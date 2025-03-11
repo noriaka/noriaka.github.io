@@ -1,0 +1,1371 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>总结 | Setsuna-Blog</title><meta name="author" content="Setsuna"><meta name="copyright" content="Setsuna"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结">
+<meta property="og:url" content="https://noriaka.github.io/posts/c8d0539d.html">
+<meta property="og:site_name" content="Setsuna-Blog">
+<meta property="og:description" content="总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://noriaka.github.io/img/AolaPictures/aola_309.png">
+<meta property="article:published_time" content="2025-03-04T05:13:02.447Z">
+<meta property="article:modified_time" content="2025-03-04T05:14:11.739Z">
+<meta property="article:author" content="Setsuna">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://noriaka.github.io/img/AolaPictures/aola_309.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "总结",
+  "url": "https://noriaka.github.io/posts/c8d0539d.html",
+  "image": "https://noriaka.github.io/img/AolaPictures/aola_309.png",
+  "datePublished": "2025-03-04T05:13:02.447Z",
+  "dateModified": "2025-03-04T05:14:11.739Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Setsuna",
+      "url": "https://noriaka.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://noriaka.github.io/posts/c8d0539d.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '总结',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/noriaka/blog_imgs/%E5%A5%87%E5%B9%BB2.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://raw.githubusercontent.com/noriaka/blog_imgs/master/%E5%8D%A1%E5%A4%AB%E5%8D%A1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(img/AolaPictures/aola_309.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Setsuna-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">总结</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-04T05:13:02.447Z" title="发表于 2025-03-04 13:13:02">2025-03-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-04T05:14:11.739Z" title="更新于 2025-03-04 13:14:11">2025-03-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="1-Lua相关"><a href="#1-Lua相关" class="headerlink" title="1. Lua相关"></a>1. Lua相关</h3><h4 id="在-Lua-中优化-table-存储大规模数据的方法有："><a href="#在-Lua-中优化-table-存储大规模数据的方法有：" class="headerlink" title="在 Lua 中优化 table 存储大规模数据的方法有："></a>在 Lua 中优化 table 存储大规模数据的方法有：</h4><ol>
+<li><strong>使用数组</strong>：Lua 的 table 在作为数组（顺序索引）时性能更高，尽量使用数字索引来存储数据，而不是字符串键。</li>
+<li><strong>预分配大小</strong>：在 LuaJIT 中，通过预先分配 table 大小，减少动态扩展的开销，比如在创建 table 时就指定足够的初始容量。</li>
+<li><strong>利用轻量化的数据结构</strong>：将大数据分块存储在多个小 table 中，可以有效减少单个 table 的压力。</li>
+</ol>
+<h4 id="G表概念："><a href="#G表概念：" class="headerlink" title="_G表概念："></a>_G表概念：</h4><ol>
+<li><strong>全局变量</strong>：在 Lua 中直接赋值的变量默认都是全局的。例如 <code>a = 10</code> 就会创建一个全局变量 <code>a</code>，并可以在整个程序中访问。</li>
+<li><strong>_G 表</strong>：Lua 将所有全局变量存储在一个特殊的全局表 <code>_G</code> 中。可以通过 <code>_G</code> 表来访问、遍历所有全局变量。例如 <code>_G[&quot;a&quot;]</code> 就是变量 <code>a</code> 的值。</li>
+<li><strong>注意事项</strong>：<ul>
+<li>全局变量过多会影响性能，特别是在需要频繁访问的场景下。</li>
+<li>未定义的全局变量默认为 <code>nil</code>，容易引发意外错误。因此，通常用 <code>local</code> 来声明局部变量以减少全局污染。</li>
+</ul>
+</li>
+<li><strong>优化</strong>：可以通过设置元表来控制 <code>_G</code>，避免错误的全局变量访问，或限制不必要的全局变量创建。</li>
+</ol>
+<h4 id="如果-Lua-中的全局变量过多，可以通过以下方法优化："><a href="#如果-Lua-中的全局变量过多，可以通过以下方法优化：" class="headerlink" title="如果 Lua 中的全局变量过多，可以通过以下方法优化："></a>如果 Lua 中的全局变量过多，可以通过以下方法优化：</h4><ol>
+<li><strong>使用局部变量</strong>：局部变量的访问速度比全局变量快很多，尽量将函数内部的变量定义为 <code>local</code>，减少对全局表 <code>_G</code> 的依赖。</li>
+<li><strong>模块化</strong>：将功能相关的全局变量封装进模块，减少直接在 <code>_G</code> 表中的变量数量。可以通过 <code>require</code> 加载模块，将全局变量转化为模块变量。</li>
+<li><strong>避免动态创建全局变量</strong>：防止在运行时动态生成全局变量，尤其是在循环或递归中，防止内存占用增加。</li>
+<li><strong>元表限制</strong>：可以为 <code>_G</code> 表设置元表来捕获不正确的全局变量访问。例如，通过元表设置可以禁止未定义的全局变量创建或访问。</li>
+</ol>
+<h4 id="G表的优势"><a href="#G表的优势" class="headerlink" title="_G表的优势"></a>_G表的优势</h4><ol>
+<li><strong>灵活性</strong>：Lua 的 <code>_G</code> 表允许动态访问和操作全局变量，开发者可以通过 <code>_G[&quot;变量名&quot;]</code> 动态获取或设置变量值。这在很多动态脚本中提供了灵活性，允许通过字符串等动态方式访问变量。</li>
+<li><strong>内存控制</strong>：与 C++ 或 C# 的全局变量相比，Lua 中的 <code>_G</code> 表相当于一个管理所有全局变量的容器，可以通过元表对其进行控制。这样，开发者可以使用元表来限制不必要的全局变量访问。</li>
+<li><strong>轻量级和性能优化</strong>：Lua 本身设计简洁，没有复杂的全局变量管理机制，减少了全局变量的内存消耗。同时，通过模块化和局部变量的使用，可以有效减少对 <code>_G</code> 表的访问需求。</li>
+</ol>
+<h4 id="脚本语言实现原理"><a href="#脚本语言实现原理" class="headerlink" title="脚本语言实现原理"></a>脚本语言实现原理</h4><p>脚本语言通过解释器将源代码逐行解析并执行，无需编译即可运行。解释器负责将脚本代码转换为机器指令，逐步执行，使脚本语言具有动态和跨平台特性，适合快速开发和嵌入应用程序中。</p>
+<h4 id="Lua-实现类和对象"><a href="#Lua-实现类和对象" class="headerlink" title="Lua 实现类和对象"></a>Lua 实现类和对象</h4><p>Lua 中可以用表（table）和元表（metatable）来模拟类和对象，通过设置元表的 <code>__index</code> 方法来实现继承和方法查找。这样可以将类的方法和属性组织在表中，并动态创建对象。</p>
+<h4 id="Lua-和-C-交互"><a href="#Lua-和-C-交互" class="headerlink" title="Lua 和 C++ 交互"></a>Lua 和 C++ 交互</h4><ol>
+<li><p>Lua 调用 C++ 的过程</p>
+<ul>
+<li><strong>流程</strong>：<code>Lua -&gt; Wrapper -&gt; C++</code></li>
+<li><strong>实现</strong>：C++ 编写一个 <strong>Wrapper</strong> 文件，将 C++ 函数、类和对象包装并注册到 Lua 虚拟机中（通常通过 <code>luaL_register</code> 函数注册）。注册完成后，Lua 可以通过该 Wrapper 文件调用 C++ 函数。</li>
+</ul>
+</li>
+<li><p>C++ 调用 Lua 的过程</p>
+<ul>
+<li><strong>流程</strong>：<code>C++ -&gt; Lua C API -&gt; Lua</code></li>
+<li><strong>实现</strong>：C++ 通过 Lua C API 调用 Lua 脚本中的函数和变量。常见操作包括加载 Lua 脚本、设置全局变量、获取返回值等。</li>
+</ul>
+</li>
+<li><p>内存和数据管理</p>
+<ul>
+<li><strong>栈结构交互</strong>：C++ 和 Lua 通过一个<strong>共享栈</strong>交换数据。C++ 调用 Lua 函数时，将参数和结果都放在栈中。比如，C++ 将参数压栈，然后调用 Lua 函数，Lua 处理并将结果压入栈顶，C++ 最后从栈顶取回结果。</li>
+</ul>
+</li>
+</ol>
+<h4 id="C-实现热更新"><a href="#C-实现热更新" class="headerlink" title="C++ 实现热更新"></a>C++ 实现热更新</h4><p>C++ 中可以通过将代码模块化为动态链接库（DLL）实现热更新。当需要更新时，重新编译 DLL 并在运行时加载新版本，避免重启应用程序，从而实现代码的无缝更新。</p>
+<h4 id="C-指针在-Lua-中的数据结构"><a href="#C-指针在-Lua-中的数据结构" class="headerlink" title="C++ 指针在 Lua 中的数据结构"></a>C++ 指针在 Lua 中的数据结构</h4><p>C++ 指针在 Lua 中通常作为<strong>轻用户数据（light userdata）</strong>，它只占用一个内存地址，适合存储简单指针，并可用于 Lua 与 C++ 间的数据交互，不带有元表等额外信息。</p>
+<h4 id="Lua-与-C-交互"><a href="#Lua-与-C-交互" class="headerlink" title="Lua 与 C# 交互"></a>Lua 与 C# 交互</h4><ol>
+<li>Lua 调用 C# 的过程<ul>
+<li><strong>流程</strong>：<code>Lua -&gt; Wrap -&gt; C#</code></li>
+<li><strong>实现</strong>：xLua 生成 Wrap 文件（中间&#x2F;适配文件），将 C# 类、字段和方法注册到 Lua 虚拟机（如 LuaJIT）。Lua 脚本可以通过 Wrap 文件访问 C# 功能；另外，还可以在 config 文件中添加相关类型，使其自动生成 Wrap 文件。</li>
+</ul>
+</li>
+<li>C# 调用 Lua 的过程<ul>
+<li><strong>流程</strong>：<code>C# -&gt; Bridge -&gt; dll -&gt; Lua</code> 或 <code>C# -&gt; dll -&gt; Lua</code></li>
+<li><strong>实现</strong>：C# 通过生成的 Bridge 文件调用 Lua 的 dll 文件（该 dll 文件是由 C 语言编写的库）。C# 代码可以直接或通过 Bridge 间接调用 Lua 虚拟机，执行 Lua 脚本。</li>
+</ul>
+</li>
+<li>内存交互<ul>
+<li><strong>C# Call Lua</strong>：C# 将请求或数据压入栈顶，Lua 从栈顶读取数据进行处理，处理完后将结果放回栈顶，C# 再从栈顶获取数据完成交互。这种基于栈的数据交换机制实现了 Lua 和 C# 的双向数据传递。</li>
+</ul>
+</li>
+<li>Wrap 文件是 C# 类型的包装文件，用于将 C# 类、方法和字段暴露给 Lua 使用。Wrap 文件通过 xLua 的自动生成机制，将 C# 类的方法和属性封装并注册到 Lua 虚拟机中，使得 Lua 脚本能够直接调用 C# 方法或访问 C# 属性。Wrap 文件的主要功能是为 Lua 提供一个接口，让 Lua 可以调用特定的 C# 类或方法。</li>
+<li>Bridge 文件是 桥接文件，用于 C# 调用 Lua。它通过与 xLua 提供的底层 C&#x2F;C++ 库（dll 文件）交互，将 C# 请求传递给 Lua 虚拟机。Bridge 文件可以将 C# 中的操作转化为 Lua 的 API 调用，从而在 C# 中实现 Lua 脚本的执行。</li>
+</ol>
+<h3 id="2-网络相关"><a href="#2-网络相关" class="headerlink" title="2. 网络相关"></a>2. 网络相关</h3><h4 id="TCP-和-UDP-原理"><a href="#TCP-和-UDP-原理" class="headerlink" title="TCP 和 UDP 原理"></a>TCP 和 UDP 原理</h4><ul>
+<li>TCP 是一种可靠的、面向连接的协议，而 UDP 是不可靠的、无连接的协议。TCP 的首部长度最小为 20 字节，而 UDP 的首部只有 8 字节。TCP 只支持一对一的通信，而 UDP 支持一对一、一对多、多对一和多对多的通信模式。TCP 提供确认、重传、流量控制和拥塞控制等功能，而 UDP 则不具备这些功能。</li>
+</ul>
+<ol>
+<li><strong>TCP（Transmission Control Protocol，传输控制协议）</strong>：<ul>
+<li>是面向连接的协议，提供可靠的、顺序的数据传输。</li>
+<li>建立连接时通过三次握手保证连接的可靠性，传输过程中对数据包进行校验、排序、重传，确保数据完整。</li>
+<li>适合需要高可靠性的场景，但由于建立连接和确认机制，速度比 UDP 慢。</li>
+</ul>
+</li>
+<li><strong>UDP（User Datagram Protocol，用户数据报协议）</strong>：<ul>
+<li>是无连接的协议，发送数据包时不需要建立连接。</li>
+<li>速度快，但不保证数据的可靠传输，数据可能丢失或顺序混乱。</li>
+<li>适合对速度要求高且可以容忍一定数据丢失的场景。</li>
+</ul>
+</li>
+</ol>
+<h4 id="游戏中-TCP-和-UDP-的应用"><a href="#游戏中-TCP-和-UDP-的应用" class="headerlink" title="游戏中 TCP 和 UDP 的应用"></a>游戏中 TCP 和 UDP 的应用</h4><ol>
+<li><strong>TCP 应用</strong>：<ul>
+<li><strong>登录认证</strong>：玩家登录游戏时的账号验证、安全信息传输需要使用 TCP 确保数据完整和安全。</li>
+<li><strong>聊天系统</strong>：游戏中的聊天信息对可靠性要求高，使用 TCP 能确保消息完整送达。</li>
+</ul>
+</li>
+<li><strong>UDP 应用</strong>：<ul>
+<li><strong>实时游戏状态更新</strong>：玩家位置、动作等数据更新速度要求高，适合使用 UDP，少量数据丢失不会对游戏体验有太大影响。</li>
+<li><strong>音视频传输</strong>：在实时语音或视频的情况下使用 UDP，可以减少延迟，提高实时性。</li>
+</ul>
+</li>
+</ol>
+<h4 id="如何用UDP来实现TCP"><a href="#如何用UDP来实现TCP" class="headerlink" title="如何用UDP来实现TCP"></a>如何用UDP来实现TCP</h4><ol>
+<li><strong>建立连接（模拟三次握手）</strong><ul>
+<li>虽然 UDP 没有连接，但可以通过在客户端发送连接请求，并等待服务端回应的方式模拟连接建立。</li>
+<li>服务端在接收到请求后，返回确认信息，客户端收到确认后正式开始传输数据，模拟了三次握手的过程。<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 客户端 <span class="comment">--&gt; 服务器：SYN（seq=x）</span></span><br><span class="line"><span class="number">2.</span> 客户端 &lt;<span class="comment">-- 服务器：SYN + ACK（seq=y, ack=x+1）</span></span><br><span class="line"><span class="number">3.</span> 客户端 <span class="comment">--&gt; 服务器：ACK（ack=y+1）</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>数据包编号</strong><ul>
+<li>为每个数据包分配一个唯一的序号（Sequence Number），使接收端能够识别数据包的顺序。</li>
+<li>通过包编号，接收端可以重排数据包，确保数据按顺序处理。</li>
+</ul>
+</li>
+<li><strong>确认应答（ACK）</strong><ul>
+<li>在发送数据包后，接收端需要向发送端发送一个确认包（ACK），确认接收到的数据包。</li>
+<li>如果发送端在一定时间内没有收到 ACK，重新发送该数据包，确保数据可靠传输。</li>
+</ul>
+</li>
+<li><strong>超时重传</strong><ul>
+<li>发送端在发送数据包后设置超时时间，等待 ACK。如果超时未收到 ACK，则重传数据包，直到确认收到为止。</li>
+<li>通过超时和重传机制，可以弥补 UDP 本身的丢包问题，提升可靠性。</li>
+</ul>
+</li>
+<li><strong>滑动窗口</strong><ul>
+<li>为了提高传输效率，可以在发送端实现滑动窗口机制，即在等待 ACK 期间继续发送多个数据包。</li>
+<li>接收端也根据窗口大小进行处理，按序接收数据包，未按序的包则缓存，等待前面的数据到达后再处理。</li>
+</ul>
+</li>
+<li><strong>断开连接（模拟四次挥手）</strong><ul>
+<li>模拟 TCP 的断开过程，客户端向服务端发送断开请求，服务端确认后，释放资源，结束会话。</li>
+<li>确保双方都能确认断开连接，防止数据未完全接收时断开连接。<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 客户端 <span class="comment">--&gt; 服务器：FIN（seq=u）</span></span><br><span class="line"><span class="number">2.</span> 客户端 &lt;<span class="comment">-- 服务器：ACK（ack=u+1）</span></span><br><span class="line"><span class="number">3.</span> 客户端 &lt;<span class="comment">-- 服务器：FIN（seq=v）</span></span><br><span class="line"><span class="number">4.</span> 客户端 <span class="comment">--&gt; 服务器：ACK（ack=v+1）</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>为什么三次握手需要三次，而挥手需要四次？<ul>
+<li>三次握手：建立连接时，客户端和服务器都需要确认自己和对方的发送和接收能力。因此，三次握手可以确保双方都已经准备好通信。三次握手通过同步的序列号来完成双向的确认。</li>
+<li>四次挥手：关闭连接时，TCP 是全双工通信，因此两端的关闭是独立进行的。客户端发送 FIN 仅表示它不再发送数据了，而服务器可能还有数据要发送。因此，双方的关闭需要分别确认，形成四次挥手。</li>
+</ul>
+</li>
+</ul>
+<h4 id="简述状态同步"><a href="#简述状态同步" class="headerlink" title="简述状态同步"></a>简述状态同步</h4><p>状态同步是一种将游戏对象的完整状态同步给所有玩家的同步方式：</p>
+<ol>
+<li><strong>原理</strong>：服务端负责计算游戏中每个对象的状态（位置、速度、方向等），并将这些状态广播给所有客户端。客户端直接更新到接收到的最新状态。</li>
+<li><strong>优点</strong>：<ul>
+<li><strong>实现简单</strong>：客户端只需接收和应用最新的状态，不需要复杂的逻辑。</li>
+<li><strong>抗干扰强</strong>：即使丢包或延迟，客户端会收到后续的状态更新，迅速恢复。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li><strong>带宽需求高</strong>：需要频繁传输对象的完整状态，尤其在游戏对象较多时对带宽要求较高。</li>
+<li><strong>体验延迟</strong>：每次接收到服务器的更新时才进行状态刷新，容易造成延迟感。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：多用于射击类、角色扮演等对精确性要求高的游戏。</li>
+</ol>
+<h4 id="简述帧同步"><a href="#简述帧同步" class="headerlink" title="简述帧同步"></a>简述帧同步</h4><p>帧同步是一种将玩家的输入操作同步给所有客户端的同步方式：</p>
+<ol>
+<li><strong>原理</strong>：客户端仅上传玩家的输入（按键、操作指令等），服务端接收后同步这些输入给所有客户端。客户端在接收到输入后独立计算并更新游戏状态，确保帧步相同。</li>
+<li><strong>优点</strong>：<ul>
+<li><strong>带宽低</strong>：只需传输输入数据，比状态同步的带宽占用小。</li>
+<li><strong>一致性好</strong>：所有客户端同时运行相同逻辑，状态高度一致，适合竞技游戏。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li><strong>抗干扰差</strong>：若丢包或延迟导致输入不同步，客户端之间的状态会发生分歧。</li>
+<li><strong>实现复杂</strong>：客户端需要确保每一帧的逻辑完全一致，否则会导致不同步问题。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：常用于格斗、RTS 等要求高度同步和公平性的竞技类游戏。</li>
+</ol>
+<h4 id="优化帧同步延迟策略"><a href="#优化帧同步延迟策略" class="headerlink" title="优化帧同步延迟策略"></a>优化帧同步延迟策略</h4><ol>
+<li><strong>预测与回滚</strong><ul>
+<li><strong>输入预测</strong>：客户端在等待服务端同步的输入时，先假设其他玩家保持当前状态，提前进行操作预测。例如，在延迟较低的情况下预测玩家移动方向不变，减少视觉延迟。</li>
+<li><strong>状态回滚</strong>：如果服务端输入到达后发现预测错误，回滚到之前的状态，重新应用正确的输入。这样保证了同步的一致性。</li>
+</ul>
+</li>
+<li><strong>帧补偿</strong><ul>
+<li><strong>快进帧数</strong>：在高延迟情况下，客户端可以增加执行帧速（例如，每帧处理多个输入），逐渐追赶上服务端的同步帧，避免同步滞后。</li>
+<li><strong>动态帧率调整</strong>：根据当前延迟动态调整帧率，降低高延迟时的数据更新频率，以平滑游戏体验。</li>
+</ul>
+</li>
+<li><strong>压缩输入数据</strong><ul>
+<li><strong>数据精简</strong>：优化输入包的内容，尽量精简每次传输的数据（例如只传输按键变化），减小传输的数据量，降低延迟。</li>
+<li><strong>封包合并</strong>：合并连续的输入数据，一起发送到服务端或客户端，减少单独包传输的频率。</li>
+</ul>
+</li>
+</ol>
+<h4 id="帧同步如何保证数据传输正确"><a href="#帧同步如何保证数据传输正确" class="headerlink" title="帧同步如何保证数据传输正确"></a>帧同步如何保证数据传输正确</h4><ol>
+<li><strong>帧编号</strong><ul>
+<li><strong>唯一标识帧</strong>：给每一帧分配唯一的帧编号，确保所有客户端和服务端的帧都能按顺序对齐。</li>
+<li><strong>丢包重传</strong>：如果某一帧的输入数据丢失，客户端或服务端可以请求重传对应帧的数据，以确保没有帧缺失。</li>
+</ul>
+</li>
+<li><strong>校验和</strong><ul>
+<li><strong>数据校验</strong>：通过计算每帧的校验和（如 CRC32、MD5 等），确保传输数据完整性。每次接收数据时，对比校验值可以快速检测数据是否损坏或丢失。</li>
+<li><strong>状态一致性检查</strong>：客户端可以定期发送关键帧的状态校验和到服务端，对比后检查是否存在不同步问题。若不同步，可以请求同步最新状态。</li>
+</ul>
+</li>
+<li><strong>确认应答机制</strong><ul>
+<li><strong>ACK 确认</strong>：每次发送输入后，接收方需要返回 ACK 确认包，告知已收到该帧的数据。</li>
+<li><strong>重传机制</strong>：如果在设定的超时时间内未收到 ACK，则重新发送该帧数据。可以通过递增的超时时间来控制重传频率，避免过多带宽消耗。</li>
+</ul>
+</li>
+<li><strong>滞后检测与回滚机制</strong><ul>
+<li><strong>输入回滚</strong>：一旦检测到错误的输入或顺序不一致，客户端可以回滚到上一正确帧，重新执行未完成的输入，确保帧逻辑的一致性。</li>
+<li><strong>滞后检测</strong>：若客户端检测到帧滞后（如帧编号不连续），可以暂停当前操作，等待服务端或其他客户端的正确输入。</li>
+</ul>
+</li>
+</ol>
+<h4 id="帧同步客户端数据不一致怎么办"><a href="#帧同步客户端数据不一致怎么办" class="headerlink" title="帧同步客户端数据不一致怎么办"></a>帧同步客户端数据不一致怎么办</h4><p>在帧同步中，若客户端出现不一致，可能导致不同步的问题，这通常由于网络延迟、数据包丢失或浮点数精度差异引起。为解决此问题，可以使用固定帧步长、状态校验、断线重连及服务器回滚等机制，确保各客户端能同步恢复一致状态，并尽量减少误差的累积。</p>
+<h4 id="客户端帧率不同导致的不一致怎么办"><a href="#客户端帧率不同导致的不一致怎么办" class="headerlink" title="客户端帧率不同导致的不一致怎么办"></a>客户端帧率不同导致的不一致怎么办</h4><p>为避免客户端帧率不同导致的不一致问题，可以采用<strong>逻辑帧和渲染帧分离</strong>的方式，强制所有客户端在相同的固定逻辑帧率下运行游戏逻辑，将渲染帧率独立出来。这样，即便不同设备的渲染帧率不同，游戏逻辑依然在相同的逻辑帧率下同步执行，从而保证一致性。</p>
+<h4 id="简述RPC调用原理"><a href="#简述RPC调用原理" class="headerlink" title="简述RPC调用原理"></a>简述RPC调用原理</h4><ul>
+<li>RPC 概念<br>RPC（Remote Procedure Call，远程过程调用）是一种通信协议，允许程序在不同的计算机或进程之间调用方法，就像在本地调用方法一样。通过 RPC，开发者可以跨越网络边界，在分布式系统中简化通信和数据传输。</li>
+<li>RPC 的调用主要分为以下几个步骤：<ol>
+<li><strong>客户端调用本地代理（Stub）</strong>：<ul>
+<li>客户端通过一个本地代理（Stub）发起调用请求，这个代理与远程服务的接口一致，看起来像是本地方法调用。</li>
+</ul>
+</li>
+<li><strong>序列化请求数据</strong>：<ul>
+<li>客户端代理将方法名称、参数等请求数据打包，并进行序列化（例如 JSON、XML 或 Protocol Buffers），使数据可以通过网络传输。</li>
+</ul>
+</li>
+<li><strong>请求发送到服务端</strong>：<ul>
+<li>序列化后的数据通过网络发送到服务端的代理（通常是远程的另一台机器）。</li>
+</ul>
+</li>
+<li><strong>服务端解包与调用方法</strong>：<ul>
+<li>服务端代理接收到数据后，进行反序列化，解析出方法名和参数，然后调用服务端的实际方法。</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：<ul>
+<li>服务端执行方法后，将结果打包并序列化为响应数据，传回客户端。</li>
+</ul>
+</li>
+<li><strong>客户端处理返回数据</strong>：<ul>
+<li>客户端代理接收到响应数据后，进行反序列化，并将结果返回给调用方，完成远程调用。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>RPC 优势与应用<ul>
+<li><strong>简化通信</strong>：通过隐藏底层网络通信细节，使得远程调用如同本地调用，提升开发效率。</li>
+<li><strong>应用场景</strong>：多用于微服务架构、分布式系统中模块间的通信，例如服务注册、数据传输和分布式计算等。</li>
+</ul>
+</li>
+</ul>
+<h4 id="粘包与拆包"><a href="#粘包与拆包" class="headerlink" title="粘包与拆包"></a>粘包与拆包</h4><ul>
+<li>粘包和拆包是网络通信中TCP协议常见的问题。</li>
+<li>粘包是指多个数据包被合并传输，通常因为发送方发送数据过快，接收方缓冲区一次接收到多个包，或操作系统合并小包以提高传输效率。</li>
+<li>拆包多由于数据包过大，超出传输协议规定的最大传输单元（MTU）或接收缓冲区的限制。</li>
+<li>为解决这些问题，可以在每个数据包前添加包长度字段，使用分隔符协议，或在应用层协议中定义数据包边界，从而确保接收方能正确识别数据包的起始和结束位置。</li>
+</ul>
+<h3 id="3-Unity相关"><a href="#3-Unity相关" class="headerlink" title="3. Unity相关"></a>3. Unity相关</h3><h4 id="简述一下Unity中的ECS架构"><a href="#简述一下Unity中的ECS架构" class="headerlink" title="简述一下Unity中的ECS架构"></a>简述一下Unity中的ECS架构</h4><ul>
+<li>Unity 的 ECS（Entity Component System）架构是一种高效的架构模式，专注于数据驱动和性能优化，特别适合需要高并发和大量数据处理的场景，如大型游戏或模拟系统。ECS 架构的核心概念：<ol>
+<li><strong>Entity（实体）</strong>：<ul>
+<li>Entity 是游戏对象的标识符，可以理解为“空容器”或“ID”，不包含具体数据。每个实体可以附加多个组件来描述其属性和行为。</li>
+</ul>
+</li>
+<li><strong>Component（组件）</strong>：<ul>
+<li>组件是数据的载体，不包含逻辑代码。它仅存储描述实体的属性，如位置、速度、颜色等。通过附加不同的组件，可以灵活定义实体的属性。</li>
+<li>每种组件只存储一个方面的数据，遵循数据分离的思想。比如 <code>Position</code> 组件只存储位置数据，<code>Health</code> 组件只存储生命值。</li>
+</ul>
+</li>
+<li><strong>System（系统）</strong>：<ul>
+<li>系统包含逻辑代码，负责处理特定类型的组件数据。系统根据特定条件或组件集合进行更新，如移动系统处理所有具有 <code>Position</code> 和 <code>Velocity</code> 组件的实体，渲染系统负责所有有 <code>Mesh</code> 和 <code>Material</code> 组件的实体。</li>
+<li>系统不直接访问实体，只处理其关联的组件数据，从而实现并行化和高效的缓存利用。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>ECS 的优势<ol>
+<li><strong>性能优化</strong>：ECS 的数据存储是基于内存局部性的。通过将相似的组件数据存储在连续的内存中，可以提高 CPU 缓存命中率，提升处理速度。</li>
+<li><strong>可并行化</strong>：ECS 将逻辑和数据分离，多个系统可以并行操作，不同系统独立处理不同的组件组合，适合多线程优化。</li>
+<li><strong>灵活扩展</strong>：组件和系统解耦，实体可以动态添加或移除组件，便于灵活定义实体行为和属性。</li>
+</ol>
+</li>
+<li>Unity 的 ECS 应用场景<br>Unity 的 ECS 在需要高并发处理和优化 CPU 性能的场景下非常有效，比如粒子系统、大量 NPC、复杂的物理模拟等。</li>
+</ul>
+<h4 id="Unity不同动画之间怎么做平滑"><a href="#Unity不同动画之间怎么做平滑" class="headerlink" title="Unity不同动画之间怎么做平滑"></a>Unity不同动画之间怎么做平滑</h4><ol>
+<li><strong>Animator Controller 的混合树（Blend Tree）</strong><ul>
+<li><strong>混合树</strong>：Unity 的 Animator Controller 支持 Blend Tree，可以根据参数动态控制多个动画之间的平滑过渡。例如，移动和跑步动画可以放在同一个 Blend Tree 中，根据速度参数自动在两者之间平滑过渡。</li>
+<li><strong>参数控制</strong>：通过设置控制参数（如速度、方向等）来控制动画权重，从而实现不同状态间的无缝过渡。</li>
+</ul>
+</li>
+<li><strong>过渡（Transitions）</strong><ul>
+<li>在 Animator Controller 中，两个动画之间可以设置 Transition，定义过渡的条件和过渡时间。</li>
+<li><strong>过渡时间</strong>：通过调整过渡时间（Transition Duration）可以控制从一个动画状态切换到另一个动画状态的平滑程度。过渡时间越长，切换越平滑。</li>
+<li><strong>淡入淡出</strong>：Transition 支持设置淡入淡出曲线，允许不同动画的权重逐渐变化，实现平滑的视觉效果。</li>
+</ul>
+</li>
+<li><strong>层级权重控制（Layer Weight）</strong><ul>
+<li>Unity 的 Animator 支持多层级动画，可以在不同的 Layer 上放置不同的动画，比如一个基础的行走动画和一个上半身的攻击动画。</li>
+<li>通过调整 Layer 的权重（Layer Weight），可以实现动画的混合。例如，在跑步时也可以让上半身执行挥剑动作，使两种动画能够自然地融合。</li>
+</ul>
+</li>
+<li><strong>Avatar Mask（骨骼蒙版）</strong><ul>
+<li>使用 Avatar Mask 可以指定某些动画只影响部分骨骼（如只控制上半身或下半身），其他部分则保持原状态。</li>
+<li>通过 Avatar Mask，Unity 可以让不同动画的骨骼系统只影响特定的骨骼区域，从而实现平滑的动画混合，不会相互干扰。</li>
+</ul>
+</li>
+<li><strong>Animation Rigging 和 Constraints</strong><ul>
+<li>Animation Rigging 包含了多种约束（Constraint）系统，可以在特定的骨骼上添加约束（如 IK 约束、Look At 约束等），用于平滑调整骨骼动画之间的过渡。</li>
+<li>例如，角色的手可以通过 IK 保持在指定位置，无论下半身是跑步还是站立都不会影响手的位置，从而实现更自然的动画混合。</li>
+</ul>
+</li>
+<li><strong>通过代码控制混合（Animator.CrossFade）</strong><ul>
+<li>Unity 提供了 <code>Animator.CrossFade</code> 函数，通过代码指定从当前动画过渡到目标动画的时间，实现平滑过渡。</li>
+<li>可以在特定条件触发时，动态控制不同动画间的过渡，比如攻击与跳跃的切换。设置过渡时间，确保在切换动作时不过于突兀。</li>
+</ul>
+</li>
+</ol>
+<h4 id="简述目前手机和PC端流行的贴图压缩格式，并说说有哪些优化点"><a href="#简述目前手机和PC端流行的贴图压缩格式，并说说有哪些优化点" class="headerlink" title="简述目前手机和PC端流行的贴图压缩格式，并说说有哪些优化点"></a>简述目前手机和PC端流行的贴图压缩格式，并说说有哪些优化点</h4><ol>
+<li><strong>ETC（Ericsson Texture Compression）</strong><ul>
+<li><strong>平台</strong>：广泛用于移动端，特别是 Android 设备。</li>
+<li><strong>特点</strong>：ETC1 不支持透明通道（Alpha），ETC2 支持透明通道，但兼容性较低。</li>
+<li><strong>优化点</strong>：对于不需要透明通道的贴图，可以选择 ETC1，以获得更广泛的兼容性；对于需要透明通道的情况，在新设备上使用 ETC2。</li>
+</ul>
+</li>
+<li><strong>ASTC（Adaptive Scalable Texture Compression）</strong><ul>
+<li><strong>平台</strong>：支持 iOS、Android 以及一些高端 PC 平台。</li>
+<li><strong>特点</strong>：支持透明通道，压缩质量灵活，压缩率范围广（如 4x4、8x8 等块大小）。</li>
+<li><strong>优化点</strong>：选择合适的块大小，块越大压缩率越高、质量越低。可根据贴图用途（如背景或 UI）选择不同的块大小，提高内存和性能效率。</li>
+</ul>
+</li>
+<li><strong>PVRTC（PowerVR Texture Compression）</strong><ul>
+<li><strong>平台</strong>：主要用于 iOS 设备，特别是老款设备。</li>
+<li><strong>特点</strong>：支持透明通道，适合对内存占用敏感的场景。</li>
+<li><strong>优化点</strong>：PVRTC 仅支持 2x2、4x4 的块大小，4x4 压缩比更高，但质量可能不佳。可以考虑将次要贴图或低分辨率贴图设置为 4x4，而关键贴图则使用 2x2。</li>
+</ul>
+</li>
+<li><strong>DXT &#x2F; BC（Block Compression）</strong><ul>
+<li><strong>平台</strong>：PC 端，特别是 Windows 平台的 DirectX 渲染。</li>
+<li><strong>特点</strong>：DXT1 支持不带透明通道的压缩，DXT5 支持带透明通道的压缩；压缩效果优秀但只适合高性能设备。</li>
+<li><strong>优化点</strong>：针对不透明的贴图优先使用 DXT1，减少内存占用。对于透明贴图，可以考虑使用 DXT5，同时尽量降低透明区域的复杂性。</li>
+</ul>
+</li>
+<li><strong>Basis Universal（.basis 格式）</strong><ul>
+<li><strong>平台</strong>：跨平台支持（通过 Vulkan、OpenGL、DirectX 进行二次解码）。</li>
+<li><strong>特点</strong>：支持各种压缩格式，通过一次压缩生成多个平台兼容的压缩文件，减少开发工作量。</li>
+<li><strong>优化点</strong>：优化点在于其二次解码策略，可以根据设备情况解码为合适的格式（如 ETC、BC、ASTC 等），减小内存负担，同时实现跨平台兼容性。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>优化要点<ol>
+<li><strong>选择合适的压缩格式</strong>：不同平台和贴图用途选择对应的压缩格式（如 iOS 选择 PVRTC，PC 端选择 DXT 系列）。</li>
+<li><strong>调整压缩块大小</strong>：如 ASTC 提供的不同块大小可以调整画质与压缩比之间的平衡，根据贴图的视觉重要性灵活选择。</li>
+<li><strong>减少高分辨率贴图使用</strong>：在小物体或远景的贴图上使用较低分辨率和高压缩比的格式，以节省内存。</li>
+<li><strong>预处理贴图</strong>：对贴图进行 mipmap 和降噪处理，减少贴图压缩时的质量损失，提高视觉效果。</li>
+<li><strong>多通道合并</strong>：将多个低彩度通道合并到一张贴图上（如使用 RGBA 通道分配不同的内容），减少单独贴图的占用。</li>
+</ol>
+</li>
+</ul>
+<h4 id="LZ4和LZMA"><a href="#LZ4和LZMA" class="headerlink" title="LZ4和LZMA"></a>LZ4和LZMA</h4><ul>
+<li>LZ4：适合 运行时按需加载的资源（如贴图、模型、场景内容等），比如游戏运行中动态加载的 AssetBundle。因为 LZ4 的分块特性，解压时间大幅减少，并且对内存和 CPU 的消耗较低。</li>
+<li>LZMA：适合 静态内容或大容量初次加载的场景，如游戏的启动加载、初次资源解压等。在 Unity 中，LZMA 更适合一次性解压的资源包，如启动加载时解压的场景或静态内容。</li>
+</ul>
+<h4 id="怎么使用Protobuf通信"><a href="#怎么使用Protobuf通信" class="headerlink" title="怎么使用Protobuf通信"></a>怎么使用Protobuf通信</h4><ul>
+<li>在 Unity 中使用 Protobuf 进行通讯时，首先定义 .proto 文件以确定消息结构（如 PlayerAction），然后用 protoc 工具生成对应的 C# 文件。在 Unity 中，创建 PlayerAction 对象并调用 ToByteArray() 将其序列化为字节数组，通过 TcpClient 发送到服务器。服务器接收后，通过 PlayerAction.Parser.ParseFrom() 方法将字节数组反序列化为 PlayerAction 对象，便于读取消息内容。这种方法使游戏实现高效、跨平台的数据通讯。</li>
+</ul>
+<h4 id="meta文件"><a href="#meta文件" class="headerlink" title="meta文件"></a>meta文件</h4><ul>
+<li>Unity 导入文件时生成的 .meta 文件用于存储该文件的唯一 ID（UUID）、导入设置和资源依赖信息，确保项目中资源在版本控制或移动时的引用关系一致性。</li>
+</ul>
+<h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><ul>
+<li>在单例模式中，<strong>饿汉式</strong>是在类加载时就创建实例，实例的生命周期从程序启动到结束，线程安全，但即使不使用实例也会占用资源；<strong>懒汉式</strong>则在首次访问时才创建实例，节省了资源，但需要额外的线程同步机制来确保线程安全。</li>
+<li>unity中推荐后者，可以加上DontDestroyOnLoad确保跨场景的持续存在</li>
+</ul>
+<h4 id="高速碰撞检测"><a href="#高速碰撞检测" class="headerlink" title="高速碰撞检测"></a>高速碰撞检测</h4><ul>
+<li>使用连续碰撞检测：Unity的碰撞检测模式（刚体组件）提供了“Discrete”（离散）、“Continuous”（连续）和“Continuous Dynamic”等选项。这会在每帧之间检查是否发生碰撞，而不是仅在每帧末尾的位置检测碰撞</li>
+<li>射线检测：使用Physics.Raycast从子弹的当前位置沿其移动方向发射一条射线，射线长度设置为本帧预期的移动距离。如果射线检测到碰撞体，则可以触发相应的碰撞逻辑，同时将子弹移动到碰撞点</li>
+<li>子弹可以是实体，在子弹头前加一小段射线也可以检测碰撞</li>
+</ul>
+<h4 id="Blend-Tree相关"><a href="#Blend-Tree相关" class="headerlink" title="Blend Tree相关"></a>Blend Tree相关</h4><ul>
+<li>设置一个参数来控制动画平滑过渡，用animator.SetFloat来设置参数值</li>
+<li>1D Blend Tree：用于单一方向上的动画混合，它基于一个参数。会在不同动画片段之间进行平滑插值，使动画过渡自然；例如，角色的走、跑和冲刺动画可以使用一个速度参数，在不同速度下切换动画</li>
+<li>2D Simple Directional：基于两个参数（水平速度和垂直速度），在二维平面中定义动画切换方向；例如走路或奔跑时根据实际移动方向平滑切换动画</li>
+<li>2D Freeform Directional：动画片段的权重不仅基于两个参数（通常是水平和垂直速度），还考虑到动画的插值角度，这使得不同方向上的动画过渡更加流畅；例如角色在进行大范围转弯或复杂的四向、八向运动时的平滑切换</li>
+<li>2D Freeform Cartesian：在动画插值时并不考虑角度，只基于二维空间中的位置。通过在二维空间中定义多个动画点，系统会根据当前位置在这些动画之间进行平滑过渡</li>
+</ul>
+<h4 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h4><ul>
+<li>A*算法可以找到全局最短路径，只要启发式函数是可行的和一致的</li>
+<li>启发式函数h(n)必须是可行的，即对于任何结点n，估算的成本不能超过实际成本</li>
+<li>启发式函数h(n)若是一致的，即对于每个结点n到其相邻结点m，h(n) &lt;&#x3D; c(n, m) + h(m)（其中c(n, m)是从n到m的实际成本），则A*算法不仅能找到全局最优路径，而且无需回溯</li>
+<li>相比Dijstra算法：<ul>
+<li>速度更快，因为后者需要遍历所有节点</li>
+<li>更适合路径规划和实时计算，理由同上</li>
+<li>灵活的适应性，因为有启发式函数</li>
+</ul>
+</li>
+<li>A* 算法使用的主要数据结构：<ul>
+<li>开放列表：优先队列（存储待探索的节点）。</li>
+<li>闭合列表：集合（存储已探索的节点）。</li>
+<li>父节点映射：哈希表（记录节点的父节点）。</li>
+<li>路径代价表：哈希表（存储从起点到每个节点的最短代价）。</li>
+<li>最终结果（最优路径）：通常存储在一个列表中，包含从起点到目标的节点顺序。</li>
+</ul>
+</li>
+</ul>
+<h4 id="NavMesh相关"><a href="#NavMesh相关" class="headerlink" title="NavMesh相关"></a>NavMesh相关</h4><ul>
+<li>在运行时添加障碍物后，AI角色默认不会避开新增障碍物。为解决此问题，可以对障碍物添加NavMesh Obstacle并启用雕刻功能；如果场景变化较大，可以使用NavMeshSurface在运行时重新生成或部分更新导航网格，以确保AI路径规划的准确性。</li>
+</ul>
+<h4 id="刚体相关"><a href="#刚体相关" class="headerlink" title="刚体相关"></a>刚体相关</h4><ul>
+<li>可以通过设置 Rigidbody 的 Interpolation 属性为 Interpolate 来平滑物体在 FixedUpdate 和渲染之间的运动</li>
+<li>逻辑和渲染分开：确保物理更新在 FixedUpdate 中进行，而渲染更新在 Update 中进行。确保在 Update 方法中读取 Rigidbody 的位置和旋转，以便在每帧中进行平滑渲染。</li>
+<li>使用平滑方法：在更新物体位置时，可以使用插值（如线性插值或球形插值）来平滑物体的移动。</li>
+</ul>
+<h4 id="粒子系统相关"><a href="#粒子系统相关" class="headerlink" title="粒子系统相关"></a>粒子系统相关</h4><ul>
+<li>粒子发射器（定义粒子的发射位置、速率、方向等）</li>
+<li>粒子属性（定义大小，颜色等）</li>
+<li>运动（定义运动轨迹，重力，风力影响等）</li>
+<li>渲染（设置纹理和材质）</li>
+<li>生命周期（管理粒子的生命周期，包括生成、变化和销毁）</li>
+<li>碰撞，事件</li>
+<li>粒子系统通过优化数据结构、利用批处理和 GPU 加速等技术，避免了将每个粒子作为单独的 GameObject 实现，从而有效减少性能消耗。</li>
+</ul>
+<h4 id="动画系统相关"><a href="#动画系统相关" class="headerlink" title="动画系统相关"></a>动画系统相关</h4><ul>
+<li>动力学动画指使用物理引擎或物理计算来模拟角色或物体的自然运动行为。通常考虑重力、碰撞、摩擦、速度等因素，使得动画更符合物理规律<ul>
+<li>通过物理引擎来计算运动，比如Unity中的Rigidbody组件、重力设置、物理材料等</li>
+<li>用于角色行走、跑步、跳跃的物理反应、布料和头发的动态运动等</li>
+<li>计算量较大，性能要求高，不适合实时性要求极高的简单动画</li>
+</ul>
+</li>
+<li>非动力学动画指不使用物理引擎，而是直接使用关键帧、骨骼动画、插值等方法预设的动画。不受物理环境因素影响，运动轨迹是固定的<ul>
+<li>常用方法包括关键帧动画、曲线插值、骨骼绑定等</li>
+<li>适合角色的基本动作（如行走、攻击）、用户界面动画、简单物体移动等</li>
+<li>缺少真实的物理反应，动画相对死板，无法根据环境动态调整</li>
+</ul>
+</li>
+</ul>
+<h4 id="AABB-Axis-Aligned-Bounding-Box-盒碰撞检测"><a href="#AABB-Axis-Aligned-Bounding-Box-盒碰撞检测" class="headerlink" title="AABB(Axis-Aligned Bounding Box)盒碰撞检测"></a>AABB(Axis-Aligned Bounding Box)盒碰撞检测</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="type">bool</span> <span class="title">CheckAABBCollision</span><span class="params">(AABB a, AABB b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a.max.x &gt;= b.min.x &amp;&amp; a.min.x &lt;= b.max.x) &amp;&amp;</span><br><span class="line">           (a.max.y &gt;= b.min.y &amp;&amp; a.min.y &lt;= b.max.y) &amp;&amp;</span><br><span class="line">           (a.max.z &gt;= b.min.z &amp;&amp; a.min.z &lt;= b.max.z); <span class="comment">// 若为二维则省略z轴</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>四叉树（QuadTree）&#x2F; 八叉树（Octree）：通过递归划分空间，将物体分配到对应的节点中，缩小潜在的碰撞检测范围。四叉树用于二维空间，八叉树用于三维空间。划分后仅检测同一区域内的AABB盒，减少不必要的碰撞检测。</li>
+<li>网格划分（Grid-Based Partitioning）：将空间划分为网格，每个网格存储当前AABB的对象，只检测同一网格中的AABB。此方法在对象分布较均匀时效率较高</li>
+<li>排序轴检测：将所有AABB在x轴（或其他任意轴）上排序，将重叠的AABB放入候选列表，再对候选列表中进行精确的AABB碰撞检测</li>
+</ul>
+<h4 id="Animator相关"><a href="#Animator相关" class="headerlink" title="Animator相关"></a>Animator相关</h4><ul>
+<li>Animator：适合简单到中等复杂度的动画需求，提供图形化的状态机和自动化过渡，易于使用但灵活性有限。</li>
+<li>Playable API：适合复杂且动态的动画控制场景，提供更强的灵活性和性能控制，但需要更多的编程工作。</li>
+</ul>
+<h4 id="RenderTexture相关"><a href="#RenderTexture相关" class="headerlink" title="RenderTexture相关"></a>RenderTexture相关</h4><ul>
+<li>RenderTexture 是 Unity 中用于将渲染结果输出到纹理的强大工具，适用于实现离屏渲染、后期处理、实时反射和折射等效果。</li>
+<li>它的优点在于灵活性，能够创建复杂的视觉效果，如小地图、动态内容显示等。</li>
+<li>高性能和内存开销，尤其在高分辨率和动态更新场景中需要特别注意。它适合用于需要自定义渲染和图像处理的复杂项目，但需要平衡性能与质量。</li>
+</ul>
+<h4 id="地形贴图出现缝隙"><a href="#地形贴图出现缝隙" class="headerlink" title="地形贴图出现缝隙"></a>地形贴图出现缝隙</h4><ul>
+<li>地形贴图出现缝隙通常由纹理采样、UV 精度、LOD 切换或多个地形块拼接问题引起。为解决这些问题，可以通过设置纹理过滤模式为 Clamp、禁用或优化 MipMap、提高网格分辨率、使用无缝纹理以及同步地形和纹理的 LOD 切换。还可以通过扩展纹理边缘和边缘融合技术，确保地形块拼接时不会产生缝隙，从而提高渲染效果的连续性与美观性。</li>
+</ul>
+<h4 id="Playable相关"><a href="#Playable相关" class="headerlink" title="Playable相关"></a>Playable相关</h4><p><strong>三者之间的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Animation</th>
+<th>Animator</th>
+<th>Playable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>用途</strong></td>
+<td>播放简单动画</td>
+<td>管理复杂动画状态机</td>
+<td>灵活的动态动画控制</td>
+</tr>
+<tr>
+<td><strong>复杂度</strong></td>
+<td>低</td>
+<td>中高</td>
+<td>高</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>简单动画，线性动画</td>
+<td>复杂动画状态，角色控制</td>
+<td>动态动画组合、混合，编程化控制</td>
+</tr>
+<tr>
+<td><strong>状态机支持</strong></td>
+<td>不支持</td>
+<td>支持</td>
+<td>通过代码控制可以实现类似状态机的功能</td>
+</tr>
+<tr>
+<td><strong>动画混合</strong></td>
+<td>不支持</td>
+<td>支持</td>
+<td>支持自定义动画混合</td>
+</tr>
+<tr>
+<td><strong>参数驱动</strong></td>
+<td>不支持</td>
+<td>支持</td>
+<td>支持动态控制和组合</td>
+</tr>
+<tr>
+<td><strong>与 Timeline 结合</strong></td>
+<td>不适用</td>
+<td>可以结合 Timeline 管理动画</td>
+<td>与 Timeline 紧密结合，可控制时间轴</td>
+</tr>
+<tr>
+<td><strong>动态性</strong></td>
+<td>通过设置 <code>AnimationClip</code> 播放</td>
+<td>依赖状态机切换</td>
+<td>通过编程动态组合和控制动画</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Animation</strong>：适用于简单的动画播放，不需要复杂的状态过渡。</li>
+<li><strong>Animator</strong>：适合复杂的动画系统，支持状态机、动画混合等功能，适用于角色动画、骨骼动画等场景。</li>
+<li><strong>Playable API</strong>：适合动态控制和组合动画，提供极高的灵活性，适用于复杂的动画控制和 Timeline 整合的场景。</li>
+</ul>
+<h3 id="4-项目相关"><a href="#4-项目相关" class="headerlink" title="4. 项目相关"></a>4. 项目相关</h3><h4 id="柏林噪声为什么可以平滑模拟地形"><a href="#柏林噪声为什么可以平滑模拟地形" class="headerlink" title="柏林噪声为什么可以平滑模拟地形"></a>柏林噪声为什么可以平滑模拟地形</h4><ul>
+<li>柏林噪声生成的值是连续的，即相邻点的值变化较小</li>
+<li>柏林噪声的参数（如频率、振幅、偏移等）可以根据需求进行调整。这使得开发者可以控制地形的特征</li>
+<li>柏林噪声在局部区域内表现出一致性，意味着在小范围内，生成的值不会出现剧烈的变化</li>
+</ul>
+<h4 id="简述单状态机和多状态机，以及如何实现混合动画"><a href="#简述单状态机和多状态机，以及如何实现混合动画" class="headerlink" title="简述单状态机和多状态机，以及如何实现混合动画"></a>简述单状态机和多状态机，以及如何实现混合动画</h4><ul>
+<li>需要绘制FSM图来判断转移条件是否设计的合理</li>
+<li>单状态机<br>单状态机是指在一个状态机中管理角色的所有状态，每次只能处于一个状态。例如，角色可以是“站立”、“跑步”或“攻击”中的一种状态。<ul>
+<li><strong>优点</strong>：简单易于实现，状态管理清晰。</li>
+<li><strong>缺点</strong>：难以处理同时存在的多个状态，比如“跑步+攻击”的组合状态，通常需要为每种组合创建新的状态，导致状态爆炸。</li>
+</ul>
+</li>
+<li>多状态机<br>多状态机是将状态拆分为多个子状态机，分别管理不同的状态。例如，一个状态机负责处理移动（如“站立”、“跑步”），另一个状态机负责攻击（如“普通攻击”、“技能攻击”）。<ul>
+<li><strong>优点</strong>：更灵活，允许多个状态机独立运行，轻松处理不同的状态组合。</li>
+<li><strong>缺点</strong>：实现复杂度稍高，需要管理多个状态机之间的协调。</li>
+</ul>
+</li>
+<li>同时实现多个状态（如跑步时攻击）<br>[<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34004750/article/details/85757204?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Ctr-1-85757204-blog-138494749.235%5Ev43%5Epc_blog_bottom_relevance_base6&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Ctr-1-85757204-blog-138494749.235%5Ev43%5Epc_blog_bottom_relevance_base6&utm_relevant_index=1%5D">https://blog.csdn.net/weixin_34004750/article/details/85757204?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-1-85757204-blog-138494749.235%5Ev43%5Epc_blog_bottom_relevance_base6&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-1-85757204-blog-138494749.235%5Ev43%5Epc_blog_bottom_relevance_base6&amp;utm_relevant_index=1]</a><br>要在“跑步”状态下实现“攻击”，可以结合多状态机和分层状态的方式：<ol>
+<li><strong>多状态机</strong>：将“移动”和“攻击”状态分别放在两个独立的状态机中。这样可以同时触发“跑步”状态和“攻击”状态，实现两者的组合。</li>
+<li><strong>分层状态管理（Layered States）</strong>：<ul>
+<li>在 Unity 中可以通过 Animator Controller 的分层（Layers）机制来实现。设置一个“移动”层管理跑步等状态，另一个“攻击”层管理攻击状态，并在两个层上分别定义跑步和攻击的动画。</li>
+<li><strong>层级权重</strong>：通过调整各层的权重，实现上半身攻击和下半身跑步的同时播放。</li>
+<li><strong>Avatar Mask</strong>：使用 Avatar Mask 将攻击动画只作用于上半身，跑步动画则作用于下半身，这样就能自然地实现“跑步+攻击”的组合。</li>
+</ul>
+</li>
+<li><strong>触发优先级</strong>：在逻辑上优先处理攻击等高优先级动作，例如在跑步时按下攻击键触发攻击的上半身动画，同时保持下半身的跑步动作。</li>
+</ol>
+</li>
+</ul>
+<h4 id="定时器项目"><a href="#定时器项目" class="headerlink" title="定时器项目"></a>定时器项目</h4><ul>
+<li>项目技术点可以说这个</li>
+<li>提供了高灵活性和优化的任务管理，支持自定义时间、帧数、回调函数和执行次数等条件，且通过小顶堆提高了大量任务处理的性能。适用于需要精确控制执行条件和高频率调度的场景</li>
+<li>Unity协程更适合逐帧执行和延时处理的场景，可以在一段时间内分步完成任务，如资源加载、异步请求等。协程依靠yield return提供非阻塞的等待和延时，便于编写流畅、自然的异步代码，适合有中断需求的任务和易读性的异步逻辑</li>
+<li>大规模定时任务优化：<ul>
+<li>数据结构优化：分层队列，将任务按不同的触发时间层级存储（例如1秒内、10秒内、1分钟内等），每个层级独立排序并单独处理</li>
+<li>分布式：区域化处理，在游戏服务器上，可以将任务按玩家区域划分，分配给不同的服务器进程或线程管理。</li>
+<li>对象池和延迟分配：在Unity中，大规模定时任务频繁创建和销毁会带来GC开销，可以使用对象池管理定时任务对象</li>
+</ul>
+</li>
+</ul>
+<h4 id="AB项目"><a href="#AB项目" class="headerlink" title="AB项目"></a>AB项目</h4><ul>
+<li>主要实现了什么<br>三个部分。一个部分就是根据一个xml文件，然后进行一个打包的处理。然后第二个部分就是进行一个加载AB包以及现在的一个逻辑的管理。然后第三部分就是热更新的一个管理，就是进行MD5值对比，然后再进行下载，热更新。</li>
+<li>AB包在运行时是怎么管理它的加载和卸载?<br>使用字典数据结构存储每个AB包，key值是AB包，value是引用计数，加载AB包时会递归查询它的依赖，并将该AB包和依赖包的引用计数都加1。卸载时就调用卸载方法对该AB包和其依赖的引用计数都减1.然后当它的引用计数为零的时候，管理器就会把它移到一个卸载队列。然后在卸载队列里等到下一帧的更新的时候然后它会把它卸出来。</li>
+<li>打包策略考虑<br>逻辑紧密的资源尽量打包成一个包</li>
+<li>怎么知道哪些资源共用了资源并需要把共用的资源单独打包<ul>
+<li>显式打包公共资源：<br>开发者可以手动设置公共资源单独打包，例如将材质、纹理、音频等共用资源放入专门的 AB 包中，并设置其他 AB 包依赖该公共包。这样，多个资源包可以引用同一 AB，进一步减少重复打包的可能性。</li>
+<li>配置文件策略：<br>使用配置文件（如图集或依赖清单）将资源分组，指定共用资源的打包方式。通过在配置文件中预设依赖结构，明确资源打包的优先级和独立性，确保资源共用关系明确化，进一步优化依赖结构。</li>
+<li>使用代码：<ul>
+<li>使用 AssetDatabase.GetDependencies 获取资源依赖关系：该方法可以帮助我们获取指定资源的所有依赖项。</li>
+<li>建立引用计数表：遍历项目中的所有资源，记录每个资源的依赖项，并建立一个字典来统计每个资源的被依赖次数。</li>
+<li>输出共用资源：筛选出引用计数大于 1 的资源，这些资源就是在多个资源中被共用的资源。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>使用Unity中的AssetBundle标签，将共用资源手动或自动设置为特定标签（如“Shared”）。</li>
+<li>将可能被多个AB包引用的资源放入一个专用的文件夹中，如Textures&#x2F;Shared、Models&#x2F;Shared等。</li>
+</ul>
+</li>
+<li>分组策略：将同类共用资源按用途或类型分组（如“UI资源”、“特效资源”、“音效资源”等），并将每个组打包成一个独立的AB包。这样可以减少AB包的数量，方便加载和管理。</li>
+<li>依赖合并：对于不同资源中引用到的小型资源（如小图片、模型材质等），可以进行依赖合并。将引用量较小的资源按照组来合并打包，比如将所有UI用到的小图标统一打包。</li>
+<li>定义“高频引用”：设置一个引用次数的阈值，只有被超过某个频次引用的资源才会视为共用资源。例如，只有被5个或以上资源引用的才会单独打包，低于这个次数的资源则跟随引用较多的AB包一起打包。</li>
+<li>模块化资源打包：将资源按功能模块进行划分，例如将所有关卡资源、UI资源、角色资源分别打包。这些模块中的共用资源放入模块级别的AB包中，从而避免按单个资源拆分带来的碎包问题。</li>
+<li>Android<ul>
+<li>StreamingAssets: Application.streamingAssetsPath (需要使用 UnityWebRequest)</li>
+<li>PersistentDataPath: Application.persistentDataPath (可直接读取)</li>
+<li>TemporaryCachePath: Application.temporaryCachePath</li>
+</ul>
+</li>
+<li>iOS<ul>
+<li>StreamingAssets: Application.streamingAssetsPath (可直接读取)</li>
+<li>PersistentDataPath: Application.persistentDataPath (可直接读取)</li>
+<li>TemporaryCachePath: Application.temporaryCachePath</li>
+</ul>
+</li>
+<li>选择合适的路径取决于资源的存储需求：StreamingAssets 适合存放不会改变的资源，而 PersistentDataPath 适合热更新和用户下载的内容。</li>
+</ul>
+<h4 id="热更新相关"><a href="#热更新相关" class="headerlink" title="热更新相关"></a>热更新相关</h4><ul>
+<li>HybridCLR热更新原理是什么<ul>
+<li>HybridCLR 热更新通过在 AOT（Ahead-Of-Time）编译的基础上引入解释执行模式，使部分 IL 代码在运行时解释执行，从而支持代码的动态更新和热修复，兼容 iOS 的 JIT 限制。</li>
+</ul>
+</li>
+<li>AOT：AOT（提前编译）是在程序运行前将代码编译为机器码，提高启动速度和安全性，但限制了运行时动态代码执行的灵活性。</li>
+<li>新项目用xlua还是HybirdCLR好<ul>
+<li>新项目如果追求更好的性能和 iOS 热更新兼容性，推荐使用 HybridCLR；而若需求简单且已有 Lua 生态基础，可以选择 xLua。</li>
+<li>HybridCLR 的性能更好是因为它直接在虚拟机上运行预编译的 C# IL 代码，不像 xLua 需要通过解释器将 Lua 脚本转换为可执行代码，减少了额外的解释开销和跨语言调用的性能损耗，因而更高效。</li>
+</ul>
+</li>
+</ul>
+<h4 id="UnityWebRequest相关"><a href="#UnityWebRequest相关" class="headerlink" title="UnityWebRequest相关"></a>UnityWebRequest相关</h4><ul>
+<li>UnityWebRequest 类使用的是HTTP&#x2F;HTTPS 协议，而 HTTP 协议本质上是基于 TCP 连接 的</li>
+<li>HTTP 使用端口 80，HTTPS 使用端口 443</li>
+<li>流程：<ul>
+<li>发送请求：客户端通过 UnityWebRequest 构造并发送一个 HTTP 请求（如 GET 或 POST）到服务器，目标资源由 URL 指定。</li>
+<li>TCP 连接：HTTP&#x2F;HTTPS 基于 TCP 协议，客户端与服务器通过 TCP&#x2F;IP 建立连接。对于 HTTPS，还会进行加密握手（TLS&#x2F;SSL）。</li>
+<li>请求发送：在建立连接后，客户端发送 HTTP 请求到服务器，可能包含请求头和数据。</li>
+<li>服务器响应：服务器处理请求，并返回 HTTP 响应，包含状态码、内容类型和资源（如 JSON、文件等）。</li>
+<li>处理响应：客户端接收到响应后，解析数据。如果状态码是成功（如 200 OK），则处理获取的资源（如文件、JSON 数据等）；否则处理错误。</li>
+</ul>
+</li>
+<li>请求类别<ul>
+<li>GET 请求：用于从服务器获取数据或文件，通过 UnityWebRequest.Get() 发送请求。</li>
+<li>POST 请求：用于向服务器提交数据（如表单、文件），通过 UnityWebRequest.Post() 发送请求。</li>
+<li>下载文件：可以使用 UnityWebRequestAssetBundle 下载 AB 包，或 UnityWebRequestTexture 下载图像文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="断点续传"><a href="#断点续传" class="headerlink" title="断点续传"></a>断点续传</h4><ul>
+<li>文件检查与断点续传：<ul>
+<li>在下载前，检查本地是否存在部分下载的文件，并记录已经下载的字节数（通过 FileInfo.Length 获取）。</li>
+<li>如果有部分文件已下载，则在 HTTP 请求头中加入 Range: bytes&#x3D;已下载字节数-，告诉服务器从该位置继续传输。</li>
+</ul>
+</li>
+<li>文件保存：<ul>
+<li>下载的文件数据写入到一个临时文件中（以防下载失败导致文件损坏），完成下载后再将临时文件重命名为最终文件。</li>
+</ul>
+</li>
+<li>HTTP Range 请求：<ul>
+<li>UnityWebRequest 支持设置自定义请求头，在这里通过 SetRequestHeader(“Range”, “bytes&#x3D;已下载字节数-“) 来告诉服务器从文件的某个位置开始传输。</li>
+</ul>
+</li>
+<li>文件合并：<ul>
+<li>如果是断点续传，打开文件流并以 Append 模式写入新下载的数据。下载完成后，将临时文件重命名为最终文件。</li>
+</ul>
+</li>
+<li>下载进度更新：<ul>
+<li>下载过程中，可以通过 <a target="_blank" rel="noopener" href="http://www.downloadhandler.data/">www.downloadHandler.data</a> 获取当前下载的数据，并写入文件流。你可以在此基础上扩展，比如定期保存下载进度、更新 UI 等。</li>
+</ul>
+</li>
+<li>服务器端的要求：<ul>
+<li>支持 HTTP Range 请求：服务器需要实现 Range 头，并能够处理部分内容请求。如果服务器不支持 Range 请求，则无法实现断点续传。</li>
+<li>返回状态码 206（Partial Content）：当服务器处理了部分请求时，应该返回 HTTP 状态码 206 Partial Content，表示文件的一部分成功传输。</li>
+</ul>
+</li>
+</ul>
+<h4 id="对象池相关"><a href="#对象池相关" class="headerlink" title="对象池相关"></a>对象池相关</h4><ul>
+<li>可以将obj的scale设成0，同时自己实现一个Init函数，在get的时候调用改函数来初始化</li>
+</ul>
+<h4 id="实习相关"><a href="#实习相关" class="headerlink" title="实习相关"></a>实习相关</h4><ul>
+<li>DXT&#x2F;ETC 这种压缩格式和 jpg&#x2F;png 之间有什么区别<br>DXT 和 ETC 是专为 GPU 优化的纹理压缩格式，可以直接加载到显存中使用，避免 CPU 解压，显存占用小、渲染性能高，非常适合游戏和实时渲染。相比之下，JPG 和 PNG 在加载到显卡前需要 CPU 解压，解压后显存占用较大，对 GPU 内存带宽要求高，适合图像存储和传输，但不适合实时渲染。</li>
+</ul>
+<h4 id="如何设计一个系统（如背包系统）"><a href="#如何设计一个系统（如背包系统）" class="headerlink" title="如何设计一个系统（如背包系统）"></a>如何设计一个系统（如背包系统）</h4><ol>
+<li>系统架构设计（如用MVC框架）</li>
+<li>静态数据配置，数据结构设置</li>
+<li>用户进度存档</li>
+<li>UI与用户交互</li>
+<li>核心功能设计</li>
+</ol>
+<h3 id="5-数据结构和算法相关"><a href="#5-数据结构和算法相关" class="headerlink" title="5. 数据结构和算法相关"></a>5. 数据结构和算法相关</h3><h4 id="完全二叉树在堆中的应用"><a href="#完全二叉树在堆中的应用" class="headerlink" title="完全二叉树在堆中的应用"></a>完全二叉树在堆中的应用</h4><ul>
+<li><strong>二叉堆（Binary Heap）</strong>：是一种基于完全二叉树的数据结构，分为<strong>最大堆</strong>和<strong>最小堆</strong>。在最大堆中，父节点的值始终大于或等于其子节点；在最小堆中，父节点的值始终小于或等于其子节点。</li>
+<li><strong>完全二叉树的特性</strong>：二叉堆采用完全二叉树的结构，因此可以用数组高效存储，从根节点到叶子节点依次存放。这样可以利用索引来轻松计算节点的父节点和子节点位置，例如：<ul>
+<li>给定节点的索引 ( i ) ，其父节点的索引为 ( (i - 1) &#x2F; 2 )。</li>
+<li>左子节点的索引为 ( 2i + 1 )，右子节点的索引为 ( 2i + 2 )。</li>
+</ul>
+</li>
+<li><strong>堆操作</strong>：二叉堆的插入和删除操作（堆化操作）基于完全二叉树的结构，通过数组实现自动调整位置，保证了操作的对数复杂度 ( O(\log n) )。查找得(O(n))</li>
+</ul>
+<h4 id="哪种数据管理使用双向链表进行管理的"><a href="#哪种数据管理使用双向链表进行管理的" class="headerlink" title="哪种数据管理使用双向链表进行管理的"></a>哪种数据管理使用双向链表进行管理的</h4><ul>
+<li>双向链表常用于 <strong>LRU（Least Recently Used）缓存</strong>的数据管理中。LRU 缓存通过双向链表和哈希表的组合来管理数据。双向链表用于维护数据的访问顺序，最新访问的节点放在链表头部，最久未使用的节点在尾部，当缓存超出容量时，可以快速移除尾部节点。同时，双向链表的双向性使得节点可以在 O(1) 时间内进行插入、删除和移动，非常适合这种数据管理方式。</li>
+</ul>
+<h4 id="红黑树，B树，B-树"><a href="#红黑树，B树，B-树" class="headerlink" title="红黑树，B树，B+树"></a>红黑树，B树，B+树</h4><ol>
+<li>红黑树（Red-Black Tree）<br> 红黑树是一种<strong>自平衡的二叉搜索树</strong>，通过对节点颜色的约束实现平衡，使得树的高度始终保持在较低水平，从而提高查找效率。<ul>
+<li><strong>结构特性</strong>：<ol>
+<li>每个节点要么是红色，要么是黑色。</li>
+<li>根节点是黑色。</li>
+<li>叶节点（即空节点）都是黑色。</li>
+<li>红色节点不能有红色子节点（红节点的子节点必须为黑色）。</li>
+<li>从任一节点到其叶子节点的所有路径上，黑色节点数量相同。</li>
+</ol>
+</li>
+<li><strong>应用场景</strong>：适合内存中进行快速查找的场景，广泛用于平衡二叉查找树中，如 Java 中的 TreeMap 和 TreeSet。</li>
+<li><strong>优缺点</strong>：<ul>
+<li><strong>优点</strong>：由于树的高度平衡，查找、插入和删除操作复杂度为 O(log n)，性能稳定。</li>
+<li><strong>缺点</strong>：树结构较为复杂，平衡维护的成本较高，通常不适合存储大量数据的外存结构。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B树（B-Tree）<br> B树是一种<strong>多叉平衡树</strong>，用于磁盘或其他存储设备的数据管理。B树的每个节点可以有多个子节点，从而有效降低了树的高度，特别适合大数据量的查找操作。<ul>
+<li><strong>结构特性</strong>：<ol>
+<li>树的阶数（<code>m</code> 阶）定义了每个节点最多有 m 个子节点。</li>
+<li>每个节点包含多个键值，并保持键值排序。</li>
+<li>每个非叶节点的子节点数量等于关键字数量+1。</li>
+<li>所有叶子节点都在同一层，确保树的平衡。</li>
+</ol>
+</li>
+<li><strong>应用场景</strong>：适用于数据库和文件系统中需要多层次索引的数据存储结构，例如文件系统和数据库的索引实现。</li>
+<li><strong>优缺点</strong>：<ul>
+<li><strong>优点</strong>：减少树的高度，降低磁盘 I&#x2F;O 次数，查找性能优于二叉树。</li>
+<li><strong>缺点</strong>：节点结构较复杂，插入和删除需要频繁分裂和合并节点，维护成本较高。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B+树（B+ Tree）<br> B+树是 B 树的变种，具有类似的多叉平衡结构，但在结构上进行了优化，使得叶子节点形成链表，便于范围查询和顺序遍历。<ul>
+<li><strong>结构特性</strong>：</li>
+</ul>
+<ol>
+<li>非叶节点只存储键值，不直接存储数据，数据全部存储在叶子节点中。</li>
+<li>所有叶子节点形成一个有序链表，用于高效的区间查找。</li>
+<li>B+ 树的阶数（m 阶）定义每个节点可以拥有的子节点数量，非叶节点包含 m-1 个键值。</li>
+</ol>
+<ul>
+<li><strong>应用场景</strong>：广泛应用于数据库索引系统和文件系统中，用于处理大规模数据的范围查询和顺序遍历。</li>
+<li><strong>优缺点</strong>：<ul>
+<li><strong>优点</strong>：数据都集中在叶子节点，并且叶子节点形成链表，便于顺序和范围查询，树高较低，磁盘 I&#x2F;O 性能更好。</li>
+<li><strong>缺点</strong>：相比 B 树存储的数据更多，增加了空间开销。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总结<ul>
+<li><strong>红黑树</strong>：平衡二叉搜索树，用于内存中快速查找操作，查找、插入和删除复杂度为 O(log n)。</li>
+<li><strong>B树</strong>：多叉平衡树，适用于数据库和文件系统的多层次索引，减少磁盘 I&#x2F;O。</li>
+<li><strong>B+树</strong>：B 树的优化版本，叶子节点通过链表连接，支持顺序遍历和范围查找，广泛用于数据库系统的索引。</li>
+</ul>
+</li>
+</ol>
+<h4 id="洗牌算法"><a href="#洗牌算法" class="headerlink" title="洗牌算法"></a>洗牌算法</h4><ol>
+<li><strong>算法原理</strong>：Fisher-Yates洗牌算法通过随机交换数组中的元素来打乱顺序。</li>
+<li><strong>步骤</strong>：从数组末尾向前遍历，每次随机选取一个位置，与当前位置的元素交换。</li>
+<li><strong>等概率性</strong>：算法确保每个元素在每个位置上出现的概率相等，实现完全随机的洗牌效果。</li>
+<li><strong>时间复杂度</strong>：算法的时间复杂度为<code>O(n)</code>，适合大规模数据的洗牌。</li>
+<li><strong>空间复杂度</strong>：在原数组上操作，无需额外空间，空间复杂度为<code>O(1)</code>。</li>
+<li><strong>应用场景</strong>：广泛用于随机抽样、卡牌洗牌、数组打乱等需要随机排序的场合。</li>
+</ol>
+<h4 id="如何设计排行榜"><a href="#如何设计排行榜" class="headerlink" title="如何设计排行榜"></a>如何设计排行榜</h4><ul>
+<li>数据结构设计：需要ID，分数，排名，同时需要索引来查找</li>
+<li>排序逻辑：<ul>
+<li>实时排序：可以使用排序算法（如快速排序或堆排序）在插入新分数时实时更新排行榜，适合用户数量较少的情况</li>
+<li>延迟排序：对于大规模用户，实时排序可能带来性能瓶颈，可以采用批量更新或延迟排序的方式，定期更新一次排行榜</li>
+<li>附近排名查询：为了显示用户周围的排名，可以根据用户分数所在的范围查询上下几名玩家的数据</li>
+<li>Top N查询：排行榜通常需要展示Top N数据，可以直接获取前N名的记录</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-图形学相关"><a href="#6-图形学相关" class="headerlink" title="6. 图形学相关"></a>6. 图形学相关</h3><h4 id="什么是渲染管线？Unity-的-SRP（Scriptable-Render-Pipeline）有什么作用"><a href="#什么是渲染管线？Unity-的-SRP（Scriptable-Render-Pipeline）有什么作用" class="headerlink" title="什么是渲染管线？Unity 的 SRP（Scriptable Render Pipeline）有什么作用"></a>什么是渲染管线？Unity 的 SRP（Scriptable Render Pipeline）有什么作用</h4><ul>
+<li>渲染管线是将 3D 场景转换为 2D 图像的一系列步骤，包括顶点处理、光栅化、着色和后处理等。</li>
+<li>Unity 提供三种主要渲染管线：<strong>内置渲染管线</strong>、<strong>通用渲染管线（URP）</strong> 和 <strong>高清渲染管线（HDRP）</strong>。内置渲染管线是 Unity 的默认选择，适合一般项目；URP 优化性能，适合移动和跨平台项目；HDRP 提供高级光照和视觉效果，适用于高端平台或视觉质量要求较高的项目。</li>
+<li><strong>通用渲染管线（URP）</strong> 和 <strong>高清渲染管线（HDRP）</strong> 是 Unity 的可编程渲染管线（Scriptable Render Pipeline, SRP）。它们允许开发者自定义渲染流程，以满足不同平台的性能和视觉效果需求。通过 SRP，开发者可以在 Unity 中精细控制渲染顺序、光照、后处理等，适用于对渲染有特殊要求的项目。</li>
+</ul>
+<h4 id="如何优化-Unity-中的渲染性能"><a href="#如何优化-Unity-中的渲染性能" class="headerlink" title="如何优化 Unity 中的渲染性能"></a>如何优化 Unity 中的渲染性能</h4><ul>
+<li><strong>减少 Draw Calls</strong>：通过合并 Mesh、使用静态批处理或动态批处理、使用图集来减少 Draw Calls。</li>
+<li><strong>LOD（Level of Detail）</strong>：为远处物体降低模型复杂度，减少多边形数。</li>
+<li><strong>光照优化</strong>：优先使用烘焙光照、减少实时光源数量。</li>
+<li><strong>纹理压缩</strong>：使用合适的贴图压缩格式（如 ASTC、ETC 等）来降低内存占用。</li>
+</ul>
+<h4 id="MVP矩阵的概念"><a href="#MVP矩阵的概念" class="headerlink" title="MVP矩阵的概念"></a>MVP矩阵的概念</h4><ul>
+<li>MVP 矩阵（Model-View-Projection Matrix）是 3D 渲染中的一个矩阵，包含模型矩阵、视图矩阵和投影矩阵，用于将物体的局部坐标转化为屏幕坐标。MVP 矩阵先将模型放入世界空间，再通过视图矩阵转换到摄像机空间，最后通过投影矩阵映射到二维屏幕，实现从 3D 到 2D 的转换。(正交投影和透视投影区别：P矩阵不同)</li>
+</ul>
+<h4 id="Shader-中避免分支的原因"><a href="#Shader-中避免分支的原因" class="headerlink" title="Shader 中避免分支的原因"></a>Shader 中避免分支的原因</h4><ul>
+<li>在 Shader 中尽量避免分支（如 if-else），因为分支会导致显卡执行多个分支路径，增加性能开销，尤其是在并行计算中。Shader 的每个线程需要执行相同路径，因此无条件运算和线性插值往往比条件判断更高效，有利于提升渲染性能。</li>
+</ul>
+<h4 id="Phong-模型的组成"><a href="#Phong-模型的组成" class="headerlink" title="Phong 模型的组成"></a>Phong 模型的组成</h4><ul>
+<li>Phong 模型是一种经典的光照模型，包含三个主要成分：环境光、漫反射光和镜面反射光。环境光提供基本亮度，漫反射光根据光源角度模拟物体的基础光照效果，而镜面反射光则提供高光效果，增加物体的真实感。</li>
+</ul>
+<h4 id="Draw-Call-的定义和优化"><a href="#Draw-Call-的定义和优化" class="headerlink" title="Draw Call 的定义和优化"></a>Draw Call 的定义和优化</h4><ul>
+<li>Draw Call 是指 GPU 渲染一个对象所需的一次 CPU 调用，每次调用都有较大开销。<ul>
+<li>UI：图集，动静分离</li>
+<li>场景：动静批处理，GPU Instancing，视锥体剔除，背面剔除，限制粒子数量，光照贴图</li>
+</ul>
+</li>
+</ul>
+<h4 id="批处理的作用"><a href="#批处理的作用" class="headerlink" title="批处理的作用"></a>批处理的作用</h4><ul>
+<li>批处理是将多个渲染对象合并成一个，减少 Draw Call 次数，降低 CPU 与 GPU 之间的数据交换量。批处理可以合并材质、模型等，减少渲染开销，是提高性能的常见手段。</li>
+</ul>
+<h4 id="平行光阴影的实现"><a href="#平行光阴影的实现" class="headerlink" title="平行光阴影的实现"></a>平行光阴影的实现</h4><ul>
+<li>平行光阴影通常通过深度贴图实现，首先在光源视角渲染场景的深度信息，生成阴影贴图，然后在物体渲染时比较物体深度与阴影贴图深度，确定是否处于阴影中。</li>
+</ul>
+<h4 id="透明物体的渲染方法"><a href="#透明物体的渲染方法" class="headerlink" title="透明物体的渲染方法"></a>透明物体的渲染方法</h4><ul>
+<li>透明物体在渲染时，通常需关闭深度写入并排序后绘制，从远到近逐层渲染，避免混色错误。常使用 Alpha 混合来控制透明度，以实现正确的视觉效果。</li>
+</ul>
+<h4 id="模板测试的作用"><a href="#模板测试的作用" class="headerlink" title="模板测试的作用"></a>模板测试的作用</h4><ul>
+<li>模板测试用于控制像素是否渲染，可以通过设置模板缓冲区值进行条件测试，实现复杂效果，如剪裁、蒙版或指定区域渲染，有效提升场景渲染的灵活性。</li>
+</ul>
+<h4 id="场景中有很多物体，大部分不透明，部分半透明，应该如何做渲染"><a href="#场景中有很多物体，大部分不透明，部分半透明，应该如何做渲染" class="headerlink" title="场景中有很多物体，大部分不透明，部分半透明，应该如何做渲染"></a>场景中有很多物体，大部分不透明，部分半透明，应该如何做渲染</h4><ul>
+<li>在渲染场景中，首先渲染不透明物体并启用深度写入，以建立深度缓冲，从而确保不透明物体遮挡关系正确；接着，渲染半透明物体，关闭深度写入但保持深度测试，并按从远到近的顺序排序，以避免半透明物体的混色问题。通过这种顺序渲染，可以实现正确的遮挡效果和透明度混合。</li>
+</ul>
+<h4 id="GPU-Instancing-概念"><a href="#GPU-Instancing-概念" class="headerlink" title="GPU Instancing 概念"></a>GPU Instancing 概念</h4><ul>
+<li>GPU Instancing 是一种图形渲染技术，用于在 GPU 上高效渲染大量相同或相似的对象。通过 GPU Instancing，开发者可以一次性将多个实例的属性（如位置、颜色、大小等）传递给 GPU，减少 CPU 与 GPU 间的 Draw Call 数量。GPU Instancing 在场景中渲染大量重复物体（如树木、草地、敌人）时非常高效，因为所有实例共享同一个网格和材质，只有少量变动的属性会在 GPU 上单独处理，从而显著提升渲染性能。</li>
+<li>区别<ul>
+<li>GPU Instancing 更适合几何形状相同但可能位置或其他属性不同的对象，并且这些对象的数量比较大。它通过 GPU 的实例化渲染多个对象，减少了 CPU 的绘制调用。</li>
+<li>静态合批处理 是一种在场景初始化时优化静态场景的技术，适合不发生变化的场景。它通过将对象合并成一个大网格，减少了 Draw Call。</li>
+<li>动态合批处理 适合小型、移动频繁的对象，可以在每一帧合批，但会增加 CPU 的计算负担。</li>
+</ul>
+</li>
+</ul>
+<h4 id="为什么需要合批"><a href="#为什么需要合批" class="headerlink" title="为什么需要合批"></a>为什么需要合批</h4><ul>
+<li>合批是为了减少渲染时的 Draw Call 数量，优化性能。每个 Draw Call 都会在 CPU 和 GPU 之间进行数据交换和指令传递，频繁的调用会增加 CPU 负担并降低帧率。合批将多个相似或相同材质的物体合并为一个批次发送到 GPU，减少 Draw Call 次数，从而提升渲染效率、降低系统资源消耗，使得游戏在不同设备上运行更加流畅。</li>
+</ul>
+<h4 id="静态合批与动态合批"><a href="#静态合批与动态合批" class="headerlink" title="静态合批与动态合批"></a>静态合批与动态合批</h4><ul>
+<li><strong>静态合批</strong>和<strong>动态合批</strong>是 Unity 优化 Draw Call 的两种方法。静态合批用于不移动的静态物体，将共享材质的静态物体在编译时合并为一个大网格，减少 Draw Call 数量。动态合批用于小型动态物体，在运行时将共享材质的动态对象合并为批次并发送到 GPU，降低 CPU 与 GPU 之间的通信开销。静态合批适合固定场景，动态合批适合需要频繁移动的小型对象。</li>
+<li>动态合批 适合少量小型动态对象的优化。</li>
+<li>静态合批 适合场景中不移动的静态对象，节省 CPU 资源。</li>
+<li>GPU Instancing 是适合大量相同物体的高效渲染技术，特别适用于需要大量重复对象的场景。</li>
+<li>SRP Batcher 通过减少 CPU 设置 GPU 渲染状态的开销，适用于基于 SRP 的管线，提升大型场景的渲染效率。</li>
+</ul>
+<h4 id="阴影渲染相关"><a href="#阴影渲染相关" class="headerlink" title="阴影渲染相关"></a>阴影渲染相关</h4><ul>
+<li>阴影贴图（Shadow Mapping）在 Unity 和其他现代渲染引擎中通常是实时渲染的。阴影贴图的工作流程是基于光源的视角实时生成深度贴图，然后在物体渲染时比较物体到光源的距离，决定物体是否处于阴影中。它与预处理的光照贴图（Lightmap）不同，光照贴图是预先计算好的静态阴影，而阴影贴图适用于动态场景和移动的光源。</li>
+<li>阴影贴图是实时渲染技术，生成动态场景中的阴影，但可能出现阴影抖动问题。常见原因包括深度计算精度不足、纹理分辨率低、摄像机移动等。解决方案包括调整 Shadow Bias 和 Normal Bias 来修正深度偏移，提高阴影贴图的分辨率，使用 级联阴影贴图（CSM） 分级处理远近阴影，及启用软阴影或 PCF 过滤技术来平滑阴影边缘，从而减少抖动并提升渲染质量。</li>
+<li>硬阴影：边缘清晰且过渡突变，适用于简单光照场景，计算性能高但不自然，通常用于模拟点光源的效果。</li>
+<li>软阴影：边缘渐变过渡，模拟面积光源和多点光源，更加逼真但计算开销较大，常用于复杂光照场景，接近现实世界中的光影表现。</li>
+<li>PCF（Percentage Closer Filtering）：通过对阴影贴图多个临近像素深度值进行多次采样来平滑阴影边缘，生成软阴影效果，性能开销取决于采样次数，在视觉效果和性能之间提供了平衡。</li>
+<li>Shadow Bias 是为了防止阴影贴图中的阴影出现“自阴影”或“阴影漏斗”现象而引入的一个小的深度偏移值。</li>
+<li>Normal Bias 是基于表面法线的偏移，常用于解决光照和阴影计算中由于表面倾斜导致的深度问题。</li>
+</ul>
+<h4 id="光追相关"><a href="#光追相关" class="headerlink" title="光追相关"></a>光追相关</h4><ul>
+<li>光线追踪的核心思想是逆向追踪光线。传统的物理光线从光源发出，经过场景中的物体，最后到达摄像机。然而，在光线追踪中，从摄像机出发追踪光线，反向追踪每一条光线的路径直到光源，计算光线与场景中物体的相互作用，确定像素的颜色。</li>
+</ul>
+<h4 id="前向渲染与延迟渲染"><a href="#前向渲染与延迟渲染" class="headerlink" title="前向渲染与延迟渲染"></a>前向渲染与延迟渲染</h4><ul>
+<li>前向渲染和延迟渲染是两种常见的渲染技术。前向渲染在每个物体渲染时直接计算光照，适合少量光源的场景，处理简单且对透明物体友好，但在多光源情况下性能下降明显。延迟渲染先渲染几何信息，再统一计算光照，适合处理大量光源，特别是复杂的光照场景，性能更高，但对显存要求大，且处理透明物体较复杂。</li>
+</ul>
+<h4 id="伽马空间和Z空间"><a href="#伽马空间和Z空间" class="headerlink" title="伽马空间和Z空间"></a>伽马空间和Z空间</h4><p><strong>区别总结</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>伽马空间（Gamma Space）</th>
+<th>Z 空间（Z Space）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>概念</strong></td>
+<td>颜色空间，涉及颜色校正</td>
+<td>深度空间，涉及物体到相机的深度</td>
+</tr>
+<tr>
+<td><strong>应用</strong></td>
+<td>控制图像在屏幕上的显示效果</td>
+<td>确定物体在 3D 场景中的深度和遮挡关系</td>
+</tr>
+<tr>
+<td><strong>处理</strong></td>
+<td>颜色值经过伽马校正</td>
+<td>深度值存储在深度缓冲区，进行深度测试</td>
+</tr>
+<tr>
+<td><strong>用途</strong></td>
+<td>匹配人眼视觉特性，呈现自然的图像</td>
+<td>确定物体的前后关系，进行正确的渲染遮挡</td>
+</tr>
+<tr>
+<td><strong>非线性</strong></td>
+<td>伽马空间通常是非线性的</td>
+<td>Z 空间经过投影矩阵转换后深度也是非线性的</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>伽马空间</strong> 主要用于颜色的显示与存储，经过伽马校正使得图像显示更加符合人眼的感知特性。</li>
+<li><strong>Z 空间</strong> 主要用于深度的处理，决定了物体在三维空间中的前后关系，确保正确的遮挡与显示顺序。</li>
+</ul>
+<h4 id="如何描边"><a href="#如何描边" class="headerlink" title="如何描边"></a>如何描边</h4><ul>
+<li>在 Unity 中，实现描边效果的常用方法是通过 Shader 进行背面剔除和几何体扩展。具体是剔除模型的正面，渲染背面并沿法线方向放大模型，从而生成描边轮廓。通过调整描边的颜色和宽度，可以灵活控制描边效果。此外，还可以通过几何体扩展和法线反转的方式实现描边，但 Shader 方式更为高效和灵活，适合实时渲染场景。</li>
+</ul>
+<h3 id="7-C-相关"><a href="#7-C-相关" class="headerlink" title="7. C++相关"></a>7. C++相关</h3><h4 id="内存对齐"><a href="#内存对齐" class="headerlink" title="内存对齐"></a>内存对齐</h4><ul>
+<li>在 C++ 中，内存对齐（Memory Alignment）是指在内存中分配数据时，将数据放置在特定的内存地址上，以优化 CPU 的访问速度。内存对齐主要是为了提高性能，减少 CPU 访问内存时的额外开销。</li>
+<li>union的内存大小为其内部最大变量的内存大小</li>
+<li>static变量存储在全局或静态存储区，而不是结构体的对象内，因此它们不参与对象的内存布局和对齐</li>
+<li>long long是8字节</li>
+<li>在 C++ 中，内存对齐并不是硬性规定，但通常会由编译器进行自动优化，同时也可以由开发者手动控制<br><img src="/image.png" alt="alt text"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Example1</span> &#123;</span><br><span class="line">    <span class="type">char</span> a;           <span class="comment">// 1 字节</span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> s;</span><br><span class="line">    <span class="type">double</span> b;         <span class="comment">// 8 字节</span></span><br><span class="line">    <span class="type">short</span> c;          <span class="comment">// 2 字节</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Example2</span> &#123;</span><br><span class="line">    <span class="type">char</span> a;</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">    <span class="type">double</span> c;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">D</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Example3</span> &#123;</span><br><span class="line">    <span class="type">char</span> a;</span><br><span class="line">    <span class="type">double</span> b;</span><br><span class="line">    <span class="type">char</span> c[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">D</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="built_in">sizeof</span>(Example1) <span class="comment">// 24字节，静态变量，不参与内存对齐</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">sizeof</span>(Example2) <span class="comment">// 24字节，因为有虚表指针在最前面</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">sizeof</span>(Example3) <span class="comment">// 24字节，会对齐</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> name1[<span class="number">10</span>];</span><br><span class="line">name1 = <span class="string">&quot;aaaaa&quot;</span>;<span class="comment">//错误，表达式必须是可修改的左值</span></span><br><span class="line"><span class="type">const</span> <span class="type">char</span> *name2 ;</span><br><span class="line">name2 = <span class="string">&quot;aaaaa&quot;</span>;<span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>C++中，用双引号括起来的字符就是字符串常量，如“abc”，“hello”，“a+b”都是字符串常量。存储在常量存储区</li>
+<li>双引号做了3件事：<ol>
+<li>申请了空间(在常量区)，存放了字符串</li>
+<li>在字符串尾加上了’&#x2F;0’</li>
+<li>返回地址</li>
+</ol>
+</li>
+</ul>
+<h4 id="客户端和服务端时钟同步："><a href="#客户端和服务端时钟同步：" class="headerlink" title="客户端和服务端时钟同步："></a>客户端和服务端时钟同步：</h4><p>这是 <strong>时钟同步算法</strong>的例子，类似于 <strong>NTP 协议</strong>的工作方式，通过交换时间戳来估算客户端和服务器之间的时钟偏差。具体解释如下：</p>
+<ol>
+<li><strong>四个时间戳</strong>：<ul>
+<li><strong>T1</strong>：客户端发起同步请求时的时间戳（客户端时间）。</li>
+<li><strong>T2</strong>：服务器接收到同步请求时的时间戳（服务器时间）。</li>
+<li><strong>T3</strong>：服务器发送响应时的时间戳（服务器时间）。</li>
+<li><strong>T4</strong>：客户端接收到服务器响应时的时间戳（客户端时间）。</li>
+</ul>
+</li>
+<li><strong>计算公式</strong>：<ul>
+<li>公式 <code>((T2 - T1) + (T3 - T4)) / 2</code> 的作用是估算客户端和服务器之间的 <strong>时间差</strong>。</li>
+<li><strong>(T2 - T1)</strong> 表示客户端到服务器的网络传输延迟。</li>
+<li><strong>(T4 - T3)</strong> 表示服务器到客户端的网络传输延迟。</li>
+<li>将两个延迟相加再除以 2，可以得出平均延迟值，进而通过这个值来调整客户端时钟。</li>
+</ul>
+</li>
+<li><strong>大致计算</strong>：<ul>
+<li>客户端最终可以用这个偏差值来调整本地时间，以实现时钟同步。</li>
+</ul>
+</li>
+</ol>
+<h4 id="静态链接和动态链接的区别和优缺点"><a href="#静态链接和动态链接的区别和优缺点" class="headerlink" title="静态链接和动态链接的区别和优缺点"></a>静态链接和动态链接的区别和优缺点</h4><ul>
+<li>静态链接在编译时将库代码直接嵌入可执行文件，使程序独立、运行速度快，但文件体积大、更新困难；动态链接在运行时加载库，多个程序可以共享库文件，节省存储空间且易于更新，但依赖库文件存在，有一定运行时开销。</li>
+</ul>
+<h4 id="inline和-define的区别"><a href="#inline和-define的区别" class="headerlink" title="inline和#define的区别"></a>inline和#define的区别</h4><ul>
+<li>inline 函数和 #define 都用于减少调用开销，但 inline 更安全，有类型检查、作用域控制和调试支持，适合复杂逻辑；而 #define 仅做文本替换，无类型检查，调试和错误处理能力较弱，因此 inline 是 #define 的更安全替代。</li>
+</ul>
+<h4 id="模板函数的概念"><a href="#模板函数的概念" class="headerlink" title="模板函数的概念"></a>模板函数的概念</h4><ul>
+<li>模板函数是 C++ 中的一种函数，它允许函数定义使用类型参数，使得函数可以在编译时根据传入的实际类型生成相应的代码，从而实现泛型编程。模板函数避免了重复代码，适用于操作不同数据类型的通用函数。</li>
+</ul>
+<h4 id="特化的概念"><a href="#特化的概念" class="headerlink" title="特化的概念"></a>特化的概念</h4><ul>
+<li>特化（Template Specialization）是 C++ 模板的一种功能，允许为特定类型定制模板函数或模板类的实现。通过特化，可以为特定数据类型提供专门的实现方式，而不是使用通用的模板版本。特化分为全特化和偏特化，其中全特化是为具体类型提供完全不同的实现，偏特化则是在部分模板参数特定化时实现。<br>下面是一个模板特化的简单例子，展示如何为特定类型提供不同实现：</li>
+</ul>
+<ol>
+<li>通用模板定义<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printType</span><span class="params">(T value)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;General template: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>特化模板定义，假设我们想要对 <code>int</code> 类型进行特化，可以这样写：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="type">void</span> <span class="built_in">printType</span>&lt;<span class="type">int</span>&gt;(<span class="type">int</span> value) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Specialized template for int: &quot;</span> &lt;&lt; value &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>使用模板和模板特化<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printType</span>(<span class="number">3.14</span>);    <span class="comment">// 调用通用模板，输出 &quot;General template: 3.14&quot;</span></span><br><span class="line">    <span class="built_in">printType</span>(<span class="number">42</span>);      <span class="comment">// 调用特化模板，输出 &quot;Specialized template for int: 42&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在这个例子中，<code>printType</code> 是一个通用模板，但对 <code>int</code> 类型进行了特化。因此，当调用 <code>printType(42)</code> 时，会使用特化版本，而其他类型如 <code>double</code> 会使用通用版本。</li>
+</ol>
+<h4 id="NULL和nullptr的区别"><a href="#NULL和nullptr的区别" class="headerlink" title="NULL和nullptr的区别"></a>NULL和nullptr的区别</h4><ul>
+<li>NULL 是 C 语言中的空指针常量，通常定义为 0，在 C++ 中也沿用，但存在类型不明确的问题；nullptr 是 C++11 引入的关键字，专用于表示空指针，类型安全且支持重载，因此 nullptr 更推荐用于指针操作。</li>
+</ul>
+<h4 id="堆和栈的区别"><a href="#堆和栈的区别" class="headerlink" title="堆和栈的区别"></a>堆和栈的区别</h4><ul>
+<li>堆和栈都是内存分配区域，但用途不同：栈用于存储局部变量和函数调用信息，分配速度快、自动管理，但空间有限；堆用于动态分配内存，需要手动管理（如 new&#x2F;delete），空间较大但分配速度慢，适合需要灵活大小和生命周期的对象。</li>
+</ul>
+<h4 id="空类的大小以及为什么"><a href="#空类的大小以及为什么" class="headerlink" title="空类的大小以及为什么"></a>空类的大小以及为什么</h4><ul>
+<li>一个空类的大小在 C++ 中通常为 1 字节。这是因为 C++ 要求每个对象在内存中都有唯一的地址，即使它不包含任何数据成员。为了满足这一要求，编译器会为空类分配 1 字节的内存空间，使得它的实例能够在内存中拥有唯一的地址，便于指针和引用操作。</li>
+</ul>
+<h4 id="C-内存泄漏"><a href="#C-内存泄漏" class="headerlink" title="C++ 内存泄漏"></a>C++ 内存泄漏</h4><ul>
+<li>C++ 中，内存泄漏是指程序分配的内存没有被正确释放，通常由于忘记释放动态分配的内存或循环引用引起。内存泄漏会导致内存消耗持续增加，影响程序性能并可能导致崩溃。</li>
+</ul>
+<h4 id="C-实现-GC-的方式"><a href="#C-实现-GC-的方式" class="headerlink" title="C++ 实现 GC 的方式"></a>C++ 实现 GC 的方式</h4><ul>
+<li>C++ 中常用的 GC 实现方式包括引用计数、智能指针（如 <code>std::shared_ptr</code>）、标记清除和分代收集等。引用计数通过追踪对象引用次数自动回收，智能指针则通过 RAII 管理内存，标记清除和分代收集则较少使用，通常在特定库或引擎中实现。</li>
+</ul>
+<h4 id="vector的扩容与缩容"><a href="#vector的扩容与缩容" class="headerlink" title="vector的扩容与缩容"></a>vector的扩容与缩容</h4><ul>
+<li><code>vector</code> 在元素增加超过当前容量时会自动扩容，通常按 1.5 或 2 倍的增长比例分配更大内存，将原有元素移动到新位置；扩容是为了减少频繁的内存分配操作，提升性能。缩容则在元素删除较多时将内存减小到合理大小，通常使用 <code>shrink_to_fit()</code> 或重新赋值方式完成，以节省内存。</li>
+</ul>
+<h4 id="多继承问题"><a href="#多继承问题" class="headerlink" title="多继承问题"></a>多继承问题</h4><ul>
+<li>多继承两个父类有相同的虚函数， 子类重写的是哪个 – 都重写，如果重写调用的是子类函数，未重写会导致二义性</li>
+<li>A类是基类，B继承A，C继承A，D继承B和C，现在A里面有一个成员x，问D里有几个x。如果我只想留一份x怎么办<ul>
+<li>在这种多重继承结构中，D 会继承两份 A 类的成员 x，因为 B 和 C 各自继承了 A</li>
+<li>如果只想在 D 中保留一份 x，可以通过虚继承来解决<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123; <span class="keyword">public</span>: <span class="type">int</span> x; &#125;;</span><br><span class="line"><span class="comment">// 虚拟继承</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> : <span class="keyword">virtual</span> <span class="keyword">public</span> A &#123;&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> : <span class="keyword">virtual</span> <span class="keyword">public</span> A &#123;&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span> : <span class="keyword">public</span> B, <span class="keyword">public</span> C &#123;</span><br><span class="line">    <span class="comment">// D 继承 B 和 C，但只会保留一份 A 的成员 x</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="重载相关"><a href="#重载相关" class="headerlink" title="重载相关"></a>重载相关</h4><ul>
+<li>同名的函数，一个接受指针一个接受引用， 是不是重载 – 是</li>
+<li>静态方法可以被重载但不能被覆写，因为不属于类的实例不能形成多态</li>
+<li>函数重载的底层实现依赖于编译器的名称修饰（Name Mangling）机制。编译器在编译过程中，会根据重载函数的参数类型、数量、顺序等信息，为每个重载的函数生成唯一的符号名。这样可以在编译和链接时区分这些重载的函数，从而避免冲突。</li>
+<li>运算符重载的本质是将运算符表达式转换为函数调用，编译器会将运算符重载的操作符解释为相应的函数。例如，当你重载 + 运算符时，编译器实际上是将 a + b 这样的表达式转换为 a.operator+(b) 或 operator+(a, b) 的函数调用</li>
+</ul>
+<h4 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h4><ul>
+<li>野指针是C++中常见的指针错误，通常因未初始化指针、释放后未置空的悬空指针或越界访问导致。野指针可能引发程序崩溃或未定义行为，因此在C++中应谨慎管理指针，使用智能指针（如std::unique_ptr或std::shared_ptr）和严格的指针初始化来避免野指针问题</li>
+</ul>
+<h4 id="开放定址法删除元素"><a href="#开放定址法删除元素" class="headerlink" title="开放定址法删除元素"></a>开放定址法删除元素</h4><ul>
+<li>直接删除会影响后续查找操作，因为空位会中断查找过程。因此标记为“已删除”状态，而不是清空该位置，此外可在适当时机重建哈希表以清除标记的删除位。</li>
+</ul>
+<h4 id="移动语义相关"><a href="#移动语义相关" class="headerlink" title="移动语义相关"></a>移动语义相关</h4><ol>
+<li><strong>移动构造</strong>：移动构造函数通过“窃取”资源而非复制，实现将临时对象的资源转移给新对象，避免了昂贵的深拷贝操作。</li>
+<li><strong>移动赋值</strong>：移动赋值运算符将一个对象的资源转移给另一个已存在的对象，释放源对象资源，提升赋值效率。</li>
+<li><strong>性能优化</strong>：移动语义减少了不必要的内存分配和数据复制，大幅提升程序在处理临时对象和大数据结构时的性能。</li>
+<li><strong>原理分析</strong>：移动语义通过右值引用 (<code>T&amp;&amp;</code>) 实现，将源对象的资源指针转移到目标对象，实现高效的资源管理和避免重复分配。</li>
+</ol>
+<h4 id="STL二级分配器"><a href="#STL二级分配器" class="headerlink" title="STL二级分配器"></a>STL二级分配器</h4><ul>
+<li>小于128字节的内存请求使用内存池（避免内存空间碎片） – 链表头指针为第一个空闲块</li>
+<li>大于的话使用malloc或new来分配内存</li>
+</ul>
+<h4 id="初始化列表方式初始化"><a href="#初始化列表方式初始化" class="headerlink" title="初始化列表方式初始化"></a>初始化列表方式初始化</h4><ul>
+<li>C++的构造函数可能会用初始化列表的方式去初始化，他和正常的方式有什么区别 – 避免产生临时变量</li>
+</ul>
+<h4 id="指针和引用使用"><a href="#指针和引用使用" class="headerlink" title="指针和引用使用"></a>指针和引用使用</h4><ul>
+<li>当需要绑定一个不变对象且无需空值时选用引用，而在需要灵活指向不同对象或表示空值时选用指针。</li>
+</ul>
+<h4 id="malloc和new区别"><a href="#malloc和new区别" class="headerlink" title="malloc和new区别"></a>malloc和new区别</h4><ul>
+<li>C用malloc申请内存，C++用new申请内存。</li>
+<li>malloc需要自己指定申请多少内存，new会自动计算申请多少内存</li>
+<li>malloc返回的是void*，new返回的是指定类型的指针</li>
+<li>malloc不会初始化，new会调用构造函数进行初始化。</li>
+</ul>
+<h4 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h4><ul>
+<li>32位系统，程序最多使用多少内存<ul>
+<li>2^32 字节，就是4G。但是内核要分去2G，剩下的才是应用程序的，所以最多是2G。</li>
+</ul>
+</li>
+</ul>
+<h4 id="智能指针相关"><a href="#智能指针相关" class="headerlink" title="智能指针相关"></a>智能指针相关</h4><ul>
+<li>shared ptr是共享指针，可以有多个指针指向同一个对象，内部维护了一个引用计数，当引用计数为0时会自动释放对象<ul>
+<li>引用计数增减：线程安全。</li>
+<li>shared_ptr实例的读写：非线程安全。</li>
+<li>被管理对象的访问：非线程安全，需要自行加锁或确保对象是线程安全的。</li>
+</ul>
+</li>
+<li>unique_ptr是独占指针，只能有一个指针指向对象，它不能被拷贝，只能被移动</li>
+<li>weak_ptr不占用引用计数，只作为对象的观察者，不能操作对象。</li>
+</ul>
+<h4 id="数组和链表的遍历效率"><a href="#数组和链表的遍历效率" class="headerlink" title="数组和链表的遍历效率"></a>数组和链表的遍历效率</h4><ul>
+<li>数组的遍历效率更高，因为数组在内存中是连续存储的，CPU 可以高效地利用缓存（Cache）预取数据，减少内存访问的延迟</li>
+<li>链表在内存中是非连续存储的，每次访问节点需要通过指针找到下一个节点，容易导致缓存命中率低、内存访问不连续</li>
+</ul>
+<h4 id="编译型和解释型语言"><a href="#编译型和解释型语言" class="headerlink" title="编译型和解释型语言"></a>编译型和解释型语言</h4><ol>
+<li><strong>执行方式</strong>：编译型语言在执行前将源代码编译成机器码，而解释型语言逐行解释执行源代码。</li>
+<li><strong>运行速度</strong>：编译型语言通常运行速度较快，因其执行的是机器码；解释型语言一般较慢，因为需要实时解释。</li>
+<li><strong>错误检测</strong>：编译型语言在编译时进行语法检查，而解释型语言的错误通常在运行时才被发现。</li>
+<li><strong>开发过程</strong>：编译型语言的编译过程较慢，开发周期更长；解释型语言支持快速开发和即时测试。</li>
+<li><strong>平台依赖性</strong>：编译型语言生成的机器码与特定平台相关，需为不同平台编译；解释型语言通常更具跨平台性。</li>
+<li><strong>内存管理</strong>：编译型语言可能需要手动管理内存，解释型语言通常具有自动垃圾回收机制。</li>
+</ol>
+<h4 id="stringstream相关"><a href="#stringstream相关" class="headerlink" title="stringstream相关"></a>stringstream相关</h4><ul>
+<li><code>ss &gt;&gt; word</code>，从 ss 中逐个提取字符串，遇到空格会自动跳过，提取到的单词存入 word<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">reverseWords</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 创建一个 stringstream 对象 ss，并将字符串 s 传入</span></span><br><span class="line">    <span class="function">stringstream <span class="title">ss</span><span class="params">(s)</span></span>;  <span class="comment">// 将字符串 s 放入 stringstream 中</span></span><br><span class="line">    string word;</span><br><span class="line">    vector&lt;string&gt; words;</span><br><span class="line">    <span class="comment">// 2. 利用 stringstream 来提取单词</span></span><br><span class="line">    <span class="keyword">while</span> (ss &gt;&gt; word) &#123;  <span class="comment">// 逐个读取单词，跳过多余的空格</span></span><br><span class="line">        words.<span class="built_in">push_back</span>(word);  <span class="comment">// 将每个单词存入 vector 中</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="memset相关"><a href="#memset相关" class="headerlink" title="memset相关"></a>memset相关</h4><ul>
+<li>memset 是 C&#x2F;C++ 标准库中的一个函数，用于将一块内存中的字节设置为指定的值。它通常用于对数组或内存区域进行初始化或重置</li>
+<li>对子类内存清零时如果有虚指针的话会报错<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">memset</span>(arr, <span class="number">0</span>, <span class="built_in">sizeof</span>(arr));  <span class="comment">// 将数组初始化为 0</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="memcpy和memmove"><a href="#memcpy和memmove" class="headerlink" title="memcpy和memmove"></a>memcpy和memmove</h4><ul>
+<li>memcpy 更快，但只适用于不重叠的内存区域。</li>
+<li>memmove 更灵活，可以安全处理重叠的内存区域，但速度相对较慢。</li>
+<li>在内存重叠的情况下，memmove 会确保正确地复制数据。它会根据 src 和 dest 的相对位置选择从前往后复制或从后往前复制，以避免重叠时的数据覆盖问题</li>
+</ul>
+<h4 id="erase函数"><a href="#erase函数" class="headerlink" title="erase函数"></a>erase函数</h4><ul>
+<li>erase(key)：根据键值删除元素。返回被删除元素的数量（0 或 1），表示是否成功删除了元素</li>
+<li>erase(iterator)：通过迭代器删除单个元素。返回删除元素之后的下一个迭代器</li>
+<li>erase(iterator_first, iterator_last)：删除迭代器范围内的元素。</li>
+<li>clear()：清空整个 map。</li>
+</ul>
+<h4 id="堆栈相关"><a href="#堆栈相关" class="headerlink" title="堆栈相关"></a>堆栈相关</h4><ul>
+<li>进程如何管理堆和栈： 进程的堆和栈由操作系统通过虚拟内存管理系统进行管理。栈是自动分配的内存，用于存储局部变量、函数参数等，分配和释放由系统自动完成。堆是动态分配的内存，程序员通过 malloc 或 new 来分配，手动通过 free 或 delete 释放。栈的大小固定，而堆的大小可以根据需求动态扩展，堆和栈的内存增长方向相反。</li>
+<li>堆内存用完时的管理： 当堆内存用完时，操作系统无法再分配更多内存，程序会遇到内存分配失败的情况。此时，malloc 会返回 NULL，new 在 C++ 中可能抛出异常。程序员需要对内存分配结果进行检查并处理，如释放不再使用的内存或减少内存分配需求，以避免程序崩溃。</li>
+<li>栈内存用完时的管理： 栈内存用完通常导致栈溢出（Stack Overflow），进而引发程序崩溃。栈溢出多发生于递归层数过深、局部变量过大或函数调用嵌套过深的情况下。操作系统通过设置固定的栈大小，并在超出限制时发出异常信号终止程序运行。为防止栈溢出，程序员应控制递归深度，避免使用过大的局部数组，或在必要时增大栈的大小。</li>
+<li>导致栈用完的情况： 栈用完的常见原因包括递归深度过大、局部变量过大或函数调用嵌套过深。递归函数每次调用都会消耗栈空间，而过大的局部数组会迅速占用栈内存，导致栈空间不足。栈溢出后，操作系统会终止程序的运行，因此程序员需要优化递归算法，使用堆内存分配大数据，或调整栈大小来避免此类问题。</li>
+</ul>
+<h4 id="虚函数表存放在哪个内存区"><a href="#虚函数表存放在哪个内存区" class="headerlink" title="虚函数表存放在哪个内存区"></a>虚函数表存放在哪个内存区</h4><ul>
+<li>虚函数表本身一般存储在全局内存区（通常是程序的数据段，或者在有些编译器实现中放在只读数据段）。由于虚函数表是类级别的（每个类只有一个虚表），而不是对象级别的，因此不会随着对象而频繁创建或销毁。</li>
+</ul>
+<h4 id="C-11-新特性总结"><a href="#C-11-新特性总结" class="headerlink" title="C++11 新特性总结"></a>C++11 新特性总结</h4><ol>
+<li><strong><code>auto</code> 类型推导</strong>：编译器自动推导变量类型，简化代码。</li>
+<li><strong><code>nullptr</code> 空指针</strong>：替代 <code>NULL</code>，更安全的空指针表示。</li>
+<li><strong>基于范围的 <code>for</code> 循环</strong>：简化容器遍历，避免手动迭代器。</li>
+<li><strong>智能指针</strong>：<code>std::unique_ptr</code> 和 <code>std::shared_ptr</code> 自动管理内存，防止内存泄漏。</li>
+<li><strong><code>lambda</code> 表达式</strong>：匿名函数，简洁地定义和传递小型函数。</li>
+<li>**移动语义与 <code>std::move</code>**：右值引用实现资源转移，提升性能。</li>
+<li><strong>哈希表容器</strong>：如 <code>std::unordered_map</code>，基于哈希的高效键值存储。</li>
+</ol>
+<h3 id="8-操作系统相关"><a href="#8-操作系统相关" class="headerlink" title="8. 操作系统相关"></a>8. 操作系统相关</h3><h4 id="死锁的概念"><a href="#死锁的概念" class="headerlink" title="死锁的概念"></a>死锁的概念</h4><ul>
+<li>死锁是指多个线程或进程在持有资源的同时相互等待对方释放资源，导致系统永久等待、无法继续执行的状态。死锁通常在并发编程中发生，满足<strong>互斥、持有并等待、不可抢占、循环等待</strong>四个条件时容易产生，比如线程同时竞争多个共享资源时或在嵌套锁情况下未按顺序释放锁。</li>
+</ul>
+<h4 id="进程线程区别"><a href="#进程线程区别" class="headerlink" title="进程线程区别"></a>进程线程区别</h4><ul>
+<li>线程是进程中的最小执行单元，多个线程共享进程的内存空间和资源，切换速度快、内存开销小；而进程是操作系统分配资源的基本单位，进程间相互独立、资源隔离更强，但切换速度较慢、资源开销较大。</li>
+</ul>
+<h4 id="进程间通信方式"><a href="#进程间通信方式" class="headerlink" title="进程间通信方式"></a>进程间通信方式</h4><ul>
+<li>管道，信号，信号量，消息队列，共享内存，Socket<ul>
+<li>轻量、单向通信：适合使用管道。(开辟一块内存缓冲区)</li>
+<li>异步、多进程通信：适合使用消息队列。</li>
+<li>高性能数据传输：共享内存是最佳选择。（需要锁）</li>
+<li>简单通知或控制：信号（向进程发送通知信号，PV操作）和信号量（控制多个进程对共享资源的访问权限）适用。</li>
+<li>跨主机&#x2F;跨网络通信：Socket 和 RPC 是主要选择。</li>
+</ul>
+</li>
+</ul>
+<h4 id="进-线程间同步方式"><a href="#进-线程间同步方式" class="headerlink" title="进&#x2F;线程间同步方式"></a>进&#x2F;线程间同步方式</h4><ul>
+<li>临界区，互斥量，信号量，管程（monitor，内部封装互斥同步提供接口），事件，条件变量</li>
+<li>条件变量：当一个进程进入管程后被阻塞，直到阻塞的原因解除时，在此期间，如果该进程还不释放管程，那么 其他进程无法进入管程。(同一时刻，管程中只能有一个进程在执行)为此，将阻塞原因定义为 条件变量 condition;<ul>
+<li>通常，一个进程被阻塞的原因可以有多个，因此在管程中设置了多个条件变量；</li>
+<li>每个条件变量保存了一个等待队列，用于记录因该条件变量而阻塞的所有进程，对条件变量只能进行两种操作：<ul>
+<li>x.wait：当x对应的条件不满足时，正在调用管程的进程调用 x.wait，将自己插入x条件的等待队列，并释放管程。此时其他进程可以使用该管程。</li>
+<li>x.signal：x对应的条件发生了变化，则调用 x.signal，唤醒一个因x条件而阻塞的进程。（进程离开管程时才能调用）</li>
+</ul>
+</li>
+<li>和信号量的区别：条件变量是没有值的，仅实现了排队等待功能；信号量是有值的，信号量的值反映了剩余资源数，而在管程中，剩余资源数用共享数据结构记录。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 生产者消费者模型</span></span><br><span class="line">monitor ProducerConsumer</span><br><span class="line">    condition isFull, isEmpty;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(Item item)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cnt == N) <span class="built_in">wait</span>(isFull); <span class="comment">// 阻塞，等待isFull=0再插入</span></span><br><span class="line">        cnt++;</span><br><span class="line">        <span class="built_in">insert_item</span>(item);</span><br><span class="line">        <span class="keyword">if</span> (cnt == <span class="number">1</span>) <span class="built_in">signal</span>(isEmpty); <span class="comment">// 释放，让isEmpty=0即表示有数据了</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Item <span class="title">remove</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cnt == <span class="number">0</span>) <span class="built_in">wait</span>(isEmpty); <span class="comment">// 阻塞，等待isEmpty=0再删除</span></span><br><span class="line">        cnt--;</span><br><span class="line">        <span class="keyword">if</span> (cnt == N<span class="number">-1</span>) <span class="built_in">signal</span>(isFull); <span class="comment">// 释放，让isFull=0表示队列没满</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">remove_item</span>();</span><br><span class="line">    &#125;</span><br><span class="line">end monitor</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="典型调度算法"><a href="#典型调度算法" class="headerlink" title="典型调度算法"></a>典型调度算法</h4><p><img src="/image-8.png" alt="alt text"></p>
+<h4 id="动态分区分配算法"><a href="#动态分区分配算法" class="headerlink" title="动态分区分配算法"></a>动态分区分配算法</h4><p><img src="/image-9.png" alt="alt text"></p>
+<ul>
+<li>固定分区会导致内部碎片，动态分区导致外部碎片</li>
+</ul>
+<h4 id="存储相关"><a href="#存储相关" class="headerlink" title="存储相关"></a>存储相关</h4><ul>
+<li>速度：缓存 &gt; 内存 &gt; 外存（虚拟内存 – 预加载）</li>
+<li>虚拟内存好处：<ul>
+<li>内存扩展，把不常用的数据存在硬盘中优化内存利用率</li>
+<li>内存隔离，为每个进程提供独立的地址空间防止相互干扰提供系统稳定性</li>
+</ul>
+</li>
+<li>什么时候诱发缺页中断，问是不是每次访存都要经过操作系统，问知不知道MMU(内存管理单元)<ul>
+<li>缺页中断在程序访问未加载到物理内存的虚拟页时发生，此时系统暂停该进程并将所需页面加载到内存。因此，并非每次访存都需要经过操作系统，仅在发生缺页中断时操作系统才介入。</li>
+<li>（MMU）负责虚拟地址到物理地址的转换，它通过页表来快速定位物理地址，大多数情况下使访存速度接近直接访问物理内存，从而减少对操作系统的依赖。</li>
+</ul>
+</li>
+<li>什么是空间局部性，对编程有什么启发<ul>
+<li>空间局部性：在访问某个存储位置时，其附近的存储位置也可能在短时间内被访问</li>
+<li>将相关数据存储在相邻的内存位置：使用连续数组而非链表存储、减少随机内存访问</li>
+<li>时间局部性: 如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行;如果某个数据被访问过，不久之后该数据很可能再次被访问。(因为程序中存在大量的循环)</li>
+</ul>
+</li>
+<li>为什么32位整型数可以直接做加减法<ul>
+<li>因为现代处理器的寄存器通常为32位或更大，支持直接对32位数据进行算术运算，无需分段处理</li>
+</ul>
+</li>
+</ul>
+<h4 id="虚拟内存相关"><a href="#虚拟内存相关" class="headerlink" title="虚拟内存相关"></a>虚拟内存相关</h4><p><img src="/image-10.png" alt="alt text"></p>
+<ul>
+<li>虚存的容量要满足以下两个条件：<ul>
+<li>虚存的实际容量 ≤ 内存容量和外存容量之和，这是硬件的硬性条件规定的，若虚存的实际容量超过了这个容量，则没有相应的空间来供虚存使用；</li>
+<li>虚存的最大容量 ≤ 计算机的地址位数能容纳的最大容量；</li>
+</ul>
+</li>
+</ul>
+<h4 id="多线程与多进程"><a href="#多线程与多进程" class="headerlink" title="多线程与多进程"></a>多线程与多进程</h4><ul>
+<li>多线程：适合 IO 密集型任务，方便资源共享与快速通信。</li>
+<li>多进程：适合 CPU 密集型任务，充分利用多核 CPU，适合独立的计算密集型操作。（100个jpg转png需要解码与编码所以是CPU密集型任务）</li>
+</ul>
+<h3 id="9-数学相关"><a href="#9-数学相关" class="headerlink" title="9. 数学相关"></a>9. 数学相关</h3><h4 id="判断直线与空间三角形是否相交"><a href="#判断直线与空间三角形是否相交" class="headerlink" title="判断直线与空间三角形是否相交"></a>判断直线与空间三角形是否相交</h4><ul>
+<li>判断直线与空间三角形是否相交，可以先将直线参数化为点和方向向量，通过射线与三角形所在平面的交点求解潜在相交点。若交点存在，再进一步判断该点是否在三角形内部（通常用重心坐标或边向量叉积法验证）。若交点位于三角形内，则直线与三角形相交。</li>
+</ul>
+<h4 id="三角形重心"><a href="#三角形重心" class="headerlink" title="三角形重心"></a>三角形重心</h4><ul>
+<li>三角形的重心是三角形三个顶点的平均位置</li>
+</ul>
+<h3 id="10-C-相关"><a href="#10-C-相关" class="headerlink" title="10. C#相关"></a>10. C#相关</h3><h4 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h4><ul>
+<li>产生原因：<ul>
+<li>内存泄漏通常是指未被使用但无法被垃圾回收器清除的对象占用的内存</li>
+<li>意外的引用（如事件处理器、静态引用、未移除的委托）</li>
+</ul>
+</li>
+<li>如何避免<ul>
+<li>应确保及时释放事件处理器的绑定，尤其是在对象生命周期结束时使用-&#x3D; EventHandler解除事件绑定</li>
+<li>对于文件、流等非托管资源，使用using语句或实现IDisposable接口，以便在使用后释放资源</li>
+<li>减少对静态对象的引用，避免不必要的对象缓存</li>
+<li>使用内存分析工具检测潜在的内存泄漏可以帮助识别和优化内存管理</li>
+</ul>
+</li>
+<li>与C++区别：<ul>
+<li>C++没有GC需要自己管理资源的释放</li>
+<li>C#有GC但需要管理非托管资源的释放</li>
+</ul>
+</li>
+</ul>
+<h4 id="托管资源与非托管资源"><a href="#托管资源与非托管资源" class="headerlink" title="托管资源与非托管资源"></a>托管资源与非托管资源</h4><ul>
+<li>托管资源：由.NET运行时和垃圾回收器（GC）自动管理的资源，主要包括在托管堆上分配的内存，如类实例、字符串、数组和其他引用类型的对象</li>
+<li>非托管资源：是指.NET运行时和垃圾回收器无法自动管理的资源，通常包括文件句柄、数据库连接、网络连接等</li>
+<li>非托管资源通常通过实现IDisposable接口，并在Dispose方法中进行清理。using语句可以帮助自动调用Dispose方法，从而简化非托管资源的管理</li>
+</ul>
+<h4 id="C-与C-的引用区别"><a href="#C-与C-的引用区别" class="headerlink" title="C++与C#的引用区别"></a>C++与C#的引用区别</h4><ul>
+<li>C++引用是对象的别名（共享同一内存地址），不能重新绑定；C#中的引用类型变量可以指向不同对象。（引用类型变量存储的是对象的内存地址，对象在堆中）</li>
+<li>C++引用主要函数参数传递（按引用传递），C#还支持通过ref和out关键字实现按引用传递（函数参数）</li>
+<li>C++对引用类型和值类型没有明确区分，C#则明确区分，并通过垃圾回收管理引用类型的内存。</li>
+<li>C++的引用管理灵活但存在风险（悬空引用、野指针），C#的垃圾回收机制提升了引用的安全性，但仍需避免事件绑定未解除导致的泄漏。</li>
+</ul>
+<h4 id="怎么去判断一个类型（自定义或内置类型）是否包含某个方法"><a href="#怎么去判断一个类型（自定义或内置类型）是否包含某个方法" class="headerlink" title="怎么去判断一个类型（自定义或内置类型）是否包含某个方法"></a>怎么去判断一个类型（自定义或内置类型）是否包含某个方法</h4><ul>
+<li>使用反射来判断一个类型是否包含某个方法。反射可以帮助我们在运行时获取类型的详细信息，包括属性、方法</li>
+<li>获取类型对象：通过typeof()获取目标类型的Type对象，或通过object.GetType()获取实例的Type</li>
+<li>使用GetMethod()方法：Type类提供了GetMethod()方法，可以查找指定名称的方法</li>
+</ul>
+<h3 id="11-设计模式相关"><a href="#11-设计模式相关" class="headerlink" title="11. 设计模式相关"></a>11. 设计模式相关</h3><h4 id="面向对象设计六原则"><a href="#面向对象设计六原则" class="headerlink" title="面向对象设计六原则"></a>面向对象设计六原则</h4><ul>
+<li>面向对象设计原则主要包括以下六大原则，它们简称为SOLID原则：</li>
+</ul>
+<ol>
+<li>单一职责原则（Single Responsibility Principle, SRP）<ul>
+<li>一个类应该只有一个引起它变化的原因，即每个类只负责一个职责。这样设计可以减少类的复杂性，提升代码的可读性和可维护性。</li>
+<li>例如，一个用户类不应该既负责用户数据管理又负责UI显示，应该将这两个职责分开。</li>
+</ul>
+</li>
+<li>开闭原则（Open&#x2F;Closed Principle, OCP）<ul>
+<li>软件实体（类、模块、函数）应该对扩展开放，对修改关闭。这意味着应该通过增加新代码来扩展功能，而不影响现有代码，从而减少因修改带来的错误风险。</li>
+<li>例如，新增一种支付方式时不修改原有支付类，而是通过继承或接口实现新支付方式。</li>
+</ul>
+</li>
+<li>里氏替换原则（Liskov Substitution Principle, LSP）<ul>
+<li>子类应该能够替换父类，并且确保原有程序逻辑的正确性不受影响。换言之，子类应尽量保持与父类相似的行为。</li>
+<li>例如，矩形类的子类不应破坏矩形的面积计算逻辑，否则将违反里氏替换原则。</li>
+</ul>
+</li>
+<li>接口隔离原则（Interface Segregation Principle, ISP）<ul>
+<li>应该将庞大的接口拆分成多个小接口，使得实现类只需关心与自己相关的接口。这可以减少类与类之间的耦合，避免不必要的代码依赖。</li>
+<li>例如，为不同操作设备定义各自独立的接口，而不是让所有设备实现一个大而全的接口。</li>
+</ul>
+</li>
+<li>依赖倒置原则（Dependency Inversion Principle, DIP）<ul>
+<li>高层模块不应该依赖于低层模块，两者都应该依赖于抽象；抽象不应该依赖于细节，细节应该依赖于抽象。这样可以降低模块之间的耦合性。</li>
+<li>例如，应用程序依赖于抽象的数据库接口，而不是具体的数据库实现，方便日后替换不同的数据库系统。</li>
+</ul>
+</li>
+<li>迪米特法则（Law of Demeter, LoD）<ul>
+<li>一个对象应尽量少地了解其他对象。即对象间通信尽量通过有限的接口来完成，避免直接依赖其他类的内部细节，减少类之间的耦合度。</li>
+<li>例如，不应直接访问其他对象的子成员，应通过方法提供服务。</li>
+</ul>
+</li>
+</ol>
+<h4 id="ECS架构比OOP好在哪"><a href="#ECS架构比OOP好在哪" class="headerlink" title="ECS架构比OOP好在哪"></a>ECS架构比OOP好在哪</h4><ul>
+<li>性能优化：<ul>
+<li>内存布局：由于数据导向设计，ECS中的组件通常以连续数组的形式存储，能充分利用CPU缓存（空间局部性），提高访问和计算效率</li>
+<li>并行处理：允许并行处理多个实体的组件，利用多核 CPU 的优势</li>
+</ul>
+</li>
+<li>逻辑与数据分离：ECS将数据（组件）与处理逻辑（系统）分开，使得系统更加专注于特定功能，提升可维护性和可重用性</li>
+<li>动态组合：ECS允许动态创建和组合组件，开发者可以轻松添加、删除或替换组件，增强了系统的灵活性</li>
+</ul>
+<h4 id="单例模式优缺点"><a href="#单例模式优缺点" class="headerlink" title="单例模式优缺点"></a>单例模式优缺点</h4><ul>
+<li>单例模式用于确保一个类在应用程序中只有一个实例，并提供全局访问点，适合场景包括管理共享资源（如配置管理、日志记录、线程池等）。缺点是违背了单一职责原则，增加了代码的耦合性，难以进行单元测试，还可能导致隐藏的依赖和并发问题。使用时需要注意线程安全、延迟初始化、避免过度使用，以免影响代码的灵活性和可维护性。</li>
+<li>饿汉式单例的对象分配在静态内存区，因为它的生命周期从程序启动时就开始，并且会在程序结束时释放。</li>
+<li>懒汉式单例的对象分配在堆内存区，因为它使用动态分配，只有在首次调用 getInstance() 时才会创建，生命周期根据实现决定，通常手动管理释放。</li>
+</ul>
+<h4 id="观察者模式-使用场景"><a href="#观察者模式-使用场景" class="headerlink" title="观察者模式 使用场景"></a>观察者模式 使用场景</h4><ul>
+<li>适用于在对象间建立一对多依赖关系的场景</li>
+<li>事件驱动系统：如 GUI 组件中的事件监听器（按钮点击、键盘输入等），可以注册多个观察者来响应不同的事件</li>
+<li>模型-视图-控制器（MVC）架构：模型发生变化时自动通知视图进行更新</li>
+<li>状态同步：多个系统或对象需要同步状态，当一个状态改变时通知其他对象更新</li>
+</ul>
+<h4 id="组合模式相关"><a href="#组合模式相关" class="headerlink" title="组合模式相关"></a>组合模式相关</h4><ul>
+<li>组合模式（Composite Pattern）是一种结构型设计模式，它通过将对象组合成树形结构来表示部分-整体的层次关系，使得客户端可以以一致的方式处理单个对象和组合对象。</li>
+<li>相较于继承，组合模式的优点是更灵活，它允许通过组合对象来动态扩展功能，减少了类层次的复杂性，也避免了继承带来的强耦合。</li>
+<li>缺点是设计和实现可能较复杂，尤其是在管理对象的生命周期和依赖关系时，需要更多的代码和维护成本。</li>
+</ul>
+</article><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/AolaPictures/aola_309.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/fc355fed.html" title="3.双指针"><img class="cover" src="/img/AolaPictures/aola_233.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">3.双指针</div></div><div class="info-2"><div class="info-item-1">双指针</div></div></div></a><a class="pagination-related" href="/posts/f19ca8e2.html" title="2.矩阵"><img class="cover" src="/img/AolaPictures/aola_250.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">2.矩阵</div></div><div class="info-2"><div class="info-item-1">矩阵</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/noriaka/blog_imgs/master/%E5%8D%A1%E5%A4%AB%E5%8D%A1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Setsuna</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/noriaka"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Lua%E7%9B%B8%E5%85%B3"><span class="toc-text">1. Lua相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8-Lua-%E4%B8%AD%E4%BC%98%E5%8C%96-table-%E5%AD%98%E5%82%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%EF%BC%9A"><span class="toc-text">在 Lua 中优化 table 存储大规模数据的方法有：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G%E8%A1%A8%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">_G表概念：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C-Lua-%E4%B8%AD%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E8%BF%87%E5%A4%9A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E4%BB%A5%E4%B8%8B%E6%96%B9%E6%B3%95%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-text">如果 Lua 中的全局变量过多，可以通过以下方法优化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#G%E8%A1%A8%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-text">_G表的优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-text">脚本语言实现原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lua-%E5%AE%9E%E7%8E%B0%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-text">Lua 实现类和对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lua-%E5%92%8C-C-%E4%BA%A4%E4%BA%92"><span class="toc-text">Lua 和 C++ 交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E5%AE%9E%E7%8E%B0%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="toc-text">C++ 实现热更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E6%8C%87%E9%92%88%E5%9C%A8-Lua-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">C++ 指针在 Lua 中的数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lua-%E4%B8%8E-C-%E4%BA%A4%E4%BA%92"><span class="toc-text">Lua 与 C# 交互</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3"><span class="toc-text">2. 网络相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-%E5%92%8C-UDP-%E5%8E%9F%E7%90%86"><span class="toc-text">TCP 和 UDP 原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E4%B8%AD-TCP-%E5%92%8C-UDP-%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">游戏中 TCP 和 UDP 的应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%94%A8UDP%E6%9D%A5%E5%AE%9E%E7%8E%B0TCP"><span class="toc-text">如何用UDP来实现TCP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5"><span class="toc-text">简述状态同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="toc-text">简述帧同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%B8%A7%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E7%AD%96%E7%95%A5"><span class="toc-text">优化帧同步延迟策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A7%E5%90%8C%E6%AD%A5%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%AD%A3%E7%A1%AE"><span class="toc-text">帧同步如何保证数据传输正确</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A7%E5%90%8C%E6%AD%A5%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">帧同步客户端数据不一致怎么办</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B8%A7%E7%8E%87%E4%B8%8D%E5%90%8C%E5%AF%BC%E8%87%B4%E7%9A%84%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">客户端帧率不同导致的不一致怎么办</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0RPC%E8%B0%83%E7%94%A8%E5%8E%9F%E7%90%86"><span class="toc-text">简述RPC调用原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%98%E5%8C%85%E4%B8%8E%E6%8B%86%E5%8C%85"><span class="toc-text">粘包与拆包</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Unity%E7%9B%B8%E5%85%B3"><span class="toc-text">3. Unity相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E4%B8%80%E4%B8%8BUnity%E4%B8%AD%E7%9A%84ECS%E6%9E%B6%E6%9E%84"><span class="toc-text">简述一下Unity中的ECS架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Unity%E4%B8%8D%E5%90%8C%E5%8A%A8%E7%94%BB%E4%B9%8B%E9%97%B4%E6%80%8E%E4%B9%88%E5%81%9A%E5%B9%B3%E6%BB%91"><span class="toc-text">Unity不同动画之间怎么做平滑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E7%9B%AE%E5%89%8D%E6%89%8B%E6%9C%BA%E5%92%8CPC%E7%AB%AF%E6%B5%81%E8%A1%8C%E7%9A%84%E8%B4%B4%E5%9B%BE%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%EF%BC%8C%E5%B9%B6%E8%AF%B4%E8%AF%B4%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E7%82%B9"><span class="toc-text">简述目前手机和PC端流行的贴图压缩格式，并说说有哪些优化点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LZ4%E5%92%8CLZMA"><span class="toc-text">LZ4和LZMA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8Protobuf%E9%80%9A%E4%BF%A1"><span class="toc-text">怎么使用Protobuf通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#meta%E6%96%87%E4%BB%B6"><span class="toc-text">meta文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">高速碰撞检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Blend-Tree%E7%9B%B8%E5%85%B3"><span class="toc-text">Blend Tree相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-%E7%AE%97%E6%B3%95"><span class="toc-text">A*算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NavMesh%E7%9B%B8%E5%85%B3"><span class="toc-text">NavMesh相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9A%E4%BD%93%E7%9B%B8%E5%85%B3"><span class="toc-text">刚体相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="toc-text">粒子系统相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="toc-text">动画系统相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AABB-Axis-Aligned-Bounding-Box-%E7%9B%92%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B"><span class="toc-text">AABB(Axis-Aligned Bounding Box)盒碰撞检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Animator%E7%9B%B8%E5%85%B3"><span class="toc-text">Animator相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RenderTexture%E7%9B%B8%E5%85%B3"><span class="toc-text">RenderTexture相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%BD%A2%E8%B4%B4%E5%9B%BE%E5%87%BA%E7%8E%B0%E7%BC%9D%E9%9A%99"><span class="toc-text">地形贴图出现缝隙</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Playable%E7%9B%B8%E5%85%B3"><span class="toc-text">Playable相关</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3"><span class="toc-text">4. 项目相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%8F%E6%9E%97%E5%99%AA%E5%A3%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E5%B9%B3%E6%BB%91%E6%A8%A1%E6%8B%9F%E5%9C%B0%E5%BD%A2"><span class="toc-text">柏林噪声为什么可以平滑模拟地形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E5%8D%95%E7%8A%B6%E6%80%81%E6%9C%BA%E5%92%8C%E5%A4%9A%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B7%B7%E5%90%88%E5%8A%A8%E7%94%BB"><span class="toc-text">简述单状态机和多状态机，以及如何实现混合动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E9%A1%B9%E7%9B%AE"><span class="toc-text">定时器项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AB%E9%A1%B9%E7%9B%AE"><span class="toc-text">AB项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E6%9B%B4%E6%96%B0%E7%9B%B8%E5%85%B3"><span class="toc-text">热更新相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UnityWebRequest%E7%9B%B8%E5%85%B3"><span class="toc-text">UnityWebRequest相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%AD%E7%82%B9%E7%BB%AD%E4%BC%A0"><span class="toc-text">断点续传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E7%9B%B8%E5%85%B3"><span class="toc-text">对象池相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%B9%A0%E7%9B%B8%E5%85%B3"><span class="toc-text">实习相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%A6%82%E8%83%8C%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-text">如何设计一个系统（如背包系统）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3"><span class="toc-text">5. 数据结构和算法相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9C%A8%E5%A0%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">完全二叉树在堆中的应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E4%BD%BF%E7%94%A8%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E7%9A%84"><span class="toc-text">哪种数据管理使用双向链表进行管理的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%8CB%E6%A0%91%EF%BC%8CB-%E6%A0%91"><span class="toc-text">红黑树，B树，B+树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95"><span class="toc-text">洗牌算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E6%8E%92%E8%A1%8C%E6%A6%9C"><span class="toc-text">如何设计排行榜</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9B%B8%E5%85%B3"><span class="toc-text">6. 图形学相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%EF%BC%9FUnity-%E7%9A%84-SRP%EF%BC%88Scriptable-Render-Pipeline%EF%BC%89%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="toc-text">什么是渲染管线？Unity 的 SRP（Scriptable Render Pipeline）有什么作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96-Unity-%E4%B8%AD%E7%9A%84%E6%B8%B2%E6%9F%93%E6%80%A7%E8%83%BD"><span class="toc-text">如何优化 Unity 中的渲染性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MVP%E7%9F%A9%E9%98%B5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">MVP矩阵的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shader-%E4%B8%AD%E9%81%BF%E5%85%8D%E5%88%86%E6%94%AF%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">Shader 中避免分支的原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Phong-%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-text">Phong 模型的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Draw-Call-%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BC%98%E5%8C%96"><span class="toc-text">Draw Call 的定义和优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%B9%E5%A4%84%E7%90%86%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">批处理的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E8%A1%8C%E5%85%89%E9%98%B4%E5%BD%B1%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">平行光阴影的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E7%89%A9%E4%BD%93%E7%9A%84%E6%B8%B2%E6%9F%93%E6%96%B9%E6%B3%95"><span class="toc-text">透明物体的渲染方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">模板测试的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E4%B8%AD%E6%9C%89%E5%BE%88%E5%A4%9A%E7%89%A9%E4%BD%93%EF%BC%8C%E5%A4%A7%E9%83%A8%E5%88%86%E4%B8%8D%E9%80%8F%E6%98%8E%EF%BC%8C%E9%83%A8%E5%88%86%E5%8D%8A%E9%80%8F%E6%98%8E%EF%BC%8C%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E5%81%9A%E6%B8%B2%E6%9F%93"><span class="toc-text">场景中有很多物体，大部分不透明，部分半透明，应该如何做渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GPU-Instancing-%E6%A6%82%E5%BF%B5"><span class="toc-text">GPU Instancing 概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%90%88%E6%89%B9"><span class="toc-text">为什么需要合批</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%90%88%E6%89%B9%E4%B8%8E%E5%8A%A8%E6%80%81%E5%90%88%E6%89%B9"><span class="toc-text">静态合批与动态合批</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1%E6%B8%B2%E6%9F%93%E7%9B%B8%E5%85%B3"><span class="toc-text">阴影渲染相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E8%BF%BD%E7%9B%B8%E5%85%B3"><span class="toc-text">光追相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E5%90%91%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%BB%B6%E8%BF%9F%E6%B8%B2%E6%9F%93"><span class="toc-text">前向渲染与延迟渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%BD%E9%A9%AC%E7%A9%BA%E9%97%B4%E5%92%8CZ%E7%A9%BA%E9%97%B4"><span class="toc-text">伽马空间和Z空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%8F%E8%BE%B9"><span class="toc-text">如何描边</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-C-%E7%9B%B8%E5%85%B3"><span class="toc-text">7. C++相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="toc-text">内存对齐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3"><span class="toc-text">字符串相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%97%B6%E9%92%9F%E5%90%8C%E6%AD%A5%EF%BC%9A"><span class="toc-text">客户端和服务端时钟同步：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%92%8C%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">静态链接和动态链接的区别和优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inline%E5%92%8C-define%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">inline和#define的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">模板函数的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%8C%96%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">特化的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NULL%E5%92%8Cnullptr%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">NULL和nullptr的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">堆和栈的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E7%B1%BB%E7%9A%84%E5%A4%A7%E5%B0%8F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88"><span class="toc-text">空类的大小以及为什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="toc-text">C++ 内存泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E5%AE%9E%E7%8E%B0-GC-%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">C++ 实现 GC 的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector%E7%9A%84%E6%89%A9%E5%AE%B9%E4%B8%8E%E7%BC%A9%E5%AE%B9"><span class="toc-text">vector的扩容与缩容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BB%A7%E6%89%BF%E9%97%AE%E9%A2%98"><span class="toc-text">多继承问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E7%9B%B8%E5%85%B3"><span class="toc-text">重载相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8E%E6%8C%87%E9%92%88"><span class="toc-text">野指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%B3%95%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-text">开放定址法删除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E7%9B%B8%E5%85%B3"><span class="toc-text">移动语义相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STL%E4%BA%8C%E7%BA%A7%E5%88%86%E9%85%8D%E5%99%A8"><span class="toc-text">STL二级分配器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E6%96%B9%E5%BC%8F%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">初始化列表方式初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E4%BD%BF%E7%94%A8"><span class="toc-text">指针和引用使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#malloc%E5%92%8Cnew%E5%8C%BA%E5%88%AB"><span class="toc-text">malloc和new区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-text">内存分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E7%9B%B8%E5%85%B3"><span class="toc-text">智能指针相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E9%81%8D%E5%8E%86%E6%95%88%E7%8E%87"><span class="toc-text">数组和链表的遍历效率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E5%92%8C%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">编译型和解释型语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stringstream%E7%9B%B8%E5%85%B3"><span class="toc-text">stringstream相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#memset%E7%9B%B8%E5%85%B3"><span class="toc-text">memset相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#memcpy%E5%92%8Cmemmove"><span class="toc-text">memcpy和memmove</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#erase%E5%87%BD%E6%95%B0"><span class="toc-text">erase函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A0%86%E6%A0%88%E7%9B%B8%E5%85%B3"><span class="toc-text">堆栈相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E5%AD%98%E6%94%BE%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%86%85%E5%AD%98%E5%8C%BA"><span class="toc-text">虚函数表存放在哪个内存区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-11-%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93"><span class="toc-text">C++11 新特性总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="toc-text">8. 操作系统相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">死锁的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E5%8C%BA%E5%88%AB"><span class="toc-text">进程线程区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-text">进程间通信方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B-%E7%BA%BF%E7%A8%8B%E9%97%B4%E5%90%8C%E6%AD%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">进&#x2F;线程间同步方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">典型调度算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D%E7%AE%97%E6%B3%95"><span class="toc-text">动态分区分配算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%9B%B8%E5%85%B3"><span class="toc-text">存储相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3"><span class="toc-text">虚拟内存相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B"><span class="toc-text">多线程与多进程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%95%B0%E5%AD%A6%E7%9B%B8%E5%85%B3"><span class="toc-text">9. 数学相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E7%9B%B4%E7%BA%BF%E4%B8%8E%E7%A9%BA%E9%97%B4%E4%B8%89%E8%A7%92%E5%BD%A2%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BA%A4"><span class="toc-text">判断直线与空间三角形是否相交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E9%87%8D%E5%BF%83"><span class="toc-text">三角形重心</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-C-%E7%9B%B8%E5%85%B3"><span class="toc-text">10. C#相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="toc-text">内存泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%98%E7%AE%A1%E8%B5%84%E6%BA%90%E4%B8%8E%E9%9D%9E%E6%89%98%E7%AE%A1%E8%B5%84%E6%BA%90"><span class="toc-text">托管资源与非托管资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E4%B8%8EC-%E7%9A%84%E5%BC%95%E7%94%A8%E5%8C%BA%E5%88%AB"><span class="toc-text">C++与C#的引用区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%8E%BB%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%9E%8B%EF%BC%88%E8%87%AA%E5%AE%9A%E4%B9%89%E6%88%96%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B%EF%BC%89%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB%E6%9F%90%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="toc-text">怎么去判断一个类型（自定义或内置类型）是否包含某个方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%B8%E5%85%B3"><span class="toc-text">11. 设计模式相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%85%AD%E5%8E%9F%E5%88%99"><span class="toc-text">面向对象设计六原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ECS%E6%9E%B6%E6%9E%84%E6%AF%94OOP%E5%A5%BD%E5%9C%A8%E5%93%AA"><span class="toc-text">ECS架构比OOP好在哪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">单例模式优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">观察者模式 使用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%E7%9B%B8%E5%85%B3"><span class="toc-text">组合模式相关</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/465725e1.html" title="8-一维动态规划"><img src="/img/AolaPictures/aola_290.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="8-一维动态规划"/></a><div class="content"><a class="title" href="/posts/465725e1.html" title="8-一维动态规划">8-一维动态规划</a><time datetime="2025-03-11T06:45:10.655Z" title="发表于 2025-03-11 14:45:10">2025-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/848b9497.html" title="7.图"><img src="/img/AolaPictures/aola_336.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="7.图"/></a><div class="content"><a class="title" href="/posts/848b9497.html" title="7.图">7.图</a><time datetime="2025-03-06T08:57:12.305Z" title="发表于 2025-03-06 16:57:12">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/48a579df.html" title="6.栈"><img src="/img/AolaPictures/aola_315.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6.栈"/></a><div class="content"><a class="title" href="/posts/48a579df.html" title="6.栈">6.栈</a><time datetime="2025-03-06T05:56:45.361Z" title="发表于 2025-03-06 13:56:45">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/23e2398a.html" title="5.区间"><img src="/img/AolaPictures/aola_305.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="5.区间"/></a><div class="content"><a class="title" href="/posts/23e2398a.html" title="5.区间">5.区间</a><time datetime="2025-03-06T04:31:06.658Z" title="发表于 2025-03-06 12:31:06">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/54809807.html" title="4.滑动窗口"><img src="/img/AolaPictures/aola_234.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4.滑动窗口"/></a><div class="content"><a class="title" href="/posts/54809807.html" title="4.滑动窗口">4.滑动窗口</a><time datetime="2025-03-05T07:01:44.160Z" title="发表于 2025-03-05 15:01:44">2025-03-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
