@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Unity | Setsuna-Blog</title><meta name="author" content="Setsuna"><meta name="copyright" content="Setsuna"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Unity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity">
+<meta property="og:url" content="https://noriaka.github.io/posts/c8a4b253.html">
+<meta property="og:site_name" content="Setsuna-Blog">
+<meta property="og:description" content="Unity">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://noriaka.github.io/img/AolaPictures/aola_258.png">
+<meta property="article:published_time" content="2025-04-06T02:12:03.409Z">
+<meta property="article:modified_time" content="2025-04-06T11:57:49.655Z">
+<meta property="article:author" content="Setsuna">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://noriaka.github.io/img/AolaPictures/aola_258.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Unity",
+  "url": "https://noriaka.github.io/posts/c8a4b253.html",
+  "image": "https://noriaka.github.io/img/AolaPictures/aola_258.png",
+  "datePublished": "2025-04-06T02:12:03.409Z",
+  "dateModified": "2025-04-06T11:57:49.655Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Setsuna",
+      "url": "https://noriaka.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://noriaka.github.io/posts/c8a4b253.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity',
+  isHighlightShrink: true,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/noriaka/blog_imgs/%E5%A5%87%E5%B9%BB2.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://raw.githubusercontent.com/noriaka/blog_imgs/master/%E5%8D%A1%E5%A4%AB%E5%8D%A1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(img/AolaPictures/aola_258.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Setsuna-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Unity</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Unity</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2025-04-06T11:57:49.655Z" title="更新于 2025-04-06 19:57:49">2025-04-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="1-UE5移动同步机制"><a href="#1-UE5移动同步机制" class="headerlink" title="1-UE5移动同步机制"></a>1-UE5移动同步机制</h2><ol>
+<li><strong>客户端（自主代理）</strong>  <ul>
+<li><strong>本地控制</strong>  <ul>
+<li>运行移动组件物理逻辑（<code>PerformMovement</code>），生成移动数据包（<code>FSavedMove_Character</code>）。  </li>
+<li>将数据包存入队列（<code>SavedMoves</code>），通过<code>ServerMove RPC</code>向服务器发送精简数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>服务器（授权Actor）</strong>  <ul>
+<li><strong>数据验证与同步</strong>  <ul>
+<li>接收<code>ServerMove</code>，复现客户端移动（<code>PerformMovement</code>）。</li>
+</ul>
+</li>
+<li><strong>一致性校验</strong>：对比客户端报告的最终位置与实际计算结果。  <ul>
+<li><strong>一致</strong> → 返回确认信号。  </li>
+<li><strong>不一致</strong> → 通过<code>ClientAdjustPosition RPC</code>发送校正指令。</li>
+</ul>
+</li>
+<li>广播同步数据：将位置、旋转、状态封装为<code>ReplicatedMovement</code>结构，发送至其他客户端。</li>
+</ul>
+</li>
+<li><strong>其他客户端（模拟代理）</strong>  <ul>
+<li><strong>直接应用同步数据</strong>：  <ul>
+<li>使用<code>ReplicatedMovement</code>更新代理状态，通过<strong>网络平滑</strong>优化视觉表现（如插值过渡）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>客户端校正处理</strong>  <ul>
+<li>若收到<code>ClientAdjustPosition</code>：  </li>
+<li>强制应用服务器移动结果，清空<code>SavedMoves</code>队列中已过时操作。  </li>
+<li>重新追踪未处理动作，确保本地状态与服务器一致。</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-抗锯齿算法"><a href="#2-抗锯齿算法" class="headerlink" title="2-抗锯齿算法"></a>2-抗锯齿算法</h2><ul>
+<li><p><strong>超级采样抗锯齿-SSAA (Super Sampling Anti-aliasing)</strong>  </p>
+<ul>
+<li><strong>原理</strong>：以N倍分辨率渲染场景，最后下采样到目标分辨率  </li>
+<li><strong>渲染阶段</strong>：光栅化前处理（几何处理阶段）  </li>
+<li><strong>优点</strong>：画质最佳，消除所有类型锯齿  </li>
+<li><strong>缺点</strong>：显存消耗巨大（4xSSAA需4倍显存），性能消耗最高</li>
+</ul>
+</li>
+<li><p><strong>多重采样抗锯齿-MSAA (Multi-Sampling Anti-aliasing)</strong>  </p>
+<ul>
+<li><strong>原理</strong>：对SSAA进行优化，在每个像素内进行多次采样  </li>
+<li><strong>渲染阶段</strong>：光栅化阶段（深度&#x2F;模板测试后）  </li>
+<li><strong>优点</strong>：比SSAA节省40%性能，保持边缘平滑  </li>
+<li><strong>缺点</strong>：无法处理透明纹理锯齿，对Deferred Rendering不友好</li>
+</ul>
+</li>
+<li><p><strong>快速近似抗锯齿-FXAA (Fast Approximate Anti-aliasing)</strong>  </p>
+<ul>
+<li><strong>原理</strong>：基于后处理的图像分析，识别高频边缘进行模糊，每个像素进行插值混合</li>
+<li><strong>渲染阶段</strong>：后处理阶段（最终图像输出前）  </li>
+<li><strong>优点</strong>：速度最快（2-3ms内完成），全屏覆盖  </li>
+<li><strong>缺点</strong>：造成细节模糊，文字&#x2F;UI元素质量下降</li>
+</ul>
+</li>
+<li><p><strong>时间性抗锯齿-TAA (Temporal Anti-aliasing)</strong>  </p>
+<ul>
+<li><strong>原理</strong>：利用历史帧数据进行时间域累积采样  </li>
+<li><strong>渲染阶段</strong>：后处理 + 运动向量计算  </li>
+<li><strong>优点</strong>：有效消除动态闪烁（Specular Aliasing）  </li>
+<li><strong>缺点</strong>：运动物体可能产生鬼影（Ghosting）</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-MipMap"><a href="#3-MipMap" class="headerlink" title="3-MipMap"></a>3-MipMap</h2><ul>
+<li><strong>MipMap</strong>：一种纹理压缩技术，通过对纹理进行多级采样，实现对纹理细节的动态调整，以提高渲染性能和视觉效果</li>
+<li>在shader中如何确定MipMap层级：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013746357/article/details/107975128">纹理采样时如何确定正确的mipmap level</a>（使用uv对xy轴的偏导数来确定）</li>
+</ul>
+<ul>
+<li>GPU通过计算UV坐标在屏幕空间中的变化率（即相邻像素的UV差值）来量化纹理的缩放程度 <ul>
+<li><code>ddx(uv)</code>：同一行相邻像素的UV差值（水平方向变化率）；<code>ddy(uv)</code>：同一列相邻像素的UV差值（垂直方向变化率）。  这两者的物理意义是：<strong>一个屏幕像素在纹理空间中覆盖的UV范围</strong>。例如：  <ul>
+<li>若UV在屏幕上均匀变化，<code>ddx(uv)</code>和<code>ddy(uv)</code>为固定值。  </li>
+<li>若物体远离相机，相邻像素的UV差值会增大（屏幕像素覆盖更多纹理区域）。</li>
+</ul>
+</li>
+<li>此计算在<strong>像素着色器</strong>中完成，因为ddx&#x2F;ddy需要访问相邻像素的UV值（顶点着色器无法获取）。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 计算纹理空间的变化率  </span></span><br><span class="line">float2 dx = <span class="built_in">ddx</span>(uv) * textureSize;  <span class="comment">// 纹理像素单位的变化率  </span></span><br><span class="line">float2 dy = <span class="built_in">ddy</span>(uv) * textureSize;  <span class="comment">//（`textureSize`是纹理的分辨率，用于将UV差值转换为实际texel数量）  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 计算最大变化率 </span></span><br><span class="line"><span class="type">float</span> rho = <span class="built_in">max</span>(<span class="built_in">length</span>(dx), <span class="built_in">length</span>(dy));   <span class="comment">//rho越大，表示屏幕像素覆盖的纹理区域越大（需要更高层级的Mipmap）。  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 转换为Mipmap层级 </span></span><br><span class="line"><span class="type">float</span> lod = <span class="built_in">log2</span>(rho);    </span><br><span class="line"><span class="comment">// 若rho=1（1个texel覆盖1个像素），lod=0（使用原图）。  </span></span><br><span class="line"><span class="comment">// 若rho=4（4x4 texel覆盖1个像素），lod=2（使用第2级Mipmap，即原图的1/4分辨率）。  </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-对象池"><a href="#4-对象池" class="headerlink" title="4-对象池"></a>4-对象池</h2><hr>
+<h3 id="一、数据结构选择策略"><a href="#一、数据结构选择策略" class="headerlink" title="一、数据结构选择策略"></a>一、数据结构选择策略</h3><ol>
+<li><p><strong>队列(Queue)</strong>  </p>
+<ul>
+<li><strong>优势</strong>：FIFO特性保持对象复用顺序，避免内存碎片  </li>
+<li><strong>示例</strong>：子弹、特效等高频创建&#x2F;销毁对象  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Queue&lt;GameObject&gt; pool = <span class="keyword">new</span> Queue&lt;GameObject&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>字典(Dictionary)分类</strong>  </p>
+<ul>
+<li><strong>场景</strong>：需按预制体类型管理的多类对象池  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Dictionary&lt;<span class="built_in">string</span>, Queue&lt;GameObject&gt;&gt; typePools = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, Queue&lt;GameObject&gt;&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>栈(Stack)</strong>  </p>
+<ul>
+<li><strong>适用场景</strong>：需优先重用最近回收对象（如频繁切换的UI元素）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、回收机制与自动化"><a href="#二、回收机制与自动化" class="headerlink" title="二、回收机制与自动化"></a>二、回收机制与自动化</h3><ol>
+<li><p><strong>手动回收</strong>  </p>
+<ul>
+<li><strong>显式调用</strong>：通过<code>Release</code>方法归还对象，需业务逻辑控制  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ReleaseBullet</span>(<span class="params">GameObject bullet</span>)</span> &#123;</span><br><span class="line">    bullet.SetActive(<span class="literal">false</span>);</span><br><span class="line">    pool.Enqueue(bullet);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>自动回收</strong>  </p>
+<ul>
+<li><strong>超时检测</strong>：通过协程定期检查未激活对象  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">AutoRecycle</span>(<span class="params"><span class="built_in">float</span> lifetime</span>)</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span>(<span class="params">lifetime</span>)</span>;</span><br><span class="line">    <span class="keyword">if</span> (!isActive) Release(<span class="keyword">this</span>.gameObject);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>事件驱动</strong>：利用<code>OnDisable</code>或自定义析构器  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnDisable</span>()</span> &#123;</span><br><span class="line">    ObjectPool.Instance.Release(<span class="keyword">this</span>.gameObject);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、性能优化关键点"><a href="#三、性能优化关键点" class="headerlink" title="三、性能优化关键点"></a>三、性能优化关键点</h3><ol>
+<li><p><strong>预热策略</strong>  </p>
+<ul>
+<li><strong>启动时预加载</strong>：避免运行时首次使用卡顿  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Prewarm</span>(<span class="params"><span class="built_in">int</span> count</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;count; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> obj = Instantiate(prefab);</span><br><span class="line">        obj.SetActive(<span class="literal">false</span>);</span><br><span class="line">        pool.Enqueue(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>动态扩容算法</strong>  </p>
+<ul>
+<li><strong>指数退避</strong>：按当前容量的150%扩容，避免频繁调整  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ExpandPool</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">int</span> newSize = Mathf.Min(currentSize * <span class="number">3</span> / <span class="number">2</span>, maxCapacity);</span><br><span class="line">    <span class="comment">// 实例化新增对象并加入池</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>状态重置优化</strong>  </p>
+<ul>
+<li><strong>延迟重置</strong>：在对象被取出时初始化而非回收时  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> GameObject <span class="title">Get</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> obj = pool.Dequeue();</span><br><span class="line">    obj.transform.position = spawnPoint; <span class="comment">// 重置位置</span></span><br><span class="line">    obj.GetComponent&lt;Rigidbody&gt;().velocity = Vector3.zero; <span class="comment">// 重置物理状态</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、Unity完整伪代码示例"><a href="#四、Unity完整伪代码示例" class="headerlink" title="四、Unity完整伪代码示例"></a>四、Unity完整伪代码示例</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象池管理器（单例模式）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ObjectPool</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ObjectPool Instance;</span><br><span class="line">    </span><br><span class="line">    [<span class="meta">System.Serializable</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PoolConfig</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> GameObject prefab;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> prewarmCount = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> maxCapacity = <span class="number">50</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> PoolConfig[] configs;</span><br><span class="line">    <span class="keyword">private</span> Dictionary&lt;GameObject, Queue&lt;GameObject&gt;&gt; poolDict = <span class="keyword">new</span> Dictionary&lt;GameObject, Queue&lt;GameObject&gt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span> &#123;</span><br><span class="line">        Instance = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">foreach</span>(<span class="keyword">var</span> config <span class="keyword">in</span> configs) &#123;</span><br><span class="line">            <span class="keyword">var</span> queue = <span class="keyword">new</span> Queue&lt;GameObject&gt;();</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;config.prewarmCount; i++) &#123;</span><br><span class="line">                <span class="keyword">var</span> obj = Instantiate(config.prefab);</span><br><span class="line">                obj.SetActive(<span class="literal">false</span>);</span><br><span class="line">                queue.Enqueue(obj);</span><br><span class="line">            &#125;</span><br><span class="line">            poolDict.Add(config.prefab, queue);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> GameObject <span class="title">Get</span>(<span class="params">GameObject prefab, Vector3 pos</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!poolDict.ContainsKey(prefab)) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> pool = poolDict[prefab];</span><br><span class="line">        <span class="keyword">if</span>(pool.Count == <span class="number">0</span> &amp;&amp; pool.Count &lt; config.maxCapacity) &#123;</span><br><span class="line">            ExpandPool(prefab); <span class="comment">// 动态扩容</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> obj = pool.Dequeue();</span><br><span class="line">        obj.transform.position = pos;</span><br><span class="line">        obj.SetActive(<span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Release</span>(<span class="params">GameObject obj</span>)</span> &#123;</span><br><span class="line">        obj.SetActive(<span class="literal">false</span>);</span><br><span class="line">        <span class="keyword">var</span> prefab = GetPrefabFromObj(obj); <span class="comment">// 通过元数据获取预制体类型</span></span><br><span class="line">        poolDict[prefab].Enqueue(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="五、注意事项"><a href="#五、注意事项" class="headerlink" title="五、注意事项"></a>五、注意事项</h3><ol>
+<li><strong>线程安全</strong>：多线程环境需加锁（如<code>lock</code>关键字）  </li>
+<li><strong>内存泄漏</strong>：定期检查游离对象，设置最大存活时间  </li>
+<li><strong>可视化调试</strong>：在Editor中显示池状态  </li>
+<li><strong>分层管理</strong>：对高频&#x2F;低频对象使用独立池</li>
+</ol>
+<h2 id="5-UI框架"><a href="#5-UI框架" class="headerlink" title="5-UI框架"></a>5-UI框架</h2><ul>
+<li>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wjj616806129/article/details/85208718">UI框架设计</a></li>
+<li>注意用栈来管理UI层级</li>
+<li>抽象一个基类出来，包含UI的基本功能</li>
+</ul>
+<h2 id="6-红点系统"><a href="#6-红点系统" class="headerlink" title="6-红点系统"></a>6-红点系统</h2><ul>
+<li>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_54351806/article/details/140640489">红点系统实现</a></li>
+<li>要点:<ul>
+<li>使用前缀树来管理红点的层级关系：可以快速定位某个节点的所有子节点，便于批量更新</li>
+<li>观察者模式：当某个节点的状态发生变化时，通过事件通知其所有父节点更新状态</li>
+</ul>
+</li>
+<li>优化点：<ul>
+<li>对使用字符串作为键的字典进行优化：避免频繁字符串分割，使用预处理的哈希表存储节点路径</li>
+<li>脏标记：当某个节点的状态发生变化时，标记其所有父节点为脏节点，在下一帧更新时批量更新（避免重复父类触发刷新）</li>
+</ul>
+</li>
+</ul>
+</article><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/AolaPictures/aola_258.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/155618b9.html" title="概率论"><img class="cover" src="/img/AolaPictures/aola_286.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">概率论</div></div><div class="info-2"><div class="info-item-1">概率论</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/noriaka/blog_imgs/master/%E5%8D%A1%E5%A4%AB%E5%8D%A1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Setsuna</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/noriaka"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-UE5%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="toc-text">1-UE5移动同步机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8A%97%E9%94%AF%E9%BD%BF%E7%AE%97%E6%B3%95"><span class="toc-text">2-抗锯齿算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-MipMap"><span class="toc-text">3-MipMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-text">4-对象池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5"><span class="toc-text">一、数据结构选择策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-text">二、回收机制与自动化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">三、性能优化关键点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Unity%E5%AE%8C%E6%95%B4%E4%BC%AA%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">四、Unity完整伪代码示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">五、注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-UI%E6%A1%86%E6%9E%B6"><span class="toc-text">5-UI框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BA%A2%E7%82%B9%E7%B3%BB%E7%BB%9F"><span class="toc-text">6-红点系统</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/c8a4b253.html" title="Unity"><img src="/img/AolaPictures/aola_258.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"/></a><div class="content"><a class="title" href="/posts/c8a4b253.html" title="Unity">Unity</a><time datetime="2025-04-06T02:12:03.409Z" title="发表于 2025-04-06 10:12:03">2025-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/155618b9.html" title="概率论"><img src="/img/AolaPictures/aola_286.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论"/></a><div class="content"><a class="title" href="/posts/155618b9.html" title="概率论">概率论</a><time datetime="2025-04-05T08:18:03.010Z" title="发表于 2025-04-05 16:18:03">2025-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/5751eea2.html" title="C++"><img src="/img/AolaPictures/aola_256.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++"/></a><div class="content"><a class="title" href="/posts/5751eea2.html" title="C++">C++</a><time datetime="2025-04-05T05:24:27.356Z" title="发表于 2025-04-05 13:24:27">2025-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d68507da.html" title="C-Sharp"><img src="/img/AolaPictures/aola_253.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C-Sharp"/></a><div class="content"><a class="title" href="/posts/d68507da.html" title="C-Sharp">C-Sharp</a><time datetime="2025-04-05T00:47:20.724Z" title="发表于 2025-04-05 08:47:20">2025-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/71242314.html" title="10-数组"><img src="/img/AolaPictures/aola_121.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="10-数组"/></a><div class="content"><a class="title" href="/posts/71242314.html" title="10-数组">10-数组</a><time datetime="2025-04-02T15:16:18.888Z" title="发表于 2025-04-02 23:16:18">2025-04-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
