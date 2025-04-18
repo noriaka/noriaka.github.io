@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>6-网络系统</title>
+      <link href="/posts/505cf207.html"/>
+      <url>/posts/505cf207.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-可靠UDP"><a href="#1-可靠UDP" class="headerlink" title="1. 可靠UDP"></a>1. 可靠UDP</h2><ol><li>序列号设计<ul><li>16位循环序号：每65536包循环一次</li><li>序列号压缩：使用差值编码减少头部开销</li></ul></li><li>ACK&#x2F;NACK机制<ul><li>累计确认：ACK携带已连续接收的最大序号</li><li>选择性确认（SACK）：明确告知丢失包位置</li><li>否定确认（NACK）：接收方主动请求重传</li></ul></li><li>滑动窗口机制<ul><li>发送窗口：限制已发送未确认的数据量（通常16-256个包）</li><li>接收窗口：动态调整的缓冲区管理</li><li>RTT动态计算：根据网络延迟调整超时时间</li></ul></li><li>ARQ协议（自动重传请求）<ul><li>停止等待ARQ：发送每个包后等待ACK，超时重传</li><li>回退N帧（Go-Back-N）：滑动窗口机制，批量发送多个包</li><li>选择性重传（Selective Repeat）：仅重传丢失的特定包</li></ul></li><li>前向纠错（FEC）<ul><li>数据包异或：生成冗余包（如包3&#x3D;包1⊕包2）</li><li>Reed-Solomon编码：适合高丢包率场景（如视频流）</li><li>权衡：增加20%-30%冗余包可修复90%丢包情况</li></ul></li><li>流量控制<ul><li>接收方通过ACK包携带剩余缓冲区大小</li><li>动态窗口调整算法：类似TCP的AIMD（加法增大乘法减小）</li></ul></li></ol><h2 id="2-时钟同步"><a href="#2-时钟同步" class="headerlink" title="2. 时钟同步"></a>2. 时钟同步</h2><ul><li>使用NTP算法</li><li>但NTP算法存在缺点：即假设上行和下行链路是稳定的</li><li>基于流的时间同步与消除高阶模式<ol><li><strong>客户端请求</strong>：客户端在“时间请求”数据包上标记当前本地时间并发送给服务器。</li><li><strong>服务器响应</strong>：服务器收到数据包后，标记服务器时间并返回。</li><li><strong>时间差计算</strong>：客户端计算时间差，公式为：$\text{时间差} &#x3D; \frac{\text{(当前时间 - 发送时间)}}{2}$（即计算出offset）</li><li><strong>立即更新时钟</strong>：第一个结果立即用于更新时钟。</li><li><strong>重复过程</strong>：客户端重复步骤1-3（类似于NTP的过程）五次或更多次。</li><li><strong>累积和排序</strong>：将数据包接收结果累积，并按延迟升序排序。</li><li><strong>消除异常值</strong>：丢弃所有大约超过中位数1.5倍的样本，并对剩余样本使用算术平均进行平均。</li></ol></li></ul><h2 id="3-RPC"><a href="#3-RPC" class="headerlink" title="3. RPC"></a>3. RPC</h2><h3 id="RPC：远程过程调用（Remote-Procedure-Call）"><a href="#RPC：远程过程调用（Remote-Procedure-Call）" class="headerlink" title="RPC：远程过程调用（Remote Procedure Call）"></a>RPC：远程过程调用（Remote Procedure Call）</h3><img src="/img/GAMES104/6-网络系统/RPC.png" height=350 /><h3 id="为什么要RPC？"><a href="#为什么要RPC？" class="headerlink" title="为什么要RPC？"></a>为什么要RPC？</h3><ul><li><em>如果需要自己编写的话需要定义网络消息包，需要考虑如何解析（不同平台可能有大小端差异）等等</em></li><li>目标：提供易于编程的网络通信，使客户端-服务器通信变得透明。</li><li>保留集中式代码的“感觉”：<ul><li>程序员不需要考虑网络问题。</li><li>使通信看起来像本地过程调用。</li></ul></li><li>无需担心网络的序列化&#x2F;反序列化。</li><li>无需担心网络的复杂性。</li></ul><h3 id="RPC-Stubs-存根"><a href="#RPC-Stubs-存根" class="headerlink" title="RPC Stubs(存根)"></a>RPC Stubs(存根)</h3><ul><li><strong>客户端存根</strong>：<ul><li>是一种在客户端看起来像是可调用的服务器过程的程序。</li><li>客户端程序认为它正在调用服务器，但实际上是在调用客户端存根。</li></ul></li><li><strong>服务器端存根</strong>：<ul><li>看起来像是对服务器的调用方。</li><li>服务器程序认为它被客户端调用，但实际上是由服务器端存根调用的。</li></ul></li><li><strong>存根通信</strong>：<ul><li>存根之间发送消息，使 RPC 透明地发生。</li></ul></li></ul><img src="/img/GAMES104/6-网络系统/RPC_Stubs.png" height=350 /><h3 id="存根编译器"><a href="#存根编译器" class="headerlink" title="存根编译器"></a>存根编译器</h3><ul><li>当客户端连接上服务器时，会相互注册所有的RPC生成RPC存根，然后会调用存根编译器进行编译</li><li>每次系统调用时会去调用存根（查找函数是否存在），存根会将参数序列化后发送给服务器，服务器收到后会反序列化参数，然后调用服务器端的函数，最后将返回值序列化后发送给客户端，客户端收到后会反序列化返回值，然后返回给客户端</li></ul><ul><li><strong>功能</strong>：<ul><li>“存根编译器”读取接口定义语言（IDL）声明，并为每个服务器过程生成两个存根程序。</li></ul></li><li><strong>服务器程序员职责</strong>：<ul><li>实现服务的过程，并将其与服务器端存根链接。</li></ul></li><li><strong>客户端程序员职责</strong>：<ul><li>实现客户端程序，并将其与客户端存根链接。</li></ul></li><li><strong>管理通信</strong>：<ul><li>存根管理客户端和服务器之间远程通信的所有细节。</li></ul></li></ul><h3 id="RPC调用过程"><a href="#RPC调用过程" class="headerlink" title="RPC调用过程"></a>RPC调用过程</h3><img src="/img/GAMES104/6-网络系统/RPC调用过程.png" height=350 />]]></content>
+      
+      
+      <categories>
+          
+          <category> GAMES104 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>13-二叉树</title>
       <link href="/posts/f126649d.html"/>
       <url>/posts/f126649d.html</url>
