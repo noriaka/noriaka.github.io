@@ -1,164 +1,209 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Unity | Setsuna-Blog</title><meta name="author" content="Setsuna"><meta name="copyright" content="Setsuna"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Unity">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Unity">
-<meta property="og:url" content="https://noriaka.github.io/posts/c8a4b253.html">
-<meta property="og:site_name" content="Setsuna-Blog">
-<meta property="og:description" content="Unity">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://noriaka.github.io/img/AolaPictures/aola_258.png">
-<meta property="article:published_time" content="2025-04-06T02:12:03.409Z">
-<meta property="article:modified_time" content="2025-04-22T02:13:10.479Z">
-<meta property="article:author" content="Setsuna">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://noriaka.github.io/img/AolaPictures/aola_258.png"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Unity",
-  "url": "https://noriaka.github.io/posts/c8a4b253.html",
-  "image": "https://noriaka.github.io/img/AolaPictures/aola_258.png",
-  "datePublished": "2025-04-06T02:12:03.409Z",
-  "dateModified": "2025-04-22T02:13:10.479Z",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "Setsuna",
-      "url": "https://noriaka.github.io/"
-    }
-  ]
-}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://noriaka.github.io/posts/c8a4b253.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
-
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
-        
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Unity | Setsuna-Blog</title><meta name="author" content="Setsuna"><meta name="copyright" content="Setsuna"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Unity"><meta name="application-name" content="Unity"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Unity"><meta property="og:url" content="https://noriaka.github.io/posts/c8a4b253.html"><meta property="og:site_name" content="Setsuna-Blog"><meta property="og:description" content="Unity"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://noriaka.github.io/img/AolaPictures/aola_258.png"><meta property="article:author" content="Setsuna"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://noriaka.github.io/img/AolaPictures/aola_258.png"><meta name="description" content="Unity"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://noriaka.github.io/posts/c8a4b253.html"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
   root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
   algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
   copy: {
     success: '复制成功',
-    error: '复制失败',
+    error: '复制错误',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
-    homepage: true,
-    post: true
+    homepage: false,
+    simplehomepage: true,
+    post: false
   },
-  runtime: '',
-  dateSuffix: {
+  runtime: '天',
+  date_suffix: {
     just: '刚刚',
     min: '分钟前',
     hour: '小时前',
     day: '天前',
     month: '个月前'
   },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Setsuna","link":"链接: ","source":"来源: Setsuna-Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
   },
   isPhotoFigcaption: false,
-  islazyloadPlugin: false,
+  islazyload: true,
   isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
+  shortcutKey: undefined,
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Setsuna-Blog',
   title: 'Unity',
-  isHighlightShrink: true,
+  postAI: '',
+  pageFillDescription: '1-UE5移动同步机制, 2-抗锯齿算法, 3-MipMap, 4-对象池, 一、数据结构选择策略, 二、回收机制与自动化, 三、性能优化关键点, 四、Unity完整伪代码示例, 五、注意事项, 5-UI框架, 6-红点系统, 7-GC总结, Unity的GC过程详解, Lua的GC过程详解, C的GC过程详解, 对比总结, 8-光照模型, 9-网络相关, 1) 检测玩家断线需要考虑网络抖动, 2) 怎么优化网络抖动, 3) 如果遇到了一个客户端有网络延迟因此发送给服务端的数据有延迟怎么办, 4) 断线重连, 1. 问题背景, 2. 实现方案, 3. 优化建议, 5) 网线被拔掉后TCP连接还存在吗？, 6) 进程被kill后TCP连接是否存在？, 10-UGUI优化：, 11-AB打包相关, 1. 基础流程, 2. 资源路径, 3. 压缩方式, 4. 打包框架相关, (1) 为什么需要BuildSetting.xml文件配置, (2) 具体流程, (3) Manifest文件, (4) 加载AB包时为什么要字典数据结构, 12-合批相关, 13-Y3编辑器相关, 14-动画重定向移动同步机制客户端自主代理本地控制运行移动组件物理逻辑生成移动数据包将数据包存入队列通过向服务器发送精简数据服务器授权数据验证与同步接收复现客户端移动一致性校验对比客户端报告的最终位置与实际计算结果一致返回确认信号不一致通过发送校正指令广播同步数据将位置旋转状态封装为结构发送至其他客户端其他客户端模拟代理直接应用同步数据使用更新代理状态通过网络平滑优化视觉表现如插值过渡客户端校正处理若收到强制应用服务器移动结果清空队列中已过时操作重新追踪未处理动作确保本地状态与服务器一致抗锯齿算法超级采样抗锯齿原理以倍分辨率渲染场景最后下采样到目标分辨率渲染阶段光栅化前处理几何处理阶段优点画质最佳消除所有类型锯齿缺点显存消耗巨大需倍显存性能消耗最高多重采样抗锯齿原理对进行优化在每个像素内进行多次采样渲染阶段光栅化阶段深度模板测试后优点比节省性能保持边缘平滑缺点无法处理透明纹理锯齿对不友好快速近似抗锯齿原理基于后处理的图像分析识别高频边缘进行模糊每个像素进行插值混合渲染阶段后处理阶段最终图像输出前优点速度最快内完成全屏覆盖缺点造成细节模糊文字元素质量下降时间性抗锯齿原理利用历史帧数据进行时间域累积采样渲染阶段后处理运动向量计算优点有效消除动态闪烁缺点运动物体可能产生鬼影一种纹理压缩技术通过对纹理进行多级采样实现对纹理细节的动态调整以提高渲染性能和视觉效果在中如何确定层级纹理采样时如何确定正确的使用对轴的偏导数来确定通过计算坐标在屏幕空间中的变化率即相邻像素的差值来量化纹理的缩放程度同一行相邻像素的差值水平方向变化率同一列相邻像素的差值垂直方向变化率这两者的物理意义是一个屏幕像素在纹理空间中覆盖的范围例如若在屏幕上均匀变化和为固定值若物体远离相机相邻像素的差值会增大屏幕像素覆盖更多纹理区域此计算在像素着色器中完成因为需要访问相邻像素的值顶点着色器无法获取计算纹理空间的变化率纹理像素单位的变化率是纹理的分辨率用于将差值转换为实际数量计算最大变化率越大表示屏幕像素覆盖的纹理区域越大需要更高层级的转换为层级若个覆盖个像素使用原图若覆盖个像素使用第级即原图的分辨率对象池一数据结构选择策略队列优势特性保持对象复用顺序避免内存碎片示例子弹特效等高频创建销毁对象字典分类场景需按预制体类型管理的多类对象池栈适用场景需优先重用最近回收对象如频繁切换的元素二回收机制与自动化手动回收显式调用通过方法归还对象需业务逻辑控制自动回收超时检测通过协程定期检查未激活对象事件驱动利用或自定义析构器三性能优化关键点预热策略启动时预加载避免运行时首次使用卡顿动态扩容算法指数退避按当前容量的扩容避免频繁调整实例化新增对象并加入池状态重置优化延迟重置在对象被取出时初始化而非回收时重置位置重置物理状态四完整伪代码示例对象池管理器单例模式动态扩容通过元数据获取预制体类型五注意事项线程安全多线程环境需加锁如关键字内存泄漏定期检查游离对象设置最大存活时间可视化调试在中显示池状态分层管理对高频低频对象使用独立池框架参考资料框架设计注意用栈来管理层级抽象一个基类出来包含的基本功能红点系统参考资料红点系统实现要点使用前缀树来管理红点的层级关系可以快速定位某个节点的所有子节点便于批量更新观察者模式当某个节点的状态发生变化时通过事件通知其所有父节点更新状态优化点对使用字符串作为键的字典进行优化避免频繁字符串分割使用预处理的哈希表存储节点路径脏标记当某个节点的状态发生变化时标记其所有父节点为脏节点在下一帧更新时批量更新避免重复父类触发刷新总结的过程详解使用垃圾收集器基于标记清除算法其核心流程如下标记阶段遍历所有根对象如全局变量静态字段活动线程栈中的引用等递归标记所有可达对象清除阶段释放未被标记的垃圾对象内存但不进行内存压缩导致内存碎片问题增量优化从开始支持增量将标记清除过程拆分为多帧执行减少单帧卡顿但增量可能因对象引用频繁变化导致性能回退分代策略的运行时支持简单分代代频繁回收代较少但实际分代效果有限后端优化了效率但仍依赖分代逻辑托管堆扩展当堆内存不足时会先尝试回收若仍不足则扩展堆内存但扩展后内存不会返还给操作系统可能造成内存浪费的过程详解采用标记清除算法核心流程包括标记阶段从根对象全局表注册表活动协程等出发使用三色标记法白灰黑递归标记可达对象清除阶段释放白色不可达对象内存但不压缩内存可能导致碎片增量模式将标记清除分步执行避免长时间停顿通过手动控制分代模式将对象分为年轻代频繁回收和老年代较少回收通过启用弱表机制通过元方法声明弱引用键值自动回收无强引用的对象常用于缓存管理的过程详解的基于分代压缩模型具体流程为分代回收托管堆分为代新对象在代优先回收代频率最高存活对象晋升到下一代标记阶段从根对象静态字段局部变量等出发标记可达对象压缩阶段在回收后整理内存消除碎片代频繁压缩代较少压缩大对象堆超过的对象分配在属于代不压缩可能引发碎片问题处理实现的对象需两次才能释放第一次调用析构函数第二次回收内存对比总结特性核心算法分代标记压缩标记清除标记清除支持分代增量内存压缩是代内压缩否否分代支持是代部分支持简单分代是分代模式增量回收否是增量是默认增量模式特殊机制增量堆分离弱表三色标记法碎片问题低压缩优化高无压缩中依赖开发者管理弱表光照模型参考资料光照模型网络相关检测玩家断线需要考虑网络抖动心跳包机制客户端定期向服务器发送心跳包如每秒发送一次服务器记录每个客户端的最后心跳时间如果服务器在一定时间内如秒未收到客户端的心跳包则判定该玩家断线超时机制服务器设置一个合理的超时时间如秒如果连续多次心跳包丢失如次才判定为断线可以根据网络状况动态调整超时时间重试机制服务器在检测到心跳包丢失后发送重试请求给客户端如果客户端收到重试请求立即发送心跳包确认在线状态如果多次重试失败如次判定为断线辅助检测如果玩家在一段时间内未发送任何游戏行为数据如移动攻击等结合心跳包机制进行综合判断网络抖动处理滑动窗口机制服务器维护一个滑动窗口记录最近的几次心跳包到达时间如果心跳包偶尔丢失但后续的心跳包正常到达则不判定为断线延迟判定不立即判定断线而是等待更长时间如倍超时时间再确认客户端辅助检测客户端定期检查网络连接状态如通过或如果客户端检测到断线主动发送断线通知给服务器怎么优化网络抖动使用通过队列缓冲处理网络数据包客户端以固定频率如每个从队列中取出数据包处理而非立即处理这能平滑因网络延迟波动抖动导致的瞬时卡顿客户端预测与服务器校正通过客户端权威预测技术本地玩家的操作立即生效同时服务器验证并纠正错误减少因网络延迟带来的感知延迟并利用插值平滑过渡避免瞬间跳跃数据压缩与带宽优化量化同步数据对位置旋转等属性进行精度限制如保留小数点后位减少单次同步数据量动态更新频率根据实体重要性动态调整同步频率例如远距离玩家降低位置更新频率近距离玩家提高频率时间补偿与抖动补偿算法服务器时间同步使用网络时间协议同步服务器时间减少客户端时间误差物理同步优化确定性物理使用固定时间步长运行物理引擎并在所有客户端保持相同的随机种子如果遇到了一个客户端有网络延迟因此发送给服务端的数据有延迟怎么办视觉欺骗在技能释放时立即播放前摇动画等服务器确认后再触发伤害判定提升操作响应感输入缓冲将玩家连续操作如连招暂存为队列网络恢复后批量发送状态同步客户端预测与服务器校正客户端在发送操作指令后立即本地模拟结果如移动技能释放同时服务器接收后进行权威验证若结果不一致服务器下发校正数据客户端需平滑过渡到正确状态服务器回退补偿服务器缓存过去一段时间内的游戏状态如秒当收到延迟指令时回退到指令生成时刻的状态重新模拟确保判定准确性帧同步缓冲区动态调整客户端维护一个指令缓冲区根据网络延迟动态调整缓冲区大小高延迟时增大缓冲区如从帧扩展至帧避免因丢帧导致卡顿确定性回滚客户端本地持续模拟未来帧当收到服务器确认帧时回滚并重新模拟差异帧要求所有逻辑运算具备确定性如固定随机种子避免浮点误差预测空指令填补在未收到服务器帧时客户端假设当前帧为空指令继续模拟待服务器数据到达后对比修正适用于移动类操作的容错断线重连问题背景在多人在线烹饪游戏中网络稳定性是关键玩家可能会因为网络波动或意外掉线导致游戏体验中断为了提升用户体验我们设计了一套断线重连机制确保玩家能够快速恢复游戏实现方案断线检测通过心跳机制检测网络连接状态客户端定期向服务器发送心跳包服务器在收到心跳包后回复确认如果服务器在规定时间内未收到心跳包会认为客户端掉线重连机制重连触发客户端在检测到断线后立即启动重连流程重连间隔设置合理的重连间隔如秒避免频繁重连导致服务器压力过大重连超时设置重连超时时间如秒如果超时未成功重连则提示用户手动重连状态同步状态保存服务器在客户端断线时保存玩家的状态信息包括位置分数物品等状态恢复重连后服务器将保存的状态信息发送给客户端确保玩家能够继续游戏优化建议缓存机制服务器为每个玩家维护一个缓存池保存断线期间的状态变化重连后将缓存的状态变化推送给客户端会话管理为每个玩家分配唯一的会话用于识别和管理玩家的连接状态用户界面提示在客户端显示重连提示告知玩家当前的网络状态网线被拔掉后连接还存在吗连接状态变化物理层中断网线断开导致底层链路不通双方无法收发任何数据包包括报文保活机制若开启此机制会定期发送探测报文若长时间无响应默认约小时无数据交互连接会被标记为断开未开启保活若应用未启用保活连接会一直处于已建立状态直到一方主动关闭或重启连接仍然存在当网线被拔掉后连接在一定时间内仍然存在这是因为协议是面向连接的连接的建立和释放需要经过特定的过程即使物理连接中断协议栈会尝试通过重传机制来恢复连接超时断开如果长时间无法恢复连接协议栈会检测到连接不可达最终会释放连接通常这个超时时间可以根据系统配置有所不同一般在几分钟到几十分钟不等最终结果连接在逻辑上仍存在操作系统未主动关闭但因物理层中断无法通信实际已不可用进程被后连接是否存在进程终止的影响正常终止如调用操作系统关闭进程打开的所有文件描述符包括触发四次挥手连接正常关闭强制终止如进程立即终止但操作系统仍会回收资源关闭并发送包连接正常终止总结无论进程如何终止内核最终会关闭连接因此连接不存在优化动静分离图集合并减少优化使用九宫格切图模式减少透明区域的绘制关闭非必要元素的默认开启减少射线检测开销压缩优化优先使用压缩格式平衡清晰度与内存占用非透明图采用无通道的压缩格式对象池优化减少频繁的和操作使用对象池管理元素打包相关基础流程默认直接打包需要放入文件夹底下通过代码指定打包生成对象指定一些参数后设置需要打包的资源路径调用方法打包设置包名称设置变体设置资源路径加载包资源加载成功加载包子资源场景和资源要分开包依赖包的加载通过文件先把文件夹同名的文件当作资源加载获取通过获取所有该资源的依赖资源路径是一个只读路径指向游戏包内的文件夹这个文件夹用于存储那些在游戏打包时需要一起打包的文件例如音频视频和图像文件在运行游戏时它们是只读的不能被修改这个路径对于读取不需要修改的静态文件很有用是一个可读写路径指向游戏的持久存储位置这个路径可以用于存储玩家的游戏数据配置文件和其他持久数据例如存档和预设这个路径是在每个游戏平台上不同的因此如果您需要在不同的游戏平台上读写数据则需要适当地处理这个路径用于处理数据持久化或作为热更新下载内容的存放目录因为它可读可写压缩方式压缩是一种默认的压缩形式这种标准压缩格式是一个单一流序列化数据文件并且在使用前需要解压缩整个包体压缩是比较流行的压缩格式能使压缩后文件达到最小但是解压相对缓慢导致加载时需要较长的解压时间压缩支持压缩能使得压缩量更大而且在使用资源包前不需要解压整个包体压缩是一种算法因此当对象从压缩包中加载时只有这个对象的对应模块被解压即可这速度更快意味着不需要等待解压整个包体压缩格式是在版本中开始引入的之前的版本不可用不压缩不压缩的方式打包后包体会很大导致很占用空间但是一旦下载访问非常快不推荐这种方式打包因为现在的加载功能做的很友好了完全可以用加载界面来进行后台加载资源而且时间也不长打包框架相关为什么需要文件配置文件中定义了项目名称打包根目录和具体的打包项每个打包项包含了资源路径资源类型类型和后缀名打包的基本策略是根据这些配置自动化生成对应的包文件指定资源路径定义需要打包的资源所在路径指定资源类型区分直接打包的资源和依赖资源指定打包粒度决定资源是以文件为单位打包以目录为单位打包还是以全局打包指定资源后缀过滤需要打包的资源类型如等此外还可以配置不同平台和不同的打包策略比如不同平台可能有不同的性能要求因此可以在打包时为不同平台设置不同的压缩方式比如某些资源可能只针对特定平台例如高分辨率的纹理或特殊格式的音频文件这时可以在中加入条件设置仅针对特定平台的打包规则示例具体流程在类中定义了完整的打包流程其中包含以下关键步骤加载打包设置通过方法加载并解析格式的打包配置文件确保所有打包规则都被正确读取和初始化搜集资源和依赖打包前通过方法搜集需要打包的资源和它们的依赖在这个过程中项目会遍历所有规则找到符合条件的文件并检查它们的依赖关系依赖关系是通过方法获得的这些信息会被用来打包完整的资源链此时还需判断哪些资源是公共资源即依赖是否被多个资源引用若被多个资源引用则需要单独打包生成名称根据资源路径和粒度类型文件目录或全项目打包生成唯一的名称不同类型的资源打包规则决定了最终的名称例如类型会直接使用文件名而类型会根据目录名生成对应的名称打包通过方法调用的方法打包所有资源在打包完成后还会生成一个文件记录打包文件的详细信息资源名称依赖关系等以便运行时加载清理多余文件调用方法删除不必要的文件打包调用方法将资源描述文件打包成里面包含了所有打包的资源信息具体包括资源路径名称依赖关系等文件在的打包机制中文件分为单个包的局部和全局主两种类型以下是具体示例和逻辑解析一局部文件每个包独立生成每个都会生成一个对应的文件该文件记录了该包的元数据信息包括校验码验证文件完整性哈希值用于版本标识依赖关系该包依赖的其他包名称包含的清单资源路径列表示例假设打包生成和两个包它们的局部文件内容如下作用开发者可通过该文件检查包内容是否被篡改或对比版本差异二全局主文件唯一的总清单主文件由自动生成通常以打包输出目录命名如其核心功能包括完整包列表记录所有生成的包名称全量依赖关系描述所有包之间的依赖拓扑哈希版本控制每个包的哈希值用于增量更新示例当打包目录中存在和时主内容如下运行时加载逻辑通过加载主可动态获取任意包的依赖链例如加载主获取的所有依赖返回加载包时为什么要字典数据结构字典值是路径键是包对象包对象里面有引用计数成员变量作用快速查找通过包的可以快速找到对应的包对象引用计数管理每个包对象都有一个引用计数成员变量用于管理包的加载和卸载引用计数管理加载时增加引用计数当包被加载时调用方法增加引用计数如果包已经在字典中存在则直接增加引用计数卸载时减少引用计数当包不再需要时调用方法减少引用计数当引用计数为时包会被卸载映射关系通过的方法可以将包的名字转换为路径合批相关渲染开始步骤把数据加载到显存中把网格和纹理等数据从硬盘加载到显存中因为显卡对显存的访问速度更快设置渲染状态根据材质球设置渲染状态比如使用哪个顶点着色器片元着色器光源属性纹理等调用准备好上述工作后就调用一个渲染命令来告诉可以开始渲染啦合批汇总合批汇总优先级顺序静态批处理实例化动态批处理静态合批必须条件共享相同的材质运行时不能移动旋转或缩放勾选为优点合并网格减少静态合批是勾选在的时候会自动下生成合并的网格并将它以文件形式存储合并后的数据这样在当场景被加载时一次性提交整个合并模型的顶点数据根据引擎的场景管理系统判断各个子模型的可见性然后设置一次渲染状态调用多次分别绘制每一个子模型缺点需要额外空间存储合并后的模型数据如果模型共享相同的几何体则会在编辑器或运行时为每个创建几何体的副本这会增大内存的开销动态合批必须条件自动调用共享相同的材质有顶点数量限制缩放材质球实例数据需一致不能延迟渲染优点合并动态小型物体网格减少缺点同上没有动态合批那样对网格数量的限制也没有静态网格那样需要这么大的内存它很好的弥补了这两者的缺陷但也有存在着一些限制的处理过程是只提交一个模型网格让绘制很多个地方这些不同地方绘制的网格可以对缩放大小旋转角度和坐标有不一样的操作材质球虽然相同但材质球属性可以各自有各自的区别从图形调用接口上来说调用的是和里的多实例渲染接口必须条件同一的多个实例同一和同一原本每次提交前都要但是在里所有材质球在显存里占有固定的如果材质球的内容不发生改变就不需要从而降低了渲染时间所以不会减少而是在与之间减少的工作量是一个渲染循环可在具有许多使用相同着色器变体的材质的场景中加快渲染速度必须条件被渲染的物体必须是或不可以是被渲染的物体不能使用修改属性不支持需要支持和项目的和都支持应用场景中有很多物体很多不同的材质球比如它们的颜色贴图不同但是这些材质球使用的是同一个确切地说是使用静态合批时内存占用太高的情况下可以一起结合使用来优化编辑器相关动画重定向',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
   isToc: true,
-  pageType: 'post'
-}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/noriaka/blog_imgs/%E5%A5%87%E5%B9%BB2.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://raw.githubusercontent.com/noriaka/blog_imgs/master/%E5%8D%A1%E5%A4%AB%E5%8D%A1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(img/AolaPictures/aola_258.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Setsuna-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Unity</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Unity</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2025-04-22T02:13:10.479Z" title="更新于 2025-04-22 10:13:10">2025-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%80%BB%E7%BB%93/">总结</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="1-UE5移动同步机制"><a href="#1-UE5移动同步机制" class="headerlink" title="1-UE5移动同步机制"></a>1-UE5移动同步机制</h2><ol>
+  postUpdate: '2025-04-22 10:13:10',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Setsuna-Blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">12</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">13</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url">总结</a></span><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">Unity</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-04-06T02:12:03.409Z" title="发表于 2025-04-06 10:12:03">2025-04-06</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-04-22T02:13:10.479Z" title="更新于 2025-04-22 10:13:10">2025-04-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/AolaPictures/aola_258.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://noriaka.github.io/posts/c8a4b253.html"><header><a class="post-meta-categories" href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url">总结</a><h1 id="CrawlerTitle" itemprop="name headline">Unity</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Setsuna</span><time itemprop="dateCreated datePublished" datetime="2025-04-06T02:12:03.409Z" title="发表于 2025-04-06 10:12:03">2025-04-06</time><time itemprop="dateCreated datePublished" datetime="2025-04-22T02:13:10.479Z" title="更新于 2025-04-22 10:13:10">2025-04-22</time></header><h2 id="1-UE5移动同步机制"><a href="#1-UE5移动同步机制" class="headerlink" title="1-UE5移动同步机制"></a>1-UE5移动同步机制</h2><ol>
 <li><strong>客户端（自主代理）</strong>  <ul>
 <li><strong>本地控制</strong>  <ul>
 <li>运行移动组件物理逻辑（<code>PerformMovement</code>），生成移动数据包（<code>FSavedMove_Character</code>）。  </li>
@@ -623,7 +668,7 @@
 <li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/432223843">合批汇总2</a></p>
 </li>
 </ul>
-<img src="/img/总结/合批.png" width=700 />
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/总结/合批.png" width=700 />
 
 <ul>
 <li>优先级顺序：SRP Batcher|静态批处理 &gt; GPU 实例化 &gt; 动态批处理</li>
@@ -669,47 +714,148 @@
 </ul>
 </li>
 </ol>
-<h2 id="13-Y3编辑器相关"><a href="#13-Y3编辑器相关" class="headerlink" title="13-Y3编辑器相关"></a>13-Y3编辑器相关</h2><h2 id="14-动画重定向"><a href="#14-动画重定向" class="headerlink" title="14-动画重定向"></a>14-动画重定向</h2></article><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/AolaPictures/aola_258.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/2dc8de0b.html" title="11-排序"><img class="cover" src="/img/AolaPictures/aola_191.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">11-排序</div></div><div class="info-2"><div class="info-item-1">排序</div></div></div></a><a class="pagination-related" href="/posts/155618b9.html" title="概率论"><img class="cover" src="/img/AolaPictures/aola_286.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">概率论</div></div><div class="info-2"><div class="info-item-1">概率论</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/noriaka/blog_imgs/master/%E5%8D%A1%E5%A4%AB%E5%8D%A1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Setsuna</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/noriaka"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-UE5%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="toc-text">1-UE5移动同步机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8A%97%E9%94%AF%E9%BD%BF%E7%AE%97%E6%B3%95"><span class="toc-text">2-抗锯齿算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-MipMap"><span class="toc-text">3-MipMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-text">4-对象池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5"><span class="toc-text">一、数据结构选择策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-text">二、回收机制与自动化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">三、性能优化关键点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Unity%E5%AE%8C%E6%95%B4%E4%BC%AA%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">四、Unity完整伪代码示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">五、注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-UI%E6%A1%86%E6%9E%B6"><span class="toc-text">5-UI框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BA%A2%E7%82%B9%E7%B3%BB%E7%BB%9F"><span class="toc-text">6-红点系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-GC%E6%80%BB%E7%BB%93"><span class="toc-text">7-GC总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity%E7%9A%84GC%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-text">Unity的GC过程详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lua%E7%9A%84GC%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-text">Lua的GC过程详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E7%9A%84GC%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-text">C#的GC过程详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="toc-text">对比总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B"><span class="toc-text">8-光照模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3"><span class="toc-text">9-网络相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A3%80%E6%B5%8B%E7%8E%A9%E5%AE%B6%E6%96%AD%E7%BA%BF%EF%BC%8C%E9%9C%80%E8%A6%81%E8%80%83%E8%99%91%E7%BD%91%E7%BB%9C%E6%8A%96%E5%8A%A8"><span class="toc-text">1) 检测玩家断线，需要考虑网络抖动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%80%8E%E4%B9%88%E4%BC%98%E5%8C%96%E7%BD%91%E7%BB%9C%E6%8A%96%E5%8A%A8"><span class="toc-text">2) 怎么优化网络抖动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A6%82%E6%9E%9C%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%89%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E5%9B%A0%E6%AD%A4%E5%8F%91%E9%80%81%E7%BB%99%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9C%89%E5%BB%B6%E8%BF%9F%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">3) 如果遇到了一个客户端有网络延迟因此发送给服务端的数据有延迟怎么办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%96%AD%E7%BA%BF%E9%87%8D%E8%BF%9E"><span class="toc-text">4) 断线重连</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="toc-text">1. 问题背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="toc-text">2. 实现方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="toc-text">3. 优化建议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%BD%91%E7%BA%BF%E8%A2%AB%E6%8B%94%E6%8E%89%E5%90%8E%EF%BC%8CTCP%E8%BF%9E%E6%8E%A5%E8%BF%98%E5%AD%98%E5%9C%A8%E5%90%97%EF%BC%9F"><span class="toc-text">5) 网线被拔掉后，TCP连接还存在吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BF%9B%E7%A8%8B%E8%A2%ABkill%E5%90%8ETCP%E8%BF%9E%E6%8E%A5%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%9F"><span class="toc-text">6) 进程被kill后TCP连接是否存在？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-UGUI%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-text">10-UGUI优化：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-AB%E6%89%93%E5%8C%85%E7%9B%B8%E5%85%B3"><span class="toc-text">11-AB打包相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%B5%81%E7%A8%8B"><span class="toc-text">1. 基础流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-text">2. 资源路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8E%8B%E7%BC%A9%E6%96%B9%E5%BC%8F"><span class="toc-text">3. 压缩方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%89%93%E5%8C%85%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3"><span class="toc-text">4. 打包框架相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81BuildSetting-xml%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">(1) 为什么需要BuildSetting.xml文件配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-text">(2) 具体流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Manifest%E6%96%87%E4%BB%B6"><span class="toc-text">(3) Manifest文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%8A%A0%E8%BD%BDAB%E5%8C%85%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%97%E5%85%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">(4) 加载AB包时为什么要字典数据结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%90%88%E6%89%B9%E7%9B%B8%E5%85%B3"><span class="toc-text">12-合批相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Y3%E7%BC%96%E8%BE%91%E5%99%A8%E7%9B%B8%E5%85%B3"><span class="toc-text">13-Y3编辑器相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%8A%A8%E7%94%BB%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">14-动画重定向</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/505cf207.html" title="6-网络系统"><img src="/img/AolaPictures/aola_296.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6-网络系统"/></a><div class="content"><a class="title" href="/posts/505cf207.html" title="6-网络系统">6-网络系统</a><time datetime="2025-04-17T15:20:54.593Z" title="发表于 2025-04-17 23:20:54">2025-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f126649d.html" title="13-二叉树"><img src="/img/AolaPictures/aola_194.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13-二叉树"/></a><div class="content"><a class="title" href="/posts/f126649d.html" title="13-二叉树">13-二叉树</a><time datetime="2025-04-17T08:51:35.735Z" title="发表于 2025-04-17 16:51:35">2025-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/773319c1.html" title="5-AI系统"><img src="/img/AolaPictures/aola_136.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="5-AI系统"/></a><div class="content"><a class="title" href="/posts/773319c1.html" title="5-AI系统">5-AI系统</a><time datetime="2025-04-11T12:51:07.947Z" title="发表于 2025-04-11 20:51:07">2025-04-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2ccc368b.html" title="12-技巧"><img src="/img/AolaPictures/aola_161.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="12-技巧"/></a><div class="content"><a class="title" href="/posts/2ccc368b.html" title="12-技巧">12-技巧</a><time datetime="2025-04-09T00:19:48.021Z" title="发表于 2025-04-09 08:19:48">2025-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2dc8de0b.html" title="11-排序"><img src="/img/AolaPictures/aola_191.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="11-排序"/></a><div class="content"><a class="title" href="/posts/2dc8de0b.html" title="11-排序">11-排序</a><time datetime="2025-04-09T00:18:07.608Z" title="发表于 2025-04-09 08:18:07">2025-04-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
-  const loadMathjax = () => {
-    if (!window.MathJax) {
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          tags: 'none',
-        },
-        chtml: {
-          scale: 1.1
-        },
-        options: {
-          enableMenu: true,
-          renderActions: {
-            findScript: [10, doc => {
-              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-                const display = !!node.type.match(/; *mode=display/)
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
-                const text = document.createTextNode('')
-                node.parentNode.replaceChild(text, node)
-                math.start = {node: text, delim: '', n: 0}
-                math.end = {node: text, delim: '', n: 0}
-                doc.math.push(math)
-              }
-            }, '']
-          }
-        }
-      }
+<h2 id="13-Y3编辑器相关"><a href="#13-Y3编辑器相关" class="headerlink" title="13-Y3编辑器相关"></a>13-Y3编辑器相关</h2><h2 id="14-动画重定向"><a href="#14-动画重定向" class="headerlink" title="14-动画重定向"></a>14-动画重定向</h2></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Setsuna</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://noriaka.github.io/posts/c8a4b253.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://noriaka.github.io/posts/c8a4b253.html')">Unity</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://noriaka.github.io/posts/c8a4b253.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Unity&amp;url=https://noriaka.github.io/posts/c8a4b253.html&amp;pic=/img/AolaPictures/aola_258.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://noriaka.github.io" target="_blank">Setsuna-Blog</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="/img/AolaPictures/aola_398.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/155618b9.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_286.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">概率论</div></div></a></div><div class="next-post pull-right"><a href="/posts/2dc8de0b.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_191.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">11-排序</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-UE5%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6"><span class="toc-number">1.</span> <span class="toc-text">1-UE5移动同步机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8A%97%E9%94%AF%E9%BD%BF%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2-抗锯齿算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-MipMap"><span class="toc-number">3.</span> <span class="toc-text">3-MipMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-number">4.</span> <span class="toc-text">4-对象池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5"><span class="toc-number">4.1.</span> <span class="toc-text">一、数据结构选择策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">二、回收机制与自动化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-number">4.3.</span> <span class="toc-text">三、性能优化关键点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Unity%E5%AE%8C%E6%95%B4%E4%BC%AA%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">4.4.</span> <span class="toc-text">四、Unity完整伪代码示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.5.</span> <span class="toc-text">五、注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-UI%E6%A1%86%E6%9E%B6"><span class="toc-number">5.</span> <span class="toc-text">5-UI框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BA%A2%E7%82%B9%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.</span> <span class="toc-text">6-红点系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-GC%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">7-GC总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity%E7%9A%84GC%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-number">7.1.</span> <span class="toc-text">Unity的GC过程详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lua%E7%9A%84GC%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-number">7.2.</span> <span class="toc-text">Lua的GC过程详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E7%9A%84GC%E8%BF%87%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-number">7.3.</span> <span class="toc-text">C#的GC过程详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="toc-number">7.4.</span> <span class="toc-text">对比总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.</span> <span class="toc-text">8-光照模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">9.</span> <span class="toc-text">9-网络相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A3%80%E6%B5%8B%E7%8E%A9%E5%AE%B6%E6%96%AD%E7%BA%BF%EF%BC%8C%E9%9C%80%E8%A6%81%E8%80%83%E8%99%91%E7%BD%91%E7%BB%9C%E6%8A%96%E5%8A%A8"><span class="toc-number">9.1.</span> <span class="toc-text">1) 检测玩家断线，需要考虑网络抖动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%80%8E%E4%B9%88%E4%BC%98%E5%8C%96%E7%BD%91%E7%BB%9C%E6%8A%96%E5%8A%A8"><span class="toc-number">9.2.</span> <span class="toc-text">2) 怎么优化网络抖动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A6%82%E6%9E%9C%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%89%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E5%9B%A0%E6%AD%A4%E5%8F%91%E9%80%81%E7%BB%99%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9C%89%E5%BB%B6%E8%BF%9F%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-number">9.3.</span> <span class="toc-text">3) 如果遇到了一个客户端有网络延迟因此发送给服务端的数据有延迟怎么办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%96%AD%E7%BA%BF%E9%87%8D%E8%BF%9E"><span class="toc-number">9.4.</span> <span class="toc-text">4) 断线重连</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="toc-number">9.4.1.</span> <span class="toc-text">1. 问题背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="toc-number">9.4.2.</span> <span class="toc-text">2. 实现方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="toc-number">9.4.3.</span> <span class="toc-text">3. 优化建议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%BD%91%E7%BA%BF%E8%A2%AB%E6%8B%94%E6%8E%89%E5%90%8E%EF%BC%8CTCP%E8%BF%9E%E6%8E%A5%E8%BF%98%E5%AD%98%E5%9C%A8%E5%90%97%EF%BC%9F"><span class="toc-number">9.5.</span> <span class="toc-text">5) 网线被拔掉后，TCP连接还存在吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BF%9B%E7%A8%8B%E8%A2%ABkill%E5%90%8ETCP%E8%BF%9E%E6%8E%A5%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%9F"><span class="toc-number">9.6.</span> <span class="toc-text">6) 进程被kill后TCP连接是否存在？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-UGUI%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-number">10.</span> <span class="toc-text">10-UGUI优化：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-AB%E6%89%93%E5%8C%85%E7%9B%B8%E5%85%B3"><span class="toc-number">11.</span> <span class="toc-text">11-AB打包相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%B5%81%E7%A8%8B"><span class="toc-number">11.1.</span> <span class="toc-text">1. 基础流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-number">11.2.</span> <span class="toc-text">2. 资源路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8E%8B%E7%BC%A9%E6%96%B9%E5%BC%8F"><span class="toc-number">11.3.</span> <span class="toc-text">3. 压缩方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%89%93%E5%8C%85%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3"><span class="toc-number">11.4.</span> <span class="toc-text">4. 打包框架相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81BuildSetting-xml%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">11.4.1.</span> <span class="toc-text">(1) 为什么需要BuildSetting.xml文件配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-number">11.4.2.</span> <span class="toc-text">(2) 具体流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Manifest%E6%96%87%E4%BB%B6"><span class="toc-number">11.4.3.</span> <span class="toc-text">(3) Manifest文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%8A%A0%E8%BD%BDAB%E5%8C%85%E6%97%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%97%E5%85%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">11.4.4.</span> <span class="toc-text">(4) 加载AB包时为什么要字典数据结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%90%88%E6%89%B9%E7%9B%B8%E5%85%B3"><span class="toc-number">12.</span> <span class="toc-text">12-合批相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Y3%E7%BC%96%E8%BE%91%E5%99%A8%E7%9B%B8%E5%85%B3"><span class="toc-number">13.</span> <span class="toc-text">13-Y3编辑器相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%8A%A8%E7%94%BB%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">14.</span> <span class="toc-text">14-动画重定向</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/98a3515c.html" title="2-UE动画系统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_398.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2-UE动画系统"/></a><div class="content"><a class="title" href="/posts/98a3515c.html" title="2-UE动画系统">2-UE动画系统</a><time datetime="2025-04-24T05:41:43.930Z" title="发表于 2025-04-24 13:41:43">2025-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7501b2ef.html" title="1-UE C++基础"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_384.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1-UE C++基础"/></a><div class="content"><a class="title" href="/posts/7501b2ef.html" title="1-UE C++基础">1-UE C++基础</a><time datetime="2025-04-24T05:23:54.230Z" title="发表于 2025-04-24 13:23:54">2025-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/505cf207.html" title="6-网络系统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_296.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6-网络系统"/></a><div class="content"><a class="title" href="/posts/505cf207.html" title="6-网络系统">6-网络系统</a><time datetime="2025-04-17T15:20:54.593Z" title="发表于 2025-04-17 23:20:54">2025-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f126649d.html" title="13-二叉树"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_194.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13-二叉树"/></a><div class="content"><a class="title" href="/posts/f126649d.html" title="13-二叉树">13-二叉树</a><time datetime="2025-04-17T08:51:35.735Z" title="发表于 2025-04-17 16:51:35">2025-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/773319c1.html" title="5-AI系统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/AolaPictures/aola_136.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="5-AI系统"/></a><div class="content"><a class="title" href="/posts/773319c1.html" title="5-AI系统">5-AI系统</a><time datetime="2025-04-11T12:51:07.947Z" title="发表于 2025-04-11 20:51:07">2025-04-11</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2025 By <a class="footer-bar-link" href="/" title="Setsuna" target="_blank">Setsuna</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
-      const script = document.createElement('script')
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
-      script.id = 'MathJax-script'
-      script.async = true
-      document.head.appendChild(script)
-    } else {
-      MathJax.startup.document.state(0)
-      MathJax.texReset()
-      MathJax.typesetPromise()
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Setsuna 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
     }
   }
 
-  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
-  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
-})()</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

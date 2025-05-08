@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>2-UE动画系统</title>
+      <link href="/posts/98a3515c.html"/>
+      <url>/posts/98a3515c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-动画系统相关函数"><a href="#1-动画系统相关函数" class="headerlink" title="1. 动画系统相关函数"></a>1. 动画系统相关函数</h2><ul><li><code>NativeUpdateAnimation</code>：可以继承AnimInstance，创建自己的子类，然后把蓝图Update逻辑放到C++里执行，以节省开销，当年堡垒之夜就使用了这个方法，但适合游戏功能稳定后再这么做（每帧更新动画逻辑，类似Tick）</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">USlashAnimInstance::NativeUpdateAnimation</span><span class="params">(<span class="type">float</span> DeltaTime)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Super::<span class="built_in">NativeUpdateAnimation</span>(DeltaTime);</span><br><span class="line">    <span class="keyword">if</span> (SlashCharacterMovement)</span><br><span class="line">    &#123;</span><br><span class="line">        GroundSpeed = UKismetMathLibrary::<span class="built_in">VSizeXY</span>(SlashCharacterMovement-&gt;Velocity);</span><br><span class="line">        bIsFalling = SlashCharacterMovement-&gt;<span class="built_in">IsFalling</span>();</span><br><span class="line">        CharacterState = SlashCharacter-&gt;<span class="built_in">GetCharacterState</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2-动画蓝图相关"><a href="#2-动画蓝图相关" class="headerlink" title="2. 动画蓝图相关"></a>2. 动画蓝图相关</h2><h3 id="2-1-动画蓝图的变量"><a href="#2-1-动画蓝图的变量" class="headerlink" title="2.1 动画蓝图的变量"></a>2.1 动画蓝图的变量</h3><ul><li>首先变量需要用<code>UPROPERTY(BlueprintReadOnly)</code>修饰</li><li>然后点选齿轮图标选择<code>Show Inherited Variables</code>，这样就可以在蓝图中看到这个变量了</li></ul><img src="/img/UE/2-UE动画系统/2-UE-1.png" height=150 /><h3 id="2-2-根据枚举值混合动画pose"><a href="#2-2-根据枚举值混合动画pose" class="headerlink" title="2.2 根据枚举值混合动画pose"></a>2.2 根据枚举值混合动画pose</h3><ul><li>使用<code>Blend Poses</code>节点：</li></ul><img src="/img/UE/2-UE动画系统/2-UE-2.png" height=125 /><img src="/img/UE/2-UE动画系统/2-UE-3.png" height=300 /><h3 id="2-3-多个动画蓝图混合（动画分层）"><a href="#2-3-多个动画蓝图混合（动画分层）" class="headerlink" title="2.3 多个动画蓝图混合（动画分层）"></a>2.3 多个动画蓝图混合（动画分层）</h3><ol><li>新建一个动画蓝图</li></ol><img src="/img/UE/2-UE动画系统/2-UE-4.png" height=300 /><ol start="2"><li>将原来动画状态复制到新的动画蓝图中，此时变量会无法识别，此时需要右键将其生成新变量（不能创建变量的参数比如<code>input pose</code>，可以暴露出接口来传入）</li></ol><img src="/img/UE/2-UE动画系统/2-UE-5.png" height=300 /><ol start="3"><li>在原来动画蓝图中使用<code>linked Anim Graph</code>节点将新的动画蓝图连接到原来的动画蓝图中，并将所有变量进行绑定</li></ol><img src="/img/UE/2-UE动画系统/2-UE-6.png" height=250 /><img src="/img/UE/2-UE动画系统/2-UE-7.png" height=200 /><h3 id="2-4-动画蒙太奇"><a href="#2-4-动画蒙太奇" class="headerlink" title="2.4 动画蒙太奇"></a>2.4 动画蒙太奇</h3><ul><li>可以用来管理多个动画序列</li></ul><ol><li>首先创建动画蒙太奇</li></ol><img src="/img/UE/2-UE动画系统/Montage/2.4.1.png" height=200 /><ol start="2"><li>拖拽不同动画到slot中并在上方右键生成不同section并命名</li></ol><img src="/img/UE/2-UE动画系统/Montage/2.4.2.png" height=125 /><ol start="3"><li>可以点击右侧白方框控制不同section切换</li></ol><img src="/img/UE/2-UE动画系统/Montage/2.4.3.png" height=150 /><ol start="4"><li>蓝图中调用时需要将输出的pose先输出到slot中，动画蒙太奇播放时会自动播放slot中的动画来覆盖之前的pose动画</li></ol><img src="/img/UE/2-UE动画系统/Montage/2.4.4.png" height=225 /><ol start="5"><li>播放蒙太奇的函数存在于AnimInstance类上，使用<code>GetMesh</code>可以访问此类从而调用节点<code>Montage Play</code>和<code>Montage Jump to Section</code>来播放</li></ol><img src="/img/UE/2-UE动画系统/Montage/2.4.5.png" height=300 />]]></content>
+      
+      
+      <categories>
+          
+          <category> UE </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1-UE C++基础</title>
+      <link href="/posts/7501b2ef.html"/>
+      <url>/posts/7501b2ef.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-内联函数"><a href="#1-内联函数" class="headerlink" title="1. 内联函数"></a>1. 内联函数</h2><ul><li>使用<code>FORCEINLINE</code>宏</li><li>一般可以直接在头文件中定义内联函数，编译时可以直接把代码复制粘贴过去，减少了函数调用的开销，从而提高了程序的执行效率</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SlashCharacter.h</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">UPROPERTY</span>(VisibleInstanceOnly)</span><br><span class="line">    AItem* OverlappingItem;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">FORCEINLINE AItem* <span class="title">GetOverlappingItem</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> OverlappingItem; &#125;</span><br><span class="line">    <span class="function">FORCEINLINE <span class="type">void</span> <span class="title">SetOverlappingItem</span><span class="params">(AItem* Item)</span> </span>&#123; OverlappingItem = Item; &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="2-枚举"><a href="#2-枚举" class="headerlink" title="2. 枚举"></a>2. 枚举</h2><ul><li>枚举名称开头使用<code>E</code>，枚举值命名使用枚举类型缩写 + ‘_’ + 枚举值名称，如<code>EItemState</code>，<code>EIS_Hovering</code></li><li>使用时声明注意要使用<code>enum class</code>为了避免命名冲突，这样使用时需要加上枚举类型表明作用域，如<code>EItemState::EIS_Hovering</code></li><li>使用宏<code>UENUM</code>则可以在蓝图中使用枚举值</li><li>为了确保枚举值范围可以用<code>uint8</code>表示</li><li>宏<code>UMETA</code>可以给枚举值添加元数据从而在蓝图中使用不同名称</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UENUM</span>(BlueprintType)</span><br><span class="line"><span class="keyword">enum class</span> <span class="title class_">ECharacterState</span> : uint8 </span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">ECS_Unequipped <span class="title">UMETA</span><span class="params">(DisplayName = <span class="string">&quot;Unequipped&quot;</span>)</span>,</span></span><br><span class="line"><span class="function">    ECS_EquippedOneHanded <span class="title">UMETA</span><span class="params">(DisplayName = <span class="string">&quot;Equipped One-Handed Weapon&quot;</span>)</span>,</span></span><br><span class="line"><span class="function">    ECS_EquippedTwoHanded <span class="title">UMETA</span><span class="params">(DisplayName = <span class="string">&quot;Equipped Two-Handed Weapon&quot;</span>)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure><h2 id="3-数学库"><a href="#3-数学库" class="headerlink" title="3. 数学库"></a>3. 数学库</h2><ul><li>头文件：<code>#include &quot;Kismet/KismetMathLibrary.h&quot;</code></li><li>常用函数：<ul><li><code>UKismetMathLibrary::VSizeXY</code>：计算二维向量的长度</li><li><code>UKismetMathLibrary::VSize</code>：计算三维向量的长度</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> UE </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>6-网络系统</title>
       <link href="/posts/505cf207.html"/>
       <url>/posts/505cf207.html</url>
